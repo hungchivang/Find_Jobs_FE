@@ -7,12 +7,16 @@ import { RegistercompanyComponent } from './Company/registercompany/registercomp
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './Company/login/login.component';
+import { ShowNewComponent } from './Show/show-new/show-new.component';
+import { DetailsJobComponent } from './Details/details-job/details-job.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistercompanyComponent,
-    LoginComponent
+    LoginComponent,
+    ShowNewComponent,
+    DetailsJobComponent
 
   ],
   imports: [
