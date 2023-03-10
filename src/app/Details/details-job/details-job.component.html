@@ -5,7 +5,9 @@
       <a href="#" class="nav-logo">
         <img src="../../../assets/img/techjobs_bgw.png">
       </a>
-      <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
         <!-- <span class="navbar-toggler-icon"></span> -->
         <i class="fa fa-bars icn-res" aria-hidden="true"></i>
 
@@ -20,7 +22,8 @@
             <a class="nav-link" href="#">Tin Tức</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
               Dropdown
             </a>
             <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
@@ -42,7 +45,8 @@
             <a class="nav-link" href="#">Đăng Nhập</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
               VI
             </a>
             <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
@@ -50,7 +54,8 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" style="color: #fff!important">Nhà Tuyển Dụng</a>
+            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" style="color: #fff!important">Nhà
+              Tuyển Dụng</a>
           </li>
         </ul>
       </div>
@@ -70,39 +75,35 @@
         <div class="col-md-2 col-sm-12 col-12">
           <div class="job-detail-header-logo">
             <a href="#">
-              <img src="../../../assets/img/fpt-logo.png" class="job-logo-ima" alt="job-logo">
+              <img src="{{JobCompanyAccount.avatar}}" class="job-logo-ima" alt="job-logo">
             </a>
           </div>
         </div>
         <div class="col-md-7 col-sm-12 col-12">
           <div class="job-detail-header-desc">
             <div class="job-detail-header-title">
-              <a href="#">[HCM] 02 Solution Architects–Up to $2000</a>
+              <a href="#">{{JobCompanyAccount.title}}</a>
             </div>
             <div class="job-detail-header-company">
-              <a href="#">Fpt Software</a>
+              <a href="#">{{JobCompanyAccount.short_name}}</a>
             </div>
             <div class="job-detail-header-de">
               <ul>
-                <li><i class="fa fa-map-marker icn-jd"></i><span>Đà Nẵng</span></li>
-                <li><i class="fa fa-usd icn-jd"></i><span>15 triệu - 20 triệu</span></li>
-                <li><i class="fa fa-calendar icn-jd"></i><span>15/01/2019</span></li>
+                <li><i class="fa fa-map-marker icn-jd"></i><span>{{JobCompanyAccount.address}}</span></li>
+                <li><i class="fa fa-usd icn-jd"></i><span>{{JobCompanyAccount.min}}$ - {{JobCompanyAccount.max}}$</span>
+                </li>
+                <li><i class="fa fa-calendar icn-jd"></i><span>{{JobCompanyAccount.expired_date}}</span></li>
               </ul>
             </div>
             <div class="job-detail-header-tag">
               <ul>
                 <li>
-                  <a href="#">Java</a>
+                  <a href="#">{{JobCompanyAccount.nameCategory}}</a>
                 </li>
                 <li>
-                  <a href="#">.NET</a>
+                  <a href="#">{{JobCompanyAccount.nameLocation}}</a>
                 </li>
-                <li>
-                  <a href="#">SQL</a>
-                </li>
-                <li>
-                  <a href="#">C#</a>
-                </li>
+
               </ul>
             </div>
           </div>
@@ -131,7 +132,7 @@
       <div class="col-md-8 col-sm-12 col-12 clear-left">
         <div class="main-wrapper">
           <h2 class="widget-title">
-            <span>Phúc lợi</span>
+            <span>Nội dung</span>
           </h2>
           <!-- content -->
           <div class="welfare-wrap">
@@ -139,13 +140,13 @@
               <div class="welfare-list">
                 <ul>
                   <li>
-                    <p><i class="fa fa-usd icn-welfare"></i>Have opponunity for growth.</p>
+                    <p><i class="fa fa-usd icn-welfare"></i>{{JobCompanyAccount.descriptionJob}}</p>
                   </li>
                   <li>
-                    <p><i class="fa fa-user icn-welfare"></i>Working under energisitic, innovative, friendly environment.</p>
+                    <p><i class="fa fa-user icn-welfare"></i>Giới tính: {{JobCompanyAccount.gender}}</p>
                   </li>
                   <li>
-                    <p><i class="fa fa-check-circle icn-welfare"></i>Competitive salary and attractive benefits packages.</p>
+                    <p><i class="fa fa-check-circle icn-welfare"></i>Số lượng :{{JobCompanyAccount.quantity}}</p>
                   </li>
                 </ul>
               </div>
@@ -154,62 +155,35 @@
           <h2 class="widget-title">
             <span>Mô tả công việc</span>
           </h2>
-          <div class="jd-content">
-            (*). Validus Vietnam is looking for a Senior QA Engineer for Web and Mobile applications.<br>
-            As a Senior QA Engineer, you will be working alongside the Vietnam technology and product development teams to create and execute manual and automated tests to ensure product quality. This position works collaboratively with the regional technology team and is based in Ho Chi Minh City, Vietnam.<br>
-            <br>
-            (*). Responsibilities:<br>
-            - Obtain a detailed understanding of Validus’ web & mobile applications, the lending engine platform, issues and potential issues affecting the platform.<br>
-            - Work alongside internal and vendor product development teams across different locations (India and Singapore), communicate clearly and frequently with all team members, business stakeholders and product owners to ensure the quality of the Validus platform.<br>
-            - Work with teams to plan projects, assess risks and help meet product deadlines.<br>
-            - Review and analyze the effectiveness and efficiency of existing systems and develop testing strategies for improving or leveraging these systems.<br>
-            - Conduct tests before product launches to ensure software runs smoothly and meets client needs across our web & mobile applications, testing for different browsers, devices and versions for compatibility as needed.<br>
-            - Drive improvements in unit testing coverage, develop test suites, expand automation.<br>
-            - Automate test plans and test cases based on business requirements, user stories and technical specifications.<br>
-            - Create and execute test scripts, cases, and scenarios.<br>
-            - Conduct all types of application testing as needed, such as system, unit, regression, load, and acceptance testing methods.<br>
-            - Assist in reproducing, investigating and debugging technical issues with the product development team.<br>
-            - Responsible for signing off on release readiness and documentation for all testing efforts, results, activities, data, logging, and tracking, closing out bugs and software issues.<br>
-            - Communicate test progress, test results, and other relevant information to project stakeholders and management.<br>
-            - Cultivate and disseminate knowledge of application-testing best practices.<br>
-          </div>
+          <p><i class="fa fa-check-circle icn-welfare"></i>{{JobCompanyAccount.nameLocation}}</p>
+
           <h2 class="widget-title">
-            <span>Yêu cầu công việc</span>
+            <span>Thông tin liên hệ </span>
           </h2>
-          <div class="jd-content">
-            - 5+ years directly testing and/or supporting web platform and mobile applications;<br>
-            - Experience with fintech and salesforce-based applications is a plus;<br>
-            - Experience testing compatibility across Mac and PC operating systems, various browsers and devices, with knowledge of tools and best practices for testing applications;<br>
-            - Go beyond essential QA testing to anticipate problems and alert them to developers and relevant stakeholders;<br>
-            - Experience using developer/debugging tools and defect tracking tools like Jira;<br>
-            - Proven experience developing test cases and test plans, that cover positive, negative and edge scenarios;<br>
-            - Strong documentation and communication skills;<br>
-            - Experienced working on web and mobile app technologies that use HTML, CSS, JavaScript, Android Studio, Native, Vue JS etc;<br>
-            - Experienced using Jira, Confluence and working in a scrum / agile development framework;<br>
-            - Experienced working in a fast-paced startup environment, with a can do attitude, capable of coping with urgent market needs and doing what is necessary to deliver exceptional product to market;<br>
-            - Experience using creative skills to effectively break code;<br>
-            - Team player;<br>
-            - Experienced working independently and with remote teams in other countries and time zones;<br>
-            - Good and effective English communication skills is a must;<br>
-            - Organized, thoughtful and enjoy creating order out of chaos;<br>
-            - Keen attention to detail and consistency;<br>
-            - Vietnam citizens or Permanent Residents (with fluency in Vietnamese) preferred.<br>
-            <br>
-            (**). Benefits:<br>
-            - All benefits according to the Vietnamese labour law, including 13rd-month salary;<br>
-            - Annual leave of 18 days;<br>
-            - Social insurance, health insurance & unemployment insurance according to Vietnam Labor Law;<br>
-            - Private health insurance;<br>
-            - Annual professional training and development $2K (ie. Courses, workshops, events, etc. must be approved by line manager).<br>
+          <div class="welfare-wrap">
+            <div class="row">
+              <div class="welfare-list">
+                <ul>
+                  <li>
+                    <p><i class="fa fa-check-circle icn-welfare"></i>Số điện thoại:{{JobCompanyAccount.phone}}</p>
+                  </li>
+                  <li>
+                    <p><i class="fa fa-user icn-welfare"></i>Email :{{JobCompanyAccount.email}}</p>
+                  </li>
+                  <li>
+                    <p><i class="fa fa-check-circle icn-welfare"></i>Website:{{JobCompanyAccount.website}}</p>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
           </div>
+
 
         </div>
 
 
-
-
       </div>
-
 
 
       <!-- Sidebar -->
@@ -226,7 +200,7 @@
                   <span class="ji-title">Nơi làm việc:</span>
                 </div>
                 <div class="col-sm-8">
-                  <span class="ji-main">Đà Nẵng</span>
+                  <span class="ji-main">{{JobCompanyAccount.address}}</span>
                 </div>
               </div>
             </div>
@@ -237,7 +211,7 @@
                   <span class="ji-title">Cấp bậc:</span>
                 </div>
                 <div class="col-sm-8">
-                  <span class="ji-main">Nhân viên</span>
+                  <span class="ji-main">{{JobCompanyAccount.nameCategory}}</span>
                 </div>
               </div>
             </div>
@@ -248,7 +222,7 @@
                   <span class="ji-title">Lương:</span>
                 </div>
                 <div class="col-sm-8">
-                  <span class="ji-main">1000$ - 3000$</span>
+                  <span class="ji-main">{{JobCompanyAccount.min}}$ - {{JobCompanyAccount.max}}$</span>
                 </div>
               </div>
             </div>
@@ -259,7 +233,7 @@
                   <span class="ji-title">Hạn nộp:</span>
                 </div>
                 <div class="col-sm-8">
-                  <span class="ji-main">31/12/2019</span>
+                  <span class="ji-main">{{JobCompanyAccount.expired_date}}</span>
                 </div>
               </div>
             </div>
@@ -270,21 +244,21 @@
                   <span class="ji-title">Ngành nghề:</span>
                 </div>
                 <div class="col-sm-8">
-                  <span class="ji-main">Quảng cáo, Đối ngoại</span>
+                  <span class="ji-main">{{JobCompanyAccount.codeJob}}</span>
                 </div>
               </div>
             </div>
 
-            <div class="job-info-list">
-              <div class="row">
-                <div class="col-sm-4">
-                  <span class="ji-title">Kỹ năng:</span>
-                </div>
-                <div class="col-sm-8">
-                  <span class="ji-main">PR Activity</span>
-                </div>
-              </div>
-            </div>
+            <!--            <div class="job-info-list">-->
+            <!--              <div class="row">-->
+            <!--                <div class="col-sm-4">-->
+            <!--                  <span class="ji-title">Kỹ năng:</span>-->
+            <!--                </div>-->
+            <!--                <div class="col-sm-8">-->
+            <!--                  <span class="ji-main"></span>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--            </div>-->
 
             <div class="job-info-list">
               <div class="row">
@@ -307,14 +281,14 @@
           </h2>
           <div class="company-intro">
             <a href="#">
-              <img src="../../../assets/img/fpt-logo.png" class="job-logo-ima" alt="job-logo">
+              <img src="{{JobCompanyAccount.avatar}}" class="job-logo-ima" alt="job-logo">
             </a>
           </div>
-          <h2 class="company-intro-name">Fpt Software</h2>
+          <h2 class="company-intro-name">{{JobCompanyAccount.nameAcc}}</h2>
           <ul class="job-add">
             <li>
               <i class="fa fa-map-marker ja-icn"></i>
-              <span>Trụ sở: 212 Phan Đăng Lưu - Hòa Cường Bắc - Hải Châu - Đà Nẵng </span>
+              <span>Trụ sở: {{JobCompanyAccount.address}} </span>
             </li>
             <li>
               <i class="fa fa-bar-chart ja-icn"></i>
@@ -332,113 +306,22 @@
             <span>Việc làm tương tự</span>
           </h2>
 
-          <div class="job-tt-contain">
+          <div class="job-tt-contain" *ngFor="let p of ListJobnew">
             <div class="job-tt-item">
 
               <a href="#" class="thumb">
-                <div style="background-image: url(../../../assets/img/alipay-logo.png);"></div>
+                <div><img src="{{p.avatar}}" width="90px" height="60px"></div>
               </a>
 
               <div class="info">
                 <a href="#" class="jobname">
-                  Fullstack .NET Developer (Angular/React)
+                  {{p.title}}
                 </a>
                 <a href="#" class="company">
-                  Alipay Software
-                </a>
+                 Làm việc tại: {{p.address}}                </a>
               </div>
             </div>
 
-            <div class="job-tt-item">
-
-              <a href="#" class="thumb">
-                <div style="background-image: url(../../../assets/img/fpt-logo.png);"></div>
-              </a>
-
-              <div class="info">
-                <a href="#" class="jobname">
-                  [HCM] 02 Solution Architects–Up to $2000
-                </a>
-                <a href="#" class="company">
-                  FPT Software
-                </a>
-              </div>
-            </div>
-            <div class="job-tt-item">
-
-              <a href="#" class="thumb">
-                <div style="background-image: url(../../../assets/img/alipay-logo.png);"></div>
-              </a>
-
-              <div class="info">
-                <a href="#" class="jobname">
-                  Fullstack .NET Developer (Angular/React)
-                </a>
-                <a href="#" class="company">
-                  Alipay Software
-                </a>
-              </div>
-            </div>
-            <div class="job-tt-item">
-
-              <a href="#" class="thumb">
-                <div style="background-image: url(../../../assets/img/alipay-logo.png);"></div>
-              </a>
-
-              <div class="info">
-                <a href="#" class="jobname">
-                  Fullstack .NET Developer (Angular/React)
-                </a>
-                <a href="#" class="company">
-                  Alipay Software
-                </a>
-              </div>
-            </div>
-            <div class="job-tt-item">
-
-              <a href="#" class="thumb">
-                <div style="background-image: url(../../../assets/img/alipay-logo.png);"></div>
-              </a>
-
-              <div class="info">
-                <a href="#" class="jobname">
-                  Fullstack .NET Developer (Angular/React)
-                </a>
-                <a href="#" class="company">
-                  Alipay Software
-                </a>
-              </div>
-            </div>
-            <div class="job-tt-item">
-
-              <a href="#" class="thumb">
-                <div style="background-image: url(../../../assets/img/alipay-logo.png);"></div>
-              </a>
-
-              <div class="info">
-                <a href="#" class="jobname">
-                  Fullstack .NET Developer (Angular/React)
-                </a>
-                <a href="#" class="company">
-                  Alipay Software
-                </a>
-              </div>
-            </div>
-            <div class="job-tt-item">
-
-              <a href="#" class="thumb">
-                <div style="background-image: url(../../../assets/img/alipay-logo.png);"></div>
-              </a>
-
-              <div class="info">
-                <a href="#" class="jobname">
-                  Fullstack .NET Developer (Angular/React)
-                </a>
-                <a href="#" class="company">
-                  Alipay Software
-                </a>
-              </div>
-            </div>
 
           </div>
         </div>
@@ -463,7 +346,6 @@
   </div>
 </div>
 <!-- (end) Phần thân -->
-
 
 
 <!-- job support -->
@@ -506,7 +388,8 @@
           <span>About</span>
         </h2>
         <p class="footer-content">
-          Discover the best way to find houses, condominiums, apartments and HDBs for sale and rent in Singapore with JobsOnline, Singapore's Fastest Growing Jobs Portal.
+          Discover the best way to find houses, condominiums, apartments and HDBs for sale and rent in Singapore with
+          JobsOnline, Singapore's Fastest Growing Jobs Portal.
         </p>
         <ul class="footer-contact">
           <li>
