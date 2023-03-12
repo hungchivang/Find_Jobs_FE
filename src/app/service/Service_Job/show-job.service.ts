@@ -19,4 +19,7 @@ export class ShowJobService {
   getOne_Job(id:number):Observable<ListJobCompanyAccount>{
     return this.Http.get<ListJobCompanyAccount>(`http://localhost:8080/job/showJobNew/${id}`)
   }
+  searchbyCompany(short_name:string):Observable<ListJobCompanyAccount[]>{
+    return this.Http.get<ListJobCompanyAccount[]>(`http://localhost:8080/job/searchCompany/${short_name}`)
+  }
 }

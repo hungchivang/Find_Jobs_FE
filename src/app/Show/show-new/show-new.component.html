@@ -149,11 +149,11 @@
         <!-- (end) content tab 1 -->
         <!-- content tab 2 -->
         <div class="tab-pane stab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <form class="bn-search-form">
+          <form class="bn-search-form" [formGroup]="formsearch" (ngSubmit)="searchbyCompany()">
             <div class="row">
               <div class="col-md-10 col-sm-12">
                 <div class="input-group s-input-group w-100">
-                  <input type="text" class="form-control sinput" placeholder="Nhập kỹ năng, công việc,...">
+                  <input type="text" class="form-control sinput" placeholder="Nhập kỹ năng, công việc,..." formControlName="short_name">
                   <span><i class="fa fa-search"></i></span>
                 </div>
               </div>
