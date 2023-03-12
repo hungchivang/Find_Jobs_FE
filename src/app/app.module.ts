@@ -7,12 +7,14 @@ import { RegistercompanyComponent } from './Company/registercompany/registercomp
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './Company/login/login.component';
+import { ShowAllComponent } from './Show/showAll/show-all.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistercompanyComponent,
-    LoginComponent
+    LoginComponent,
+    ShowAllComponent
 
   ],
   imports: [
