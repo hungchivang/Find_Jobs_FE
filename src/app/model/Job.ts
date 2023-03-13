@@ -18,7 +18,6 @@ export class Job{
   company:Company;
   category:Category;
 
-
   constructor(id: number, title: string, code: string, salaryMin: number, salaryMax: number, address: string, expYear: number, expiredDate: Date, description: string, quantity: number, gender: string, status: boolean, location: Location, company: Company, category: Category) {
     this.id = id;
     this.title = title;

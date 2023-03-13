@@ -41,7 +41,14 @@ export class LoginComponent implements OnInit {
         if(this.newAcc.status){
           console.log(this.newAcc.status)
           alert("Đăng nhập thành công")
-          this.router.navigate([""]);
+          if(this.newAcc.role.id == 1){
+            this.router.navigate(["/homeCompany"]);
+          }else if(this.newAcc.role.id == 2){
+            this.router.navigate(["/home"]);
+          }else {
+            this.router.navigate([""]);
+          }
+
         }else {
           alert("Tài khoản đã bị khóa")
         }

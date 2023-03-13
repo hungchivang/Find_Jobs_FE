@@ -10,6 +10,8 @@ import { LoginComponent } from './Company/login/login.component';
 import { HomecompanyComponent } from './Company/homecompany/homecompany.component';
 import {AuthInterceptor} from "./auth.interceptor";
 import { InformationcompanyComponent } from './Company/informationcompany/informationcompany.component';
+import { ShowNewComponent } from './Show/show-new/show-new.component';
+import { DetailsJobComponent } from './Details/details-job/details-job.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { InformationcompanyComponent } from './Company/informationcompany/inform
     RegistercompanyComponent,
     LoginComponent,
     HomecompanyComponent,
-    InformationcompanyComponent
+    InformationcompanyComponent,
+    ShowNewComponent,
+    DetailsJobComponent
 
   ],
   imports: [
