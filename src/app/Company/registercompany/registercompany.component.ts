@@ -41,7 +41,7 @@ export class RegistercompanyComponent implements OnInit {
       this.registerCompanyService.register(this.registerForm.value).subscribe((data) => {
         this.account = data;
         console.log(this.account)
-        alert("thanh cong. chờ xác nhận")
+        alert("Đăng kí thành công. Vào Mail để xem chi tiết")
         this.router.navigate(["/login"])
       }, () => {
         alert("Email or số điện thoại đã tồn tại");

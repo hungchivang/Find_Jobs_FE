@@ -91,7 +91,7 @@
                   <input type="text" class="input form-control-lgin" placeholder="Số điện thoại" formControlName="phone">
                 </div>
               </div>
-              <p *ngIf="!registerForm.get('phone')?.valid && registerForm.get('phone')?.touched" style="color: red">Không được để trống</p>
+              <p *ngIf="!registerForm.get('phone')?.valid && registerForm.get('phone')?.touched" style="color: red">Không được để trống(10 chữ số ,bắt đầu từ 0)</p>
 
               <div class="reg-info">
                 <h3>Đăng kí với : </h3>
@@ -100,7 +100,7 @@
                 <select class="form-control" id="exampleFormControlSelect1" formControlName="id" >
                   <option></option>
                   <option value="2">Ứng Viên</option>
-                  <option value="3">Doanh Nghiệp</option>
+                  <option value="1">Doanh Nghiệp</option>
                 </select>
               </div>
 

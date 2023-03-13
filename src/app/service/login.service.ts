@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {AccountToken} from "../model/AccountToken";
+import {Account} from "../model/Account";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,10 @@ export class LoginService {
 
   login(account: any): Observable<AccountToken>{
     return this.http.post<AccountToken>("http://localhost:8080/login",account);
+  }
+
+  findAccountByEmail(email :string): Observable<Account>{
+    return this.http.get<Account>("http://localhost:8080/login/" + email);
   }
 
   setToken(token: string){
