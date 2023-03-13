@@ -12,6 +12,7 @@ import {AuthInterceptor} from "./auth.interceptor";
 import { InformationcompanyComponent } from './Company/informationcompany/informationcompany.component';
 import { ShowNewComponent } from './Show/show-new/show-new.component';
 import { DetailsJobComponent } from './Details/details-job/details-job.component';
+import { GuestComponent } from './guest/guest.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetailsJobComponent } from './Details/details-job/details-job.component
     HomecompanyComponent,
     InformationcompanyComponent,
     ShowNewComponent,
-    DetailsJobComponent
+    DetailsJobComponent,
+    GuestComponent
 
   ],
   imports: [

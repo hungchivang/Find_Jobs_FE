@@ -36,6 +36,8 @@ export class ShowNewComponent implements OnInit {
 
 
 
+
+
   searchbyCompany() {
     let value = this.formsearch.get('short_name')?.value
     this.servicerShow_New.searchbyCompany(value).subscribe((data) => {
