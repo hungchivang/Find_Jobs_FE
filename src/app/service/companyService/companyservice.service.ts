@@ -21,6 +21,9 @@ export class CompanyserviceService {
   findAllCompany(email : string):Observable<CompanyAndAccount>{
     return this.http.get<any>("http://localhost:8080/company/showCompany/" + email);
   }
+  findOneConpanyByib(idJob:number):Observable<ListJobCompanyAccount>{
+    return this.http.get<ListJobCompanyAccount>(`http://localhost:8080/company/businessUserDetails/${idJob}`)
+  }
 
 
 

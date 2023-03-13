@@ -187,16 +187,16 @@
               <div class="job-content">
                 <div class="job-logo">
                   <a href="#">
-                    <img src="{{p.avatar}}" class="job-logo-ima" alt="job-logo">
+                    <img src="{{p.avatar}}" class="job-logo-ima" alt="job-logo"  routerLink="/detailsJob/{{p.idJob}}">
                   </a>
                 </div>
 
                 <div class="job-desc">
                   <div class="job-title">
-                    <a href="#">{{p.title}}</a>
+                    <a href="#"  routerLink="/detailsJob/{{p.idJob}}">{{p.title}} </a>
                   </div>
                   <div class="job-company">
-                    <a >{{p.short_name}}</a> | <a href="#" class="job-address"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <a routerLink="/businessUserDetails/{{p.idJob}}" >{{p.short_name}}</a> | <a href="#" class="job-address"><i class="fa fa-map-marker" aria-hidden="true"></i>
                     {{p.address}}</a>
                   </div>
 
@@ -221,7 +221,7 @@
             </div>
 
             <div class="readmorestyle-wrap">
-              <a  class="readallstyle reads1" routerLink="/detailsJob/{{p.idJob}}">Xem thêm</a>
+<!--              <a  class="readallstyle reads1" routerLink="/detailsJob/{{p.idJob}}">Xem thêm</a>-->
             </div>
           </div>
         </div>
@@ -285,54 +285,54 @@
                   <span class="cate-count">(300)</span>
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
+<!--              <li>-->
+<!--                <a href="#">-->
+<!--                  <span class="cate-img">-->
+<!--                  <em>HR</em>-->
+<!--                </span>-->
+<!--                  <span class="cate-count">(300)</span>-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#">-->
+<!--                  <span class="cate-img">-->
+<!--                  <em>HR</em>-->
+<!--                </span>-->
+<!--                  <span class="cate-count">(300)</span>-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#">-->
+<!--                  <span class="cate-img">-->
+<!--                  <em>HR</em>-->
+<!--                </span>-->
+<!--                  <span class="cate-count">(300)</span>-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#">-->
+<!--                  <span class="cate-img">-->
+<!--                  <em>HR</em>-->
+<!--                </span>-->
+<!--                  <span class="cate-count">(300)</span>-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#">-->
+<!--                  <span class="cate-img">-->
+<!--                  <em>HR</em>-->
+<!--                </span>-->
+<!--                  <span class="cate-count">(300)</span>-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#">-->
+<!--                  <span class="cate-img">-->
+<!--                  <em>HR</em>-->
+<!--                </span>-->
+<!--                  <span class="cate-count">(300)</span>-->
+<!--                </a>-->
+<!--              </li>-->
               <li>
                 <a href="#" class="readallstyle reads1">Xem tất cả</a>
               </li>

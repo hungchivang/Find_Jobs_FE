@@ -7,6 +7,7 @@ import {InformationcompanyComponent} from "./Company/informationcompany/informat
 import {ShowNewComponent} from "./Show/show-new/show-new.component";
 import {DetailsJobComponent} from "./Details/details-job/details-job.component";
 import {GuestComponent} from "./guest/guest.component";
+import {BusinessUserDetailsComponent} from "./Details/business-user-details/business-user-details.component";
 
 const routes: Routes = [
   {path:"registerCompany", component: RegistercompanyComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:"home", component: ShowNewComponent },
   {path:'detailsJob/:idJob', component: DetailsJobComponent },
   {path:'guest', component: GuestComponent },
+  {path:'businessUserDetails/:idJob', component: BusinessUserDetailsComponent },
 
 ];
 

@@ -13,6 +13,7 @@ import { InformationcompanyComponent } from './Company/informationcompany/inform
 import { ShowNewComponent } from './Show/show-new/show-new.component';
 import { DetailsJobComponent } from './Details/details-job/details-job.component';
 import { GuestComponent } from './guest/guest.component';
+import { BusinessUserDetailsComponent } from './Details/business-user-details/business-user-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GuestComponent } from './guest/guest.component';
     InformationcompanyComponent,
     ShowNewComponent,
     DetailsJobComponent,
-    GuestComponent
+    GuestComponent,
+    BusinessUserDetailsComponent
 
   ],
   imports: [
