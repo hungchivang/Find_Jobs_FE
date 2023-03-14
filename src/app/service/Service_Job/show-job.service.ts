@@ -13,8 +13,8 @@ export class ShowJobService {
 
   }
 
-  getAllJob_Latest():Observable<ListJobCompanyAccount[]>{
-   return  this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/showJobNew")
+  getAllJob_Latest(page: number):Observable<ListJobCompanyAccount[]>{
+   return  this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/showJobNew"+'?page='+page)
   }
   getOne_Job(id:number):Observable<ListJobCompanyAccount>{
     return this.Http.get<ListJobCompanyAccount>(`http://localhost:8080/job/showJobNew/${id}`)

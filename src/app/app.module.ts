@@ -14,6 +14,8 @@ import { ShowNewComponent } from './Show/show-new/show-new.component';
 import { DetailsJobComponent } from './Details/details-job/details-job.component';
 import { GuestComponent } from './guest/guest.component';
 import { BusinessUserDetailsComponent } from './Details/business-user-details/business-user-details.component';
+import { EditUserComponent } from './User/edit-user/edit-user.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -25,14 +27,16 @@ import { BusinessUserDetailsComponent } from './Details/business-user-details/bu
     ShowNewComponent,
     DetailsJobComponent,
     GuestComponent,
-    BusinessUserDetailsComponent
+    BusinessUserDetailsComponent,
+    EditUserComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

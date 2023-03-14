@@ -15,6 +15,8 @@ export class ShowNewComponent implements OnInit {
   formsearch!: FormGroup
   account!:AccountToken;
   ListJobnew: ListJobCompanyAccount[] = []
+  p: number = 1;
+  total: number = 0;
 
 
   ngOnInit(): void {
@@ -29,8 +31,9 @@ export class ShowNewComponent implements OnInit {
   }
 
   getAllJob_Latest() {
-    this.servicerShow_New.getAllJob_Latest().subscribe((data) => {
+    this.servicerShow_New.getAllJob_Latest(this.p).subscribe((data) => {
       this.ListJobnew = data;
+      this.total = this.ListJobnew.length;
     })
   }
 
@@ -44,6 +47,10 @@ export class ShowNewComponent implements OnInit {
       this.ListJobnew = data;
     })
 
+  }
+  pageChangeEvent(event: number){
+    this.p = event;
+    this.getAllJob_Latest();
   }
 
 }
