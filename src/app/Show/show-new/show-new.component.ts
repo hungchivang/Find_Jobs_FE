@@ -14,7 +14,8 @@ import {LoginService} from "../../service/login.service";
 export class ShowNewComponent implements OnInit {
   formsearch!: FormGroup
   account!:AccountToken;
-  ListJobnew: ListJobCompanyAccount[] = []
+  ListJobnew: ListJobCompanyAccount[] = [];
+  ListAllJob1: ListJobCompanyAccount[] = []
 
 
   ngOnInit(): void {
@@ -23,6 +24,7 @@ export class ShowNewComponent implements OnInit {
       short_name: new FormControl("")
     })
     this.account = this.loginService.getUserToken();
+    this.getAllJob();
   }
 
   constructor(private servicerShow_New: ShowJobService,private loginService:LoginService) {
@@ -33,8 +35,7 @@ export class ShowNewComponent implements OnInit {
       this.ListJobnew = data;
     })
   }
-
-
+  
 
   searchbyCompany() {
     let value = this.formsearch.get('short_name')?.value
@@ -42,6 +43,13 @@ export class ShowNewComponent implements OnInit {
       this.ListJobnew = data;
     })
 
+  }
+
+  getAllJob() {
+    this.servicerShow_New.getAllJob().subscribe((data) => {
+      this.ListAllJob1 = data;
+      console.log(data)
+    })
   }
 
 }
