@@ -24,10 +24,10 @@
               Dropdown
             </a>
             <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" (click)="sortJobBySalaryMin()">Min</a>
-              <a class="dropdown-item" (click)="sortJobBySalary1000()">300 > 1000</a>
-              <a class="dropdown-item" (click)="sortJobBySalary2000()">1000 > 2000</a>
-              <a class="dropdown-item" (click)="sortJobBySalaryMax()">max</a>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
         </ul>
@@ -97,6 +97,17 @@
         <li class="nav-item search-nav-item">
           <a class="nav-link snav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" >Tìm công ty</a>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tìm theo lương
+          </a>
+          <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" (click)="sortJobBySalaryMin()">Min</a>
+            <a class="dropdown-item" (click)="sortJobBySalary1000()">300 > 1000</a>
+            <a class="dropdown-item" (click)="sortJobBySalary2000()">1000 > 2000</a>
+            <a class="dropdown-item" (click)="sortJobBySalaryMax()">max</a>
+          </div>
+        </li>
       </ul>
       <div class="tab-content search-tab-content" id="myTabContent">
         <!-- content tab 1 -->
@@ -152,6 +163,8 @@
             </div>
           </form>
         </div>
+
+
         <!-- (end) content tab 2 -->
       </div>
 
