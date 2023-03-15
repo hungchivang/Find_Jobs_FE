@@ -24,10 +24,10 @@
               Dropdown
             </a>
             <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" (click)="sortJobBySalaryMin()">Min</a>
+              <a class="dropdown-item" (click)="sortJobBySalary1000()">300 > 1000</a>
+              <a class="dropdown-item" (click)="sortJobBySalary2000()">1000 > 2000</a>
+              <a class="dropdown-item" (click)="sortJobBySalaryMax()">max</a>
             </div>
           </li>
         </ul>
@@ -106,10 +106,9 @@
             <div class="row">
               <div class="col-md-10 col-sm-12">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-5">
                     <div class="input-group s-input-group">
-                      <input type="text" class="form-control sinput" formControlName="searchByName" placeholder="Nhập kỹ năng, công việc,...">
-                      <span><i class="fa fa-search"></i></span>
+                      <input type="text" class="select-css" formControlName="searchByName" placeholder="Nhập kỹ năng, công việc,...">
                     </div>
                   </div>
                   <div class="col-md-4" formGroupName="searchByCategory" >
@@ -117,14 +116,13 @@
                       <option value="all_c" disabled selected >Hình thức ứng tuyển</option>
                       <option  *ngFor="let c of ListCategory" value="{{c.id}}">{{c.name}}</option>
                     </select>
-<!--                    <i class="fa fa-code sfa" aria-hidden="true"></i>-->
                   </div>
-                  <div class="col-md-4" formGroupName="searchByLocation" >
+                  <div class="col-md-3" formGroupName="searchByLocation" >
                     <select formControlName="idLocation" class="select-css">
                       <option  value="all_l" disabled selected >Vị trí ứng tuyển</option>
                       <option  *ngFor="let lo of ListLocation" value="{{lo.id}}" >{{lo.name}}</option>
                     </select>
-<!--                    <i class="fa fa-map-marker sfa" aria-hidden="true"></i>-->
+
                   </div>
                 </div>
               </div>
@@ -172,7 +170,6 @@
           <h2 class="widget-title">
             <span>Tuyển gấp</span>
           </h2>
-
           <div class="job-group" *ngFor="let p of ListJobnew">
             <div class="job pagi">
               <div class="job-content">

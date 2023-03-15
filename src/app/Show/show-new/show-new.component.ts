@@ -118,18 +118,31 @@ export class ShowNewComponent implements OnInit {
     }
   }
 
-  reset() {
-      this.formSearchJob.setValue({
-        searchByName:'',
-        searchByCategory:{
-          idCategory:'all_c'
-        },
-        searchByLocation:{
-          idLocation:'all_l'
-        }
-      })
-
+  //sort Job by Salary
+  sortJobBySalaryMin() {
+    this.servicerShow_New.sortJobBySalaryMin().subscribe((data) => {
+      this.ListJobnew = data;
+    })
   }
+
+  sortJobBySalary1000() {
+    this.servicerShow_New.sortJobBySalary1000().subscribe((data) => {
+      this.ListJobnew = data;
+    })
+  }
+
+  sortJobBySalary2000() {
+    this.servicerShow_New.sortJobBySalary2000().subscribe((data) => {
+      this.ListJobnew = data;
+    })
+  }
+
+  sortJobBySalaryMax() {
+    this.servicerShow_New.sortJobBySalaryMax().subscribe((data) => {
+      this.ListJobnew = data;
+    })
+  }
+
 
 
 

@@ -63,4 +63,22 @@ export class ShowJobService {
   searchJobsByTitleAddressCategoryLocation(key:String,idCategory:number, idLocation:number): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/searchJobsByTitleAddressCategoryLocation?key=" + key + "&idCategory=" + idCategory + "&idLocation=" + idLocation)
   }
+
+  //sort job by salary
+  sortJobBySalaryMin(): Observable<ListJobCompanyAccount[]> {
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/sortJobBySalaryMin")
+  }
+
+  sortJobBySalary1000(): Observable<ListJobCompanyAccount[]> {
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/sortJobBySalary1000")
+  }
+
+  sortJobBySalary2000(): Observable<ListJobCompanyAccount[]> {
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/sortJobBySalary2000")
+  }
+
+  sortJobBySalaryMax(): Observable<ListJobCompanyAccount[]> {
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/sortJobBySalaryMax")
+  }
+
 }
