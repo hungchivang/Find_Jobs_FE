@@ -17,7 +17,9 @@ export class ShowNewComponent implements OnInit {
   account!:AccountToken;
   ListJobnew: ListJobCompanyAccount[] = [];
   ListAllJob: ListJobCompanyAccount[] = [];
-  ListTopCompany: ListTopCompany[] = []
+  ListTopCompany: ListTopCompany[] = [];
+  p: number = 1;
+  total: number = 0;
 
 
   ngOnInit(): void {
@@ -34,11 +36,11 @@ export class ShowNewComponent implements OnInit {
   }
 
   getAllJob_Latest() {
-    this.servicerShow_New.getAllJob_Latest().subscribe((data) => {
+    this.servicerShow_New.getAllJob_Latest(this.p).subscribe((data) => {
       this.ListJobnew = data;
+      this.total = this.ListJobnew.length;
     })
   }
-
 
   searchbyCompany() {
     let value = this.formsearch.get('short_name')?.value
@@ -46,6 +48,10 @@ export class ShowNewComponent implements OnInit {
       this.ListJobnew = data;
     })
 
+  }
+  pageChangeEvent(event: number){
+    this.p = event;
+    this.getAllJob_Latest();
   }
 
   getAllJob() {
@@ -59,5 +65,4 @@ export class ShowNewComponent implements OnInit {
       this.ListTopCompany = data;
     })
   }
-
 }

@@ -12,6 +12,10 @@ import {AuthInterceptor} from "./auth.interceptor";
 import { InformationcompanyComponent } from './Company/informationcompany/informationcompany.component';
 import { ShowNewComponent } from './Show/show-new/show-new.component';
 import { DetailsJobComponent } from './Details/details-job/details-job.component';
+import { GuestComponent } from './guest/guest.component';
+import { BusinessUserDetailsComponent } from './Details/business-user-details/business-user-details.component';
+import { EditUserComponent } from './User/edit-user/edit-user.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -21,14 +25,18 @@ import { DetailsJobComponent } from './Details/details-job/details-job.component
     HomecompanyComponent,
     InformationcompanyComponent,
     ShowNewComponent,
-    DetailsJobComponent
+    DetailsJobComponent,
+    GuestComponent,
+    BusinessUserDetailsComponent,
+    EditUserComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

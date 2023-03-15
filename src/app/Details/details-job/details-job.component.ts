@@ -10,10 +10,12 @@ import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 })
 export class DetailsJobComponent implements OnInit {
   JobCompanyAccount!: ListJobCompanyAccount
-  ListJobnew:ListJobCompanyAccount[]=[]
+  ListJobnew: ListJobCompanyAccount[] = []
 
 
   id!: number;
+  p: number = 1;
+  total: number = 0;
 
   ngOnInit(): void {
     this.router.params.subscribe((Param) => {
@@ -32,9 +34,11 @@ export class DetailsJobComponent implements OnInit {
     })
 
   }
-  getAllJob_Latest(){
-    this.servicerShow_New.getAllJob_Latest().subscribe((data)=>{
-      this.ListJobnew=data;
+
+  getAllJob_Latest() {
+    this.servicerShow_New.getAllJob_Latest(this.p).subscribe((data) => {
+      this.ListJobnew = data;
+      this.total = this.ListJobnew.length;
     })
 
 

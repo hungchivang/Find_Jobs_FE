@@ -14,4 +14,11 @@ export class AccountserviceService {
   editAccount(account : any):Observable<Account>{
     return this.http.post<Account>("http://localhost:8080/account",account );
   }
+  findUserbyemail(email:string):Observable<Account>{
+    return this.http.get<Account>(`http://localhost:8080/account/editUser/${email}`)
+  }
+
+  editUser(account:Account):Observable<Account>{
+  return   this.http.post<Account>("http://localhost:8080/account/editUser",account)
+  }
 }
