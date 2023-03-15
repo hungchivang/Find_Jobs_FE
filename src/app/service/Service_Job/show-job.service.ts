@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Job} from "../../model/Job";
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
+import {ListTopCompany} from "../../model/ListTopCompany";
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class ShowJobService {
 
   getAllJob():Observable<ListJobCompanyAccount[]>{
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/showAllJob")
+  }
+
+  getTopCompany():Observable<ListTopCompany[]>{
+    return this.Http.get<ListTopCompany[]>("http://localhost:8080/job/showTopCompany")
   }
 }
