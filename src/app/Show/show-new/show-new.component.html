@@ -1,4 +1,4 @@
-<div class="container-fluid fluid-nav" >
+<div class="container-fluid fluid-nav" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
       <!-- <a class="navbar-brand" href="#">Navbar</a> -->
@@ -101,50 +101,41 @@
       <div class="tab-content search-tab-content" id="myTabContent">
         <!-- content tab 1 -->
         <div class="tab-pane stab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <form class="bn-search-form">
+
+          <form class="bn-search-form" [formGroup]="formSearchJob" id="formSearchJobTopBar" (ngSubmit)="searchBy3Filed()">
             <div class="row">
               <div class="col-md-10 col-sm-12">
                 <div class="row">
-                  <div class="col-md-5">
+                  <div class="col-md-4">
                     <div class="input-group s-input-group">
-                      <input type="text" class="form-control sinput" placeholder="Nhập kỹ năng, công việc,...">
+                      <input type="text" class="form-control sinput" formControlName="searchByName" placeholder="Nhập kỹ năng, công việc,...">
                       <span><i class="fa fa-search"></i></span>
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <select id="computer-languages">
-                      <option value="" selected hidden >Tất cả ngôn ngữ</option>
-                      <option>Java</option>
-                      <option>.NET</option>
-                      <option>Javascript</option>
-                      <option>Php</option>
-                      <option>Python</option>
-                      <option>QC QC</option>
-                      <option>Business Analyst</option>
-                      <option>Tester</option>
-                      <option>Ruby</option>
+                  <div class="col-md-4" formGroupName="searchByCategory" >
+                    <select  formControlName="idCategory" class="select-css">
+                      <option value="all_c" disabled selected >Hình thức ứng tuyển</option>
+                      <option  *ngFor="let c of ListCategory" value="{{c.id}}">{{c.name}}</option>
                     </select>
-                    <i class="fa fa-code sfa" aria-hidden="true"></i>
+<!--                    <i class="fa fa-code sfa" aria-hidden="true"></i>-->
                   </div>
-                  <div class="col-md-3">
-                    <select id="s-provinces">
-                      <option value="" selected hidden >Tất cả địa điểm</option>
-                      <option>Đà Nẵng</option>
-                      <option>Hà Nội</option>
-                      <option>Hồ Chí Minh</option>
-                      <option>Buôn Ma Thuột</option>
-                      <option>Quy Nhơn</option>
-                      <option>Nha Trang</option>
+                  <div class="col-md-4" formGroupName="searchByLocation" >
+                    <select formControlName="idLocation" class="select-css">
+                      <option  value="all_l" disabled selected >Vị trí ứng tuyển</option>
+                      <option  *ngFor="let lo of ListLocation" value="{{lo.id}}" >{{lo.name}}</option>
                     </select>
-                    <i class="fa fa-map-marker sfa" aria-hidden="true"></i>
+<!--                    <i class="fa fa-map-marker sfa" aria-hidden="true"></i>-->
                   </div>
                 </div>
               </div>
               <div class="col-md-2 col-sm-12">
                 <button type="submit" class="btn btn-primary btn-search col-sm-12">Tìm kiếm</button>
+
               </div>
             </div>
           </form>
+
+
         </div>
         <!-- (end) content tab 1 -->
         <!-- content tab 2 -->
@@ -158,7 +149,7 @@
                 </div>
               </div>
               <div class="col-md-2 col-sm-12">
-                <button type="submit" class="btn btn-primary btn-search col-sm-12">Tìm kiếm</button>
+                <button type="submit" class="btn btn-primary btn-search col-sm-12" >Tìm kiếm</button>
               </div>
             </div>
           </form>
@@ -187,7 +178,7 @@
               <div class="job-content">
                 <div class="job-logo">
                   <a href="#">
-                    <img src="{{p.avatar}}" class="job-logo-ima" alt="job-logo">
+                    <img src="{{p.avatar}}" class="job-logo-ima" alt="job-logo" height="20px" width="10px">
                   </a>
                 </div>
 
@@ -1633,7 +1624,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/readmore.js"></script>
+<script type="text/javascript" src="assets/js/readmore.js"></script>
 <script type="text/javascript">
   $('.catelog-list').readmore({
     speed: 75,
@@ -1644,15 +1635,15 @@
 </script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.4.1.slim.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/select2.min.js"></script>
-<script src="js/jobdata.js"></script>
+<script src="assets/js/jquery-3.4.1.slim.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/select2.min.js"></script>
+<script src="assets/js/jobdata.js"></script>
 
 <!-- <script type="text/javascript" src="js/pagination.js"></script> -->
 <!-- Owl Stylesheets Javascript -->
-<script src="js/owlcarousel/owl.carousel.js"></script>
+<script src="assets/js/owlcarousel/owl.carousel.js"></script>
 <!-- Read More Plugin -->
 
 </div>

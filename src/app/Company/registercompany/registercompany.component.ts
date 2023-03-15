@@ -38,6 +38,7 @@ export class RegistercompanyComponent implements OnInit {
 
   register() {
     this.idRole= this.registerForm.value.role;
+    console.log(this.idRole)
       this.registerCompanyService.register(this.registerForm.value).subscribe((data) => {
         this.account = data;
         console.log(this.account)

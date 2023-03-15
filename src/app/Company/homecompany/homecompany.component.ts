@@ -6,6 +6,7 @@ import {LoginService} from "../../service/login.service";
 import {CompanyAndAccount} from "../../model/CompanyAndAccount";
 import {CompanyserviceService} from "../../service/companyService/companyservice.service";
 import {ActivatedRoute} from "@angular/router";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-homecompany',
@@ -16,13 +17,18 @@ export class HomecompanyComponent implements OnInit {
 
   listJob: ListJobCompanyAccount[] = [];
   company !: CompanyAndAccount;
-
   accountToken !: AccountToken;
+  p:number=1;
+  total:number=0;
+  formSearchJobByTitle!:FormGroup;
 
   ngOnInit(): void {
     this.informationCompany();
     this.findAllJob();
 
+    this.formSearchJobByTitle = new FormGroup({
+      title: new FormControl()
+    })
   }
 
   constructor(private showJobService: ShowjobService, private loginService: LoginService,
@@ -31,8 +37,9 @@ export class HomecompanyComponent implements OnInit {
 
   findAllJob() {
     this.accountToken = this.loginService.getUserToken();
-    this.showJobService.findAllJobInCompany(this.accountToken.email).subscribe(data => {
+    this.showJobService.findAllJobInCompany(this.accountToken.email,this.p).subscribe(data => {
       this.listJob = data;
+      this.total= this.listJob.length;
     }, error => {
       alert("loi")
     })
@@ -55,4 +62,23 @@ export class HomecompanyComponent implements OnInit {
     })
   }
 
+
+  pageChangeEvent(event:number){
+    this.p =event;
+    this.findAllJob();
+  }
+
+  searchJobByTitleOfCompany() {
+    let title = this.formSearchJobByTitle.get('title')?.value;
+    console.log(title)
+    this.accountToken = this.loginService.getUserToken();
+    console.log(this.accountToken.email)
+    this.showJobService.searchJobByTitleAndEmailOfCompany(this.accountToken.email,title).subscribe(data => {
+      this.listJob = data;
+      console.log(data)
+      console.log(this.listJob)
+    }, error => {
+      alert("loi")
+    })
+  }
 }

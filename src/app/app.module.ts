@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistercompanyComponent } from './Company/registercompany/registercompany.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './Company/login/login.component';
 import { HomecompanyComponent } from './Company/homecompany/homecompany.component';
@@ -12,6 +12,8 @@ import {AuthInterceptor} from "./auth.interceptor";
 import { InformationcompanyComponent } from './Company/informationcompany/informationcompany.component';
 import { ShowNewComponent } from './Show/show-new/show-new.component';
 import { DetailsJobComponent } from './Details/details-job/details-job.component';
+import {NgxPaginationModule} from "ngx-pagination";
+
 
 @NgModule({
   declarations: [
@@ -21,15 +23,17 @@ import { DetailsJobComponent } from './Details/details-job/details-job.component
     HomecompanyComponent,
     InformationcompanyComponent,
     ShowNewComponent,
-    DetailsJobComponent
+    DetailsJobComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        FormsModule,
+        NgxPaginationModule,
+    ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,

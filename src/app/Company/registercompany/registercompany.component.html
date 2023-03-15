@@ -47,7 +47,7 @@
               </div>
               <div class="input-div one">
                 <div class="div lg-lable">
-                  <input type="text" class="input form-control-lgin" placeholder="Địa Chỉ Email" formControlName="email">
+                  <input type="email" class="input form-control-lgin" placeholder="Địa Chỉ Email" required formControlName="email">
 <!--                         ngModel (change)="checkEmail(email.value)" #email>-->
                 </div>
               </div>
@@ -57,7 +57,7 @@
                  style="color: red; margin-top: 10px">Email không hợp lệ</p>
               <div class="input-div one">
                 <div class="div lg-lable">
-                  <input type="password" class="input form-control-lgin" placeholder="Mật khẩu" formControlName="password">
+                  <input type="password" class="input form-control-lgin" placeholder="Mật khẩu" required formControlName="password">
                 </div>
               </div>
               <p *ngIf="registerForm.get('password')?.errors?.['pattern'] && registerForm.get('password')?.touched"
@@ -75,20 +75,20 @@
               </div>
               <div class="input-div one">
                 <div class="div lg-lable">
-                  <input type="text" class="input form-control-lgin" placeholder="Nhập tên" formControlName="name">
+                  <input type="text" class="input form-control-lgin" placeholder="Nhập tên" required formControlName="name">
                 </div>
               </div>
               <p *ngIf="!registerForm.get('name')?.valid && registerForm.get('name')?.touched" style="color: red">Không được để trống</p>
               <div class="input-div one">
                 <div class="div lg-lable">
-                  <input type="text" class="input form-control-lgin" placeholder="Địa Chỉ" formControlName="address">
+                  <input type="text" class="input form-control-lgin" placeholder="Địa Chỉ" required formControlName="address">
                 </div>
               </div>
               <p *ngIf="!registerForm.get('address')?.valid && registerForm.get('address')?.touched" style="color: red">Không được để trống</p>
 
               <div class="input-div one">
                 <div class="div lg-lable">
-                  <input type="text" class="input form-control-lgin" placeholder="Số điện thoại" formControlName="phone">
+                  <input type="text" class="input form-control-lgin" placeholder="Số điện thoại" required formControlName="phone">
                 </div>
               </div>
               <p *ngIf="!registerForm.get('phone')?.valid && registerForm.get('phone')?.touched" style="color: red">Không được để trống(10 chữ số ,bắt đầu từ 0)</p>
@@ -106,7 +106,7 @@
 
               <div class="form-group d-block frm-text">
                 <a href="#" class="fg-login d-inline-block"></a>
-                <a href="#" class="fg-login float-right d-inline-block">Bạn đã có tài khoản? Đăng Nhập</a>
+                <a routerLink="/login" class="fg-login float-right d-inline-block" >Bạn đã có tài khoản? Đăng Nhập</a>
               </div>
               <button type="submit" class="btn btn-primary float-right btn-login d-block w-100">Đăng Ký</button>
               <div class="form-group d-block w-100 mt-5">
