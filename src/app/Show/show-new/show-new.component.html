@@ -53,7 +53,8 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/login">Đăng xuất</a>
+            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/login">Đăng
+              xuất</a>
           </li>
         </ul>
       </div>
@@ -102,54 +103,60 @@
             <a class="nav-link snav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                aria-controls="profile" aria-selected="false">Tìm công ty</a>
           </li>
+
+<!--Sap xep luong-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+              Tìm theo lương
+            </a>
+            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" (click)="sortJobBySalaryMin()">Min</a>
+              <a class="dropdown-item" (click)="sortJobBySalary1000()">300 > 1000</a>
+              <a class="dropdown-item" (click)="sortJobBySalary2000()">1000 > 2000</a>
+              <a class="dropdown-item" (click)="sortJobBySalaryMax()">max</a>
+            </div>
+          </li>
+
         </ul>
         <div class="tab-content search-tab-content" id="myTabContent">
           <!-- content tab 1 -->
           <div class="tab-pane stab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <form class="bn-search-form">
+
+<!--Tim kiem-->
+            <form class="bn-search-form" [formGroup]="formSearchJob" id="formSearchJobTopBar"
+                  (ngSubmit)="searchBy3Filed()">
               <div class="row">
                 <div class="col-md-10 col-sm-12">
                   <div class="row">
                     <div class="col-md-5">
                       <div class="input-group s-input-group">
-                        <input type="text" class="form-control sinput" placeholder="Nhập kỹ năng, công việc,...">
-                        <span><i class="fa fa-search"></i></span>
+                        <input type="text" class="select-css" formControlName="searchByName"
+                               placeholder="Nhập kỹ năng, công việc,...">
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <select id="computer-languages">
-                        <option value="" selected hidden>Tất cả ngôn ngữ</option>
-                        <option>Java</option>
-                        <option>.NET</option>
-                        <option>Javascript</option>
-                        <option>Php</option>
-                        <option>Python</option>
-                        <option>QC QC</option>
-                        <option>Business Analyst</option>
-                        <option>Tester</option>
-                        <option>Ruby</option>
+                    <div class="col-md-4" formGroupName="searchByCategory">
+                      <select formControlName="idCategory" class="select-css">
+                        <option value="all_c" disabled selected>Hình thức ứng tuyển</option>
+                        <option *ngFor="let c of ListCategory" value="{{c.id}}">{{c.name}}</option>
                       </select>
-                      <i class="fa fa-code sfa" aria-hidden="true"></i>
                     </div>
-                    <div class="col-md-3">
-                      <select id="s-provinces">
-                        <option value="" selected hidden>Tất cả địa điểm</option>
-                        <option>Đà Nẵng</option>
-                        <option>Hà Nội</option>
-                        <option>Hồ Chí Minh</option>
-                        <option>Buôn Ma Thuột</option>
-                        <option>Quy Nhơn</option>
-                        <option>Nha Trang</option>
+                    <div class="col-md-3" formGroupName="searchByLocation">
+                      <select formControlName="idLocation" class="select-css">
+                        <option value="all_l" disabled selected>Vị trí ứng tuyển</option>
+                        <option *ngFor="let lo of ListLocation" value="{{lo.id}}">{{lo.name}}</option>
                       </select>
-                      <i class="fa fa-map-marker sfa" aria-hidden="true"></i>
+
                     </div>
                   </div>
                 </div>
                 <div class="col-md-2 col-sm-12">
                   <button type="submit" class="btn btn-primary btn-search col-sm-12">Tìm kiếm</button>
+
                 </div>
               </div>
             </form>
+
           </div>
           <!-- (end) content tab 1 -->
           <!-- content tab 2 -->
@@ -185,7 +192,7 @@
         <div class="col-md-8 col-sm-12 col-12">
           <div class="job-board-wrap">
             <h2 class="widget-title">
-              <span>Tuyển gấp</span>
+              <span>Việc làm mới nhất</span>
             </h2>
 
             <div class="job-group"
@@ -304,50 +311,6 @@
                     <span class="cate-count">(300)</span>
                   </a>
                 </li>
-                <li>
-                  <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                    <span class="cate-count">(300)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                    <span class="cate-count">(300)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                    <span class="cate-count">(300)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                    <span class="cate-count">(300)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                    <span class="cate-count">(300)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="readallstyle reads1">Xem tất cả</a>
-                </li>
-
               </ul>
             </div>
           </div>
@@ -787,7 +750,6 @@
 
 </div>
 <!-- (end) job-best-salary -->
-
 
 
 <!-- (end) job-best-salary -->

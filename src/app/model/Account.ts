@@ -13,7 +13,6 @@ export class Account {
   banner: string;
   role: Role;
 
-
   constructor(id: number, email: string, password: string, name: string, phone: string, address: string, avatar: string, status: boolean, description: string, banner: string, role: Role) {
     this.id = id;
     this.email = email;

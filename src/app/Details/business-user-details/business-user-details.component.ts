@@ -19,8 +19,6 @@ export class BusinessUserDetailsComponent implements OnInit {
       this.id = +param["idJob"]
     })
     this.findCompanybyid(this.id)
-
-
   }
 
   constructor(public serviceCompany: CompanyserviceService, private Router: ActivatedRoute) {
@@ -29,10 +27,6 @@ export class BusinessUserDetailsComponent implements OnInit {
   findCompanybyid(id: number) {
     this.serviceCompany.findOneConpanyByib(id).subscribe((data) => {
       this.JobCompany=data;
-
-
     })
   }
-
-
 }

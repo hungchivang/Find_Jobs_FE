@@ -11,13 +11,13 @@ import {ImageserviceService} from "../../service/image/imageservice.service";
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.css']
 })
+
 export class EditUserComponent implements OnInit{
-  email!:string;
-
-  account!:Account
-
-  formEditUser!:FormGroup
+  email!: string;
+  account!: Account;
+  formEditUser!: FormGroup;
   RegexAlphaNumeric = "^[a-zA-Z0-9]{8,16}";
+
   constructor(private Roter:ActivatedRoute,public acountservice:AccountserviceService, private imageService:ImageserviceService,private router:Router) {
   }
   ngOnInit(): void {
@@ -28,26 +28,22 @@ export class EditUserComponent implements OnInit{
     this.showOneUser(this.email)
 
     this.formEditUser = new FormGroup({
-      id:new FormControl(""),
+      id: new FormControl(""),
       email: new FormControl(""),
-      password:new FormControl("", Validators.pattern(this.RegexAlphaNumeric)),
+      password: new FormControl("", Validators.pattern(this.RegexAlphaNumeric)),
       name: new FormControl("",Validators.required),
       phone: new FormControl("",[Validators.required, Validators.pattern(/^0\d{8,9}$/)]),
       address: new FormControl("",Validators.required),
       avatar: new FormControl(""),
       status: new FormControl(""),
-      description:new FormControl("",Validators.required),
+      description: new FormControl("",Validators.required),
       banner: new FormControl(""),
-
     })
-
   }
-  showOneUser(email:string){
 
-
+  showOneUser(email:string) {
     this.acountservice.findUserbyemail(email).subscribe((data)=>{
       this.account=data;
-
       this.formEditUser.get('id')?.setValue(data.id)
       this.formEditUser.get('email')?.setValue(data.email)
       this.formEditUser.get('password')?.setValue(data.password)
@@ -60,6 +56,7 @@ export class EditUserComponent implements OnInit{
       this.formEditUser.get('banner')?.setValue(data.banner)
     })
   }
+
   selectedFile!: ImageSnippet;
   onSuccess() {
     this.selectedFile.pending = false;
@@ -75,7 +72,6 @@ export class EditUserComponent implements OnInit{
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];
     const reader = new FileReader();
-
     reader.addEventListener('load', (event: any) => {
       this.selectedFile = new ImageSnippet(event.target.result, file);
       this.imageService.uploadImageforUser(this.selectedFile.file).subscribe(
@@ -87,19 +83,11 @@ export class EditUserComponent implements OnInit{
           this.onError();
         })
     });
-
     reader.readAsDataURL(file);
   }
   edit(){
     this.acountservice.editUser(this.formEditUser.value).subscribe((data)=>{
       this.router.navigate(["/home"])
-
     })
-
   }
-
-
-
-
-
 }

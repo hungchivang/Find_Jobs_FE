@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistercompanyComponent } from './Company/registercompany/registercompany.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './Company/login/login.component';
 import { HomecompanyComponent } from './Company/homecompany/homecompany.component';
@@ -16,6 +15,7 @@ import { GuestComponent } from './guest/guest.component';
 import { BusinessUserDetailsComponent } from './Details/business-user-details/business-user-details.component';
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { InfoDetailCompanyComponent } from './Company/info-detail-company/info-detail-company.component';
 
 @NgModule({
   declarations: [
@@ -28,21 +28,26 @@ import {NgxPaginationModule} from "ngx-pagination";
     DetailsJobComponent,
     GuestComponent,
     BusinessUserDetailsComponent,
-    EditUserComponent
+    EditUserComponent,
+    InfoDetailCompanyComponent
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgxPaginationModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        FormsModule,
+        NgxPaginationModule,
+    ],
+
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
   }],
+
   bootstrap: [AppComponent]
 })
+
 export class AppModule{ }

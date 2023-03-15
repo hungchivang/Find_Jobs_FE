@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
+import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {ShowJobService} from "../../service/Service_Job/show-job.service";
 import {ActivatedRoute} from "@angular/router";
-import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 
 @Component({
-  selector: 'app-details-job',
-  templateUrl: './details-job.component.html',
-  styleUrls: ['./details-job.component.css']
+  selector: 'app-info-detail-company',
+  templateUrl: './info-detail-company.component.html',
+  styleUrls: ['./info-detail-company.component.css']
 })
-export class DetailsJobComponent implements OnInit {
+export class InfoDetailCompanyComponent {
   JobCompanyAccount!: ListJobCompanyAccount
   ListJobnew: ListJobCompanyAccount[] = []
 

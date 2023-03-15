@@ -8,6 +8,7 @@ import {LoginService} from "../service/login.service";
   templateUrl: './guest.component.html',
   styleUrls: ['./guest.component.css']
 })
+
 export class GuestComponent implements OnInit{
   ListJobnew: ListJobCompanyAccount[] = []
 
@@ -16,13 +17,14 @@ export class GuestComponent implements OnInit{
   }
   constructor(private servicerShow_New: ShowJobService,private loginService:LoginService) {
   }
+
   getall_Guest(){
     this.servicerShow_New.getallJob_byGuest().subscribe((data)=>{
       this.ListJobnew=data;
     })
   }
-  click(){
-    alert("Ban phải đăng nhập mới dùng được chức năng này !")
-  }
 
+  click(){
+    alert("Bạn phải đăng nhập mới dùng được chức năng này!")
+  }
 }

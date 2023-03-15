@@ -15,8 +15,6 @@ export class LoginComponent implements OnInit {
 
   RegexAlphaNumeric = "^[a-zA-Z0-9]{8,16}";
 
-
-
   ngOnInit(): void {
   }
 
@@ -27,7 +25,6 @@ export class LoginComponent implements OnInit {
     email: new FormControl("", [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
     password: new FormControl("", [Validators.required, Validators.pattern(this.RegexAlphaNumeric)])
   })
-
 
   newAcc!: Account;
   login() {
@@ -49,12 +46,10 @@ export class LoginComponent implements OnInit {
             this.router.navigate([""]);
           }
 
-        }else {
+        } else {
           alert("Tài khoản đã bị khóa")
         }
       })
-
-
     })
   }
 }

@@ -108,11 +108,9 @@ export class InformationcompanyComponent implements OnInit {
     this.companyService.editCompany(this.newCompany).subscribe((data) => {
       this.router.navigate(['/homeCompany']);
     })
-
   }
 
-
-  //upload image
+  //Upload image
   selectedFile!: ImageSnippet;
   onSuccess() {
     this.selectedFile.pending = false;

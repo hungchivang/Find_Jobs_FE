@@ -10,7 +10,6 @@ export class AccountNoRole{
   description: string;
   banner: string;
 
-
   constructor(id: number, email: string, password: string, name: string, phone: string, address: string, avatar: string, status: boolean, description: string, banner: string) {
     this.id = id;
     this.email = email;

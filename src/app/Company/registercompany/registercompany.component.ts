@@ -33,11 +33,11 @@ export class RegistercompanyComponent implements OnInit {
     role: new FormGroup({
       id: new FormControl('',)
     })
-
   })
 
   register() {
     this.idRole= this.registerForm.value.role;
+    console.log(this.idRole)
       this.registerCompanyService.register(this.registerForm.value).subscribe((data) => {
         this.account = data;
         console.log(this.account)
@@ -48,8 +48,4 @@ export class RegistercompanyComponent implements OnInit {
         console.log(this.registerForm.value)
       })
     }
-
-
-
-
 }

@@ -1,6 +1,6 @@
-export class Category{
-  id!: number;
-  name!: string
+export class Locations {
+  id!:number;
+  name!:string;
 
   constructor(id: number, name: string) {
     this.id = id;
