@@ -31,6 +31,10 @@ export class CompanyserviceService {
   blokCompany(id:number):Observable<void>{
     return  this.http.get<void>(`http://localhost:8080/admin/blogComPany/${id}`);
   }
+  searchbyCompany(name:string):Observable<CompanyAndAccount[]>{
+    return this.http.get<CompanyAndAccount[]>(`http://localhost:8080/admin/searchCompany/${name}`)
+  }
+
 
 
 

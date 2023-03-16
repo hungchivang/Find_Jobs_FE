@@ -323,7 +323,7 @@
         <li>
           <a>
             <i class="icon-home home-icon"></i>
-            <a class="menu-text" routerLink="/adminUser"> User Management </a>
+            <a routerLink="/adminCompany">  Company management </a>
           </a>
         </li>
 
@@ -362,72 +362,70 @@
         <ul class="breadcrumb">
           <li>
             <i class="icon-home home-icon"></i>
-            <span href="#">Company management</span>
+            <span href="#">User management</span>
           </li>
 
         </ul><!-- .breadcrumb -->
 
-      <div class="nav-search" id="nav-search">
-        <form class="form-search" [formGroup]="formsearch" (ngSubmit)="seagchbynameCompany()">
+        <div class="nav-search" id="nav-search">
+          <form class="form-search" [formGroup]="formsearch" (ngSubmit)="seagchbynameUser()">
 								<span class="input-icon">
 									<input type="text" placeholder="Search ..." class="nav-search-input"
                          id="nav-search-input" autocomplete="off" formControlName="name"/>
 									<button type="submit" class="icon-search nav-search-icon"></button>
 								</span>
-        </form>
-      </div><!-- #nav-search -->
-    </div>
+          </form>
+        </div><!-- #nav-search -->
+      </div>
 
       <div class="page-content">
 
-          <table class="table">
-            <thead class="thead-dark">
-            <tr>
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
 
-              <th scope="col" style="text-align: center">Tên Công ty</th>
-              <th scope="col" style="text-align: center">Hình ảnh</th>
-              <th scope="col" style="text-align: center">Email</th>
-              <th scope="col" style="text-align: center">Số điện thoại</th>
-              <th scope="col" style="text-align: center">Mã công ty</th>
-              <th scope="col" style="text-align: center">Địa chỉ</th>
-              <th scope="col" style="text-align: center">Website</th>
-              <th scope="col" style="text-align: center">Khóa tài khoản</th>
-              <th scope="col" style="text-align: center">Đề xuất</th>
+            <th scope="col" style="text-align: center">Tên người dùng</th>
+            <th scope="col" style="text-align: center">Hình ảnh</th>
+            <th scope="col" style="text-align: center">Email</th>
+            <th scope="col" style="text-align: center">Số điện thoại</th>
+            <th scope="col" style="text-align: center">Mật khẩu</th>
+            <th scope="col" style="text-align: center">Địa chỉ</th>
+            <th scope="col" style="text-align: center">Khóa tài khoản</th>
 
-            </tr>
-            </thead>
 
-            <tr *ngFor="let p of ListCompany  | paginate:{itemsPerPage: 6, currentPage: p, totalItems: total }">
+          </tr>
+          </thead>
 
-              <th scope="row" style="text-align: center">{{p.short_name}}</th>
-              <td><img src="{{p.avatar}}" width="100" height="70"></td>
-              <th scope="row" style="text-align: center">{{p.email}}</th>
-              <th scope="row" style="text-align: center">{{p.phone}}</th>
-              <th scope="row" style="text-align: center">{{p.code}}</th>
-              <th scope="row" style="text-align: center">{{p.address}}</th>
-              <th scope="row" style="text-align: center">{{p.website}}</th>
-              <td scope="row" style="text-align: center">
-                <div class="custom-control custom-switch">
+          <tr *ngFor="let p of ListAccount  | paginate:{itemsPerPage: 6, currentPage: p, totalItems: total }">
 
-                  <div *ngIf="p.status">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1{{p.short_name}}" checked>
-                    <label class="custom-control-label" for="customSwitch1{{p.short_name}}" (click)="blockCompany(p.idAccount)">Active</label>
-                  </div>
-                  <div *ngIf="!p.status">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch2{{p.short_name}}">
-                    <label class="custom-control-label" for="customSwitch2{{p.short_name}}" (click)="blockCompany(p.idAccount)">Block</label>
-                  </div>
+            <th scope="row" style="text-align: center">{{p.name}}</th>
+            <td><img src="{{p.avatar}}" width="100" height="70"></td>
+            <th scope="row" style="text-align: center">{{p.email}}</th>
+            <th scope="row" style="text-align: center">{{p.phone}}</th>
+                        <th scope="row" style="text-align: center">{{p.password}}</th>
+            <th scope="row" style="text-align: center">{{p.address}}</th>
+            <!--            <th scope="row" style="text-align: center">{{p.website}}</th>-->
+            <td scope="row" style="text-align: center">
+              <div class="custom-control custom-switch">
+
+                <div *ngIf="p.status">
+                  <input type="checkbox" class="custom-control-input" id="customSwitch1{{p.name}}" checked>
+                  <label class="custom-control-label" for="customSwitch1{{p.name}}" (click)="blockUser(p.id)">Active</label>
                 </div>
-              </td>
-              <td scope="row" style="text-align: center"></td>
+                <div *ngIf="!p.status">
+                  <input type="checkbox" class="custom-control-input" id="customSwitch2{{p.name}}">
+                  <label class="custom-control-label" for="customSwitch2{{p.name}}" (click)="blockUser(p.id)">Block</label>
+                </div>
+              </div>
+            </td>
+            <td scope="row" style="text-align: center"></td>
 
 
-            </tr>
+          </tr>
 
 
-          </table>
-          <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
-
+        </table>
+        <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
 
 
       </div>

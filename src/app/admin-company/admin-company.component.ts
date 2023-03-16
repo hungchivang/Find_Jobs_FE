@@ -14,11 +14,15 @@ export class AdminCompanyComponent implements OnInit{
   total: number = 0;
 
   ListCompany:CompanyAndAccount[]=[]
+  formsearch!: FormGroup
 
 
 
   ngOnInit(): void {
     this.getallCompany()
+    this.formsearch=new FormGroup({
+      name:new FormControl("")
+    })
 
 
   }
@@ -42,6 +46,12 @@ export class AdminCompanyComponent implements OnInit{
     this.CompanyserviceService.blokCompany(id).subscribe((data)=>{
       this.getallCompany()
 
+    })
+  }
+  seagchbynameCompany(){
+    let value = this.formsearch.get('name')?.value
+    this.CompanyserviceService.searchbyCompany(value).subscribe((data)=>{
+      this.ListCompany=data
     })
   }
 
