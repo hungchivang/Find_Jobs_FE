@@ -10,6 +10,7 @@ import {GuestComponent} from "./guest/guest.component";
 import {BusinessUserDetailsComponent} from "./Details/business-user-details/business-user-details.component";
 import {EditUserComponent} from "./User/edit-user/edit-user.component";
 import {InfoDetailCompanyComponent} from "./Company/info-detail-company/info-detail-company.component";
+import {AdminCompanyComponent} from "./admin-company/admin-company.component";
 
 const routes: Routes = [
   {path:"registerCompany", component: RegistercompanyComponent },
@@ -22,6 +23,8 @@ const routes: Routes = [
   {path:'businessUserDetails/:idJob', component: BusinessUserDetailsComponent },
   {path:'edit/:email', component: EditUserComponent },
   {path:'InfoJobDetail/:idJob', component: InfoDetailCompanyComponent },
+  {path:"adminCompany", component: AdminCompanyComponent },
+
 
 ];
 

@@ -16,13 +16,13 @@ import {Locations} from "../../model/Locations";
 })
 export class ShowNewComponent implements OnInit {
   formsearch!: FormGroup
-  account!:AccountToken;
+  account!: AccountToken;
   ListJobnew: ListJobCompanyAccount[] = [];
   ListAllJob: ListJobCompanyAccount[] = [];
   ListTopCompany: ListTopCompany[] = [];
-  ListCategory:Category[] = [];
-  ListLocation : Locations[] = [];
-  formSearchJob!:FormGroup;
+  ListCategory: Category[] = [];
+  ListLocation: Locations[] = [];
+  formSearchJob!: FormGroup;
   p: number = 1;
   total: number = 0;
 
@@ -50,7 +50,7 @@ export class ShowNewComponent implements OnInit {
     this.getTopCompany();
   }
 
-  constructor(private servicerShow_New: ShowJobService,private loginService:LoginService) {
+  constructor(private servicerShow_New: ShowJobService, private loginService: LoginService) {
   }
 
   getAllJob_Latest() {
@@ -68,59 +68,67 @@ export class ShowNewComponent implements OnInit {
   }
 
   // show list category,location
-  getListCategory(){
+  getListCategory() {
     this.servicerShow_New.getAllCategory().subscribe(data => {
-      this.ListCategory = data;})
+      this.ListCategory = data;
+    })
   }
 
-  getListLocation(){
+  getListLocation() {
     this.servicerShow_New.getAllLocation().subscribe(data => {
       this.ListLocation = data;
     })
   }
 
 // @ts-ignore
-  searchBy3Filed(){
+  searchBy3Filed() {
     let searchByName = this.formSearchJob.get('searchByName')?.value;
     console.log(searchByName)
-    let searchByCategory =this.formSearchJob.get("searchByCategory")?.value.idCategory;
+    let searchByCategory = this.formSearchJob.get("searchByCategory")?.value.idCategory;
     console.log(searchByCategory)
     let searchByLocation = this.formSearchJob.get('searchByLocation')?.value.idLocation;
     console.log(searchByLocation)
 
-    if(searchByName!=null &&searchByCategory == "all_c" && searchByLocation == "all_l"){
+    if (searchByName != null && searchByCategory == "all_c" && searchByLocation == "all_l") {
       return this.servicerShow_New.searchJobsByTitleOrAddress(searchByName).subscribe((data) => {
-        this.ListJobnew = data;})
+        this.ListJobnew = data;
+      })
     }
 
-    if(searchByName==null &&searchByCategory != "all_c" && searchByLocation == "all_l"){
+    if (searchByName == null && searchByCategory != "all_c" && searchByLocation == "all_l") {
       return this.servicerShow_New.searchJobsByNameCategory(searchByCategory).subscribe((data) => {
-        this.ListJobnew = data;})
+        this.ListJobnew = data;
+      })
     }
 
-    if(searchByName==null &&searchByCategory == "all_c" && searchByLocation != "all_l"){
+    if (searchByName == null && searchByCategory == "all_c" && searchByLocation != "all_l") {
       return this.servicerShow_New.searchJobsByNameLocation(searchByLocation).subscribe((data) => {
-        this.ListJobnew = data;})
+        this.ListJobnew = data;
+      })
     }
 
-    if(searchByName!=null &&searchByCategory != "all_c" && searchByLocation != "all_l"){
-      return this.servicerShow_New.searchJobsByTitleAddressCategoryLocation(searchByName,searchByCategory,searchByLocation).subscribe((data) => {
-        this.ListJobnew = data;})
+    if (searchByName != null && searchByCategory != "all_c" && searchByLocation != "all_l") {
+      return this.servicerShow_New.searchJobsByTitleAddressCategoryLocation(searchByName, searchByCategory, searchByLocation).subscribe((data) => {
+        this.ListJobnew = data;
+      })
     }
 
-    if(searchByName!=null &&searchByCategory != "all_c" && searchByLocation == "all_l"){
-      return this.servicerShow_New.searchJobsByTitleAndAddressAndCategory(searchByName,searchByCategory).subscribe((data) => {
-        this.ListJobnew = data;})
+    if (searchByName != null && searchByCategory != "all_c" && searchByLocation == "all_l") {
+      return this.servicerShow_New.searchJobsByTitleAndAddressAndCategory(searchByName, searchByCategory).subscribe((data) => {
+        this.ListJobnew = data;
+      })
     }
 
-    if(searchByName!=null &&searchByCategory == "all_c" && searchByLocation != "all_l"){
-      return this.servicerShow_New.searchJobsByTitleAndAddressAndLocation(searchByName,searchByLocation).subscribe((data) => {
-        this.ListJobnew = data;})
+    if (searchByName != null && searchByCategory == "all_c" && searchByLocation != "all_l") {
+      return this.servicerShow_New.searchJobsByTitleAndAddressAndLocation(searchByName, searchByLocation).subscribe((data) => {
+        this.ListJobnew = data;
+      })
     }
 
-    if(searchByName==null &&searchByCategory != "all_c" && searchByLocation != "all_l"){
-      return this.servicerShow_New.searchJobsByCategoryAndLocation(searchByCategory,searchByLocation).subscribe((data) => {
-        this.ListJobnew = data;})
+    if (searchByName == null && searchByCategory != "all_c" && searchByLocation != "all_l") {
+      return this.servicerShow_New.searchJobsByCategoryAndLocation(searchByCategory, searchByLocation).subscribe((data) => {
+        this.ListJobnew = data;
+      })
     }
   }
 
@@ -149,7 +157,7 @@ export class ShowNewComponent implements OnInit {
     })
   }
 
-  pageChangeEvent(event: number){
+  pageChangeEvent(event: number) {
     this.p = event;
     this.getAllJob_Latest();
   }
