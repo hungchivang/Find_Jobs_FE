@@ -11,6 +11,8 @@ import {BusinessUserDetailsComponent} from "./Details/business-user-details/busi
 import {EditUserComponent} from "./User/edit-user/edit-user.component";
 import {InfoDetailCompanyComponent} from "./Company/info-detail-company/info-detail-company.component";
 import {AdminJobComponent} from "./admin-job/admin-job.component";
+import {AdminCompanyComponent} from "./admin-company/admin-company.component";
+import {AdminUserComponent} from "./admin-user/admin-user.component";
 
 const routes: Routes = [
   {path:"registerCompany", component: RegistercompanyComponent },
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path:'businessUserDetails/:idJob', component: BusinessUserDetailsComponent },
   {path:'edit/:email', component: EditUserComponent },
   {path:'InfoJobDetail/:idJob', component: InfoDetailCompanyComponent },
-  {path:'adminJob', component: AdminJobComponent }
+  {path:'adminJob', component: AdminJobComponent },
+  {path:"adminCompany", component: AdminCompanyComponent },
+  {path:"adminUser", component: AdminUserComponent }
 
 ];
 

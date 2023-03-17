@@ -17,6 +17,8 @@ import { EditUserComponent } from './User/edit-user/edit-user.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { InfoDetailCompanyComponent } from './Company/info-detail-company/info-detail-company.component';
 import { AdminJobComponent } from './admin-job/admin-job.component';
+import { AdminCompanyComponent } from './admin-company/admin-company.component';
+import { AdminUserComponent } from './admin-user/admin-user.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,10 @@ import { AdminJobComponent } from './admin-job/admin-job.component';
     BusinessUserDetailsComponent,
     EditUserComponent,
     InfoDetailCompanyComponent,
-    AdminJobComponent
+    AdminJobComponent,
+    InfoDetailCompanyComponent,
+    AdminCompanyComponent,
+    AdminUserComponent
 
   ],
     imports: [
@@ -40,7 +45,7 @@ import { AdminJobComponent } from './admin-job/admin-job.component';
         ReactiveFormsModule,
         HttpClientModule,
         FormsModule,
-        NgxPaginationModule,
+        NgxPaginationModule
     ],
 
   providers: [{

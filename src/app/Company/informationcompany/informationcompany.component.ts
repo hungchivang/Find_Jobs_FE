@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {AccountToken} from "../../model/AccountToken";
-import {ShowjobService} from "../../service/job/showjob.service";
 import {LoginService} from "../../service/login.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Company} from "../../model/Company";
@@ -10,8 +8,6 @@ import {CompanyAndAccount} from "../../model/CompanyAndAccount";
 import {CompanyserviceService} from "../../service/companyService/companyservice.service";
 import {Router} from "@angular/router";
 import {AccountserviceService} from "../../service/accountService/accountservice.service";
-import {AccountNoRole} from "../../model/AccountNoRole";
-import {Role} from "../../model/Role";
 import {ImageSnippet} from "../../model/ImageSnippet";
 import {ImageserviceService} from "../../service/image/imageservice.service";
 
@@ -35,7 +31,6 @@ export class InformationcompanyComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAll();
-
   }
 
   findAll() {
@@ -67,7 +62,6 @@ export class InformationcompanyComponent implements OnInit {
           account: new FormGroup({
             id: new FormControl()
           })
-
         })
         // @ts-ignore
         this.formEdit?.get("role")?.get("id").setValue(data.role);
@@ -138,7 +132,6 @@ export class InformationcompanyComponent implements OnInit {
           this.onError();
         })
     });
-
     reader.readAsDataURL(file);
   }
 }

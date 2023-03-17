@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Job} from "../../model/Job";
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {ListTopCompany} from "../../model/ListTopCompany";
 import {Category} from "../../model/Category";
@@ -13,7 +12,6 @@ import {Locations} from "../../model/Locations";
 export class ShowJobService {
 
   constructor(private Http:HttpClient) {
-
   }
 
   getAllJob_Latest(page: number):Observable<ListJobCompanyAccount[]>{

@@ -1,9 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup} from "@angular/forms";
 import {AccountToken} from "../model/AccountToken";
 import {ListJobCompanyAccount} from "../model/ListJobCompanyAccount";
-import {Category} from "../model/Category";
-import {Locations} from "../model/Locations";
 import {ShowJobService} from "../service/Service_Job/show-job.service";
 import {LoginService} from "../service/login.service";
 
