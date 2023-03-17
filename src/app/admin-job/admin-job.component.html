@@ -411,7 +411,7 @@
                   <input type="checkbox" class="custom-control-input" id="tuan{{p.short_name}}" checked>
                   <label class="custom-control-label" for="tuan{{p.short_name}}" (click)="blockJob(p.idJob)">Active</label>
                 </div>
-                <div *ngIf="p.statusJob == 2">
+                <div *ngIf="p.statusJob == 2 || p.statusJob == 0">
                   <input type="checkbox" class="custom-control-input" id="manh{{p.short_name}}" >
                   <label class="custom-control-label" for="manh{{p.short_name}}" (click)="blockJob(p.idJob)">Block</label>
                 </div>

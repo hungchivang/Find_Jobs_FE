@@ -173,17 +173,18 @@
 <!--                  block------------->
                   <div class="custom-control custom-switch">
 
-                    <div *ngIf="list.statusJob">
+                    <div *ngIf="list.statusJob == 1">
                       <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
                       <label class="custom-control-label" for="customSwitch1" (click)="blockJobByEmail(list.idJob)">Active</label>
                     </div>
-                    <div *ngIf="!list.statusJob">
+                    <div *ngIf="list.statusJob == 0 ">
                       <input type="checkbox" class="custom-control-input" id="customSwitch2" >
                       <label class="custom-control-label" for="customSwitch2" (click)="blockJobByEmail(list.idJob)">Block</label>
                     </div>
+
                   </div>
                   <div class="readmorestyle-wrap">
-                    <a routerLink="/" class="readallstyle reads1">Xem chi tiết</a>
+                    <a routerLink="/InfoJobDetail/{{list.idJob}}" class="readallstyle reads1">Xem chi tiết</a>
                   </div>
                 </div>
                 <div class="wrap-btn-appl">

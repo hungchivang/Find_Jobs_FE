@@ -56,7 +56,7 @@ export class HomecompanyComponent implements OnInit {
 
   blockJobByEmail(id:number) {
     this.showJobService.blockJobByCompany(id).subscribe((data) =>{
-      console.log(data)
+
       this.findAllJob();
     })
   }
