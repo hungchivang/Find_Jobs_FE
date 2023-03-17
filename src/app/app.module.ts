@@ -16,6 +16,7 @@ import { BusinessUserDetailsComponent } from './Details/business-user-details/bu
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { InfoDetailCompanyComponent } from './Company/info-detail-company/info-detail-company.component';
+import { AdminJobComponent } from './admin-job/admin-job.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InfoDetailCompanyComponent } from './Company/info-detail-company/info-d
     GuestComponent,
     BusinessUserDetailsComponent,
     EditUserComponent,
-    InfoDetailCompanyComponent
+    InfoDetailCompanyComponent,
+    AdminJobComponent
 
   ],
     imports: [

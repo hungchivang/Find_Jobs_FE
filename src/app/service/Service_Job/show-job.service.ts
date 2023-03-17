@@ -36,6 +36,16 @@ export class ShowJobService {
     return this.Http.get<ListTopCompany[]>("http://localhost:8080/job/showTopCompany")
   }
 
+  // Hiển thị Admin-job
+  getAdminJob(page: number):Observable<ListJobCompanyAccount[]>{
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/admin/showAdminJob" + '?page='+page)
+  }
+
+  // Hiển thị, khóa tin Admin
+  getBlogJob(id: number):Observable<void> {
+    return this.Http.get<void>(`http://localhost:8080/admin/blogJob/${id}`)
+  }
+
   getallJob_byGuest():Observable<ListJobCompanyAccount[]>{
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/guest")
   }
