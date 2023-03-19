@@ -14,6 +14,7 @@ import {AccountNoRole} from "../../model/AccountNoRole";
 import {Role} from "../../model/Role";
 import {ImageSnippet} from "../../model/ImageSnippet";
 import {ImageserviceService} from "../../service/image/imageservice.service";
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-informationcompany',
@@ -27,6 +28,7 @@ export class InformationcompanyComponent implements OnInit {
   formEdit !: FormGroup;
   newAccount!: Account;
   newCompany!: Company;
+
 
   constructor(private companyService: CompanyserviceService, private loginService: LoginService,
               private router: Router, private accountService: AccountserviceService,
