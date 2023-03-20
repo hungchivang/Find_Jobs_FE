@@ -101,4 +101,7 @@ export class ShowJobService {
   sortJobBySalaryMax(): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/sortJobBySalaryMax")
   }
+  getAdminJoblimit3():Observable<ListJobCompanyAccount[]>{
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/admin/AdminJob" )
+  }
 }

@@ -13,6 +13,7 @@ import {InfoDetailCompanyComponent} from "./Company/info-detail-company/info-det
 import {AdminJobComponent} from "./admin-job/admin-job.component";
 import {AdminCompanyComponent} from "./admin-company/admin-company.component";
 import {AdminUserComponent} from "./admin-user/admin-user.component";
+import {AdminComponent} from "./admin/admin.component";
 
 const routes: Routes = [
   {path:"registerCompany", component: RegistercompanyComponent },
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'InfoJobDetail/:idJob', component: InfoDetailCompanyComponent },
   {path:'adminJob', component: AdminJobComponent },
   {path:"adminCompany", component: AdminCompanyComponent },
-  {path:"adminUser", component: AdminUserComponent }
+  {path:"adminUser", component: AdminUserComponent },
+  {path:"admin", component: AdminComponent },
 
 ];
 

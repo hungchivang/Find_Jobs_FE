@@ -33,14 +33,14 @@
         </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>
+            <a class="nav-link" ><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text" (click)="showError()">Tìm kiếm</span></a>
           </li>
           <li class="nav-item">
-<!--            <a class="nav-link" href="#">Xin chào :{{.email}}</a>-->
+            <!--            <a class="nav-link" href="#">Xin chào :{{.email}}</a>-->
           </li>
-                    <li class="nav-item">
-<!--                      <a class="nav-link" routerLink="/registerCompany">Đăng kí</a>-->
-                    </li>
+          <li class="nav-item">
+            <!--                      <a class="nav-link" routerLink="/registerCompany">Đăng kí</a>-->
+          </li>
           <li class="nav-item dropdown">
             <!--            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
             <!--              VI-->
@@ -144,7 +144,7 @@
                   </div>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                  <button type="submit" class="btn btn-primary btn-search col-sm-12" routerLink="/login" (click)="click()">Tìm kiếm</button>
+                  <button type="submit" class="btn btn-primary btn-search col-sm-12"  (click)="showError()">Tìm kiếm</button>
                 </div>
               </div>
             </form>
@@ -161,7 +161,7 @@
                   </div>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                  <button type="submit" class="btn btn-primary btn-search col-sm-12" routerLink="/login" (click)="click()">Tìm kiếm</button>
+                  <button type="submit" class="btn btn-primary btn-search col-sm-12" (click)="showError()">Tìm kiếm</button>
                 </div>
               </div>
             </form>
@@ -218,13 +218,13 @@
                     </div>
                   </div>
                   <div class="wrap-btn-appl">
-                    <a href="#" class="btn btn-appl "routerLink="/login" (click)="click()">Apply Now</a>
+                    <a  class="btn btn-appl "  (click)="showError()">Apply Now</a>
                   </div>
                 </div>
               </div>
 
               <div class="readmorestyle-wrap">
-                <a  class="readallstyle reads1" routerLink="/login" (click)="click()">Xem thêm</a>
+                <a  class="readallstyle reads1"  (click)="showError()">Xem thêm</a>
               </div>
             </div>
           </div>
@@ -654,6 +654,10 @@
   <!-- (end) top employer -->
 
   <div class="clearfix"></div>
+
+  <p-toast position="top-left" key="tl"></p-toast>
+  <p-toast position="top-center" key="tc"></p-toast>
+  <p-toast position="bottom-center" key="bc"></p-toast>
 
 
   <!-- job-best-salary -->
@@ -1606,6 +1610,3 @@
   <!-- <script type="text/javascript" src="js/pagination.js"></script> -->
   <!-- Owl Stylesheets Javascript -->
   <script src="js/owlcarousel/owl.carousel.js"></script>
-  <!-- Read More Plugin -->
-
-</div>

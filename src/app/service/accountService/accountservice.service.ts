@@ -34,4 +34,7 @@ export class AccountserviceService {
   searchbyUser(name:string):Observable<Account[]>{
     return this.http.get<Account[]>(`http://localhost:8080/admin/searchUser/${name}`)
   }
+  getallUserlimit3():Observable<Account[]>{
+    return this.http.get<Account[]>("http://localhost:8080/admin/adminUser")
+  }
 }
