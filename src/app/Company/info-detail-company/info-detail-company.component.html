@@ -14,49 +14,49 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto tnav-left tn-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Việc Làm IT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tin Tức</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true"
-               aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
+<!--        <ul class="navbar-nav mr-auto tnav-left tn-nav">-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">Việc Làm IT</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">Tin Tức</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true"-->
+<!--               aria-expanded="false">-->
+<!--              Dropdown-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">-->
+<!--              <a class="dropdown-item" href="#">Action</a>-->
+<!--              <a class="dropdown-item" href="#">Another action</a>-->
+<!--              <div class="dropdown-divider"></div>-->
+<!--              <a class="dropdown-item" href="#">Something else here</a>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--        </ul>-->
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>
-          </li>
+<!--          <li class="nav-item active">-->
+<!--            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">Đăng Ký</a>-->
+<!--          </li>-->
           <li class="nav-item">
-            <a class="nav-link" href="#">Đăng Ký</a>
+            <a class="nav-link">Xin chào {{account.email}}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Đăng Nhập</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-              VI
-            </a>
-            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">English</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" style="color: #fff!important">Nhà
-              Tuyển Dụng</a>
-          </li>
+<!--          <li class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
+<!--               aria-haspopup="true" aria-expanded="false">-->
+<!--              VI-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">-->
+<!--              <a class="dropdown-item" href="#">English</a>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" style="color: #fff!important">Nhà-->
+<!--              Tuyển Dụng</a>-->
+<!--          </li>-->
         </ul>
       </div>
     </nav>
@@ -73,7 +73,7 @@
       <div class="row">
         <div class="col-md-2 col-sm-12 col-12">
           <div class="job-detail-header-logo">
-            <a href="#">
+            <a>
               <img src="{{JobCompanyAccount.avatar}}" class="job-logo-ima" alt="job-logo">
             </a>
           </div>
@@ -81,10 +81,10 @@
         <div class="col-md-7 col-sm-12 col-12">
           <div class="job-detail-header-desc">
             <div class="job-detail-header-title">
-              <a href="#">{{JobCompanyAccount.title}}</a>
+              <a>{{JobCompanyAccount.title}}</a>
             </div>
             <div class="job-detail-header-company">
-              <a href="#">{{JobCompanyAccount.short_name}}</a>
+              <a>{{JobCompanyAccount.short_name}}</a>
             </div>
             <div class="job-detail-header-de">
               <ul>
@@ -97,22 +97,22 @@
             <div class="job-detail-header-tag">
               <ul>
                 <li>
-                  <a href="#">{{JobCompanyAccount.nameCategory}}</a>
+                  <a>{{JobCompanyAccount.nameCategory}}</a>
                 </li>
                 <li>
-                  <a href="#">{{JobCompanyAccount.nameLocation}}</a>
+                  <a>{{JobCompanyAccount.nameLocation}}</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <div class="col-md-3 col-sm-12 col-12">
-          <div class="jd-header-wrap-right">
-            <div class="jd-center">
-              <a href="#" class="btn btn-primary btn-apply">Nộp đơn</a>
-              <p class="jd-view">Lượt xem: <span>1.520</span></p>
-            </div>
-          </div>
+<!--          <div class="jd-header-wrap-right">-->
+<!--            <div class="jd-center">-->
+<!--              <a href="#" class="btn btn-primary btn-apply">Nộp đơn</a>-->
+<!--              <p class="jd-view">Lượt xem: <span>1.520</span></p>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </div>
     </div>
@@ -138,13 +138,13 @@
               <div class="welfare-list">
                 <ul>
                   <li>
-                    <p><i class="fa fa-usd icn-welfare"></i>{{JobCompanyAccount.descriptionJob}}</p>
+                    <p><i class="fa fa-check-circle icn-welfare"></i>{{JobCompanyAccount.descriptionJob}}</p>
                   </li>
                   <li>
                     <p><i class="fa fa-user icn-welfare"></i>Giới tính: {{JobCompanyAccount.gender}}</p>
                   </li>
                   <li>
-                    <p><i class="fa fa-check-circle icn-welfare"></i>Số lượng :{{JobCompanyAccount.quantity}}</p>
+                    <p><i class="fa fa-check-circle icn-welfare"></i>Số lượng: {{JobCompanyAccount.quantity}}</p>
                   </li>
                 </ul>
               </div>
@@ -163,13 +163,13 @@
               <div class="welfare-list">
                 <ul>
                   <li>
-                    <p><i class="fa fa-check-circle icn-welfare"></i>Số điện thoại:{{JobCompanyAccount.phone}}</p>
+                    <p><i class="fa fa-check-circle icn-welfare"></i>Số điện thoại: {{JobCompanyAccount.phone}}</p>
                   </li>
                   <li>
-                    <p><i class="fa fa-user icn-welfare"></i>Email :{{JobCompanyAccount.email}}</p>
+                    <p><i class="fa fa-user icn-welfare"></i>Email: {{JobCompanyAccount.email}}</p>
                   </li>
                   <li>
-                    <p><i class="fa fa-check-circle icn-welfare"></i>Website:{{JobCompanyAccount.website}}</p>
+                    <p><i class="fa fa-check-circle icn-welfare"></i>Website: {{JobCompanyAccount.website}}</p>
                   </li>
 
                 </ul>
@@ -203,7 +203,7 @@
             <div class="job-info-list">
               <div class="row">
                 <div class="col-sm-4">
-                  <span class="ji-title">Cấp bậc:</span>
+                  <span class="ji-title">Hình thức:</span>
                 </div>
                 <div class="col-sm-8">
                   <span class="ji-main">{{JobCompanyAccount.nameCategory}}</span>
@@ -261,7 +261,7 @@
                   <span class="ji-title">Kinh nghiệm:</span>
                 </div>
                 <div class="col-sm-8">
-                  <span class="ji-main">1 năm</span>
+                  <span class="ji-main">{{JobCompanyAccount.exp_year}}</span>
                 </div>
               </div>
             </div>
@@ -274,7 +274,7 @@
             <span>Giới thiệu công ty</span>
           </h2>
           <div class="company-intro">
-            <a href="#">
+            <a>
               <img src="{{JobCompanyAccount.avatar}}" class="job-logo-ima" alt="job-logo">
             </a>
           </div>
@@ -286,52 +286,52 @@
             </li>
             <li>
               <i class="fa fa-bar-chart ja-icn"></i>
-              <span>Quy mô công ty: 50-100 người</span>
+              <span>Quy mô công ty: {{JobCompanyAccount.number_of_employees}} người</span>
             </li>
           </ul>
 
-          <div class="wrap-comp-info mb-2">
-            <a routerLink="/informationCompany" class="btn btn-primary btn-company">Xem thêm</a>
-          </div>
+<!--          <div class="wrap-comp-info mb-2">-->
+<!--            <a routerLink="/informationCompany" class="btn btn-primary btn-company">Xem thêm</a>-->
+<!--          </div>-->
         </div>
 
-        <div class="side-bar mb-3">
-          <h2 class="widget-title">
-            <span>Việc làm tương tự</span>
-          </h2>
+<!--        <div class="side-bar mb-3">-->
+<!--          <h2 class="widget-title">-->
+<!--            <span>Việc làm tương tự</span>-->
+<!--          </h2>-->
 
-          <div class="job-tt-contain" *ngFor="let p of ListJobnew">
-            <div class="job-tt-item">
+<!--          <div class="job-tt-contain" *ngFor="let p of ListJobnew">-->
+<!--            <div class="job-tt-item">-->
 
-              <a href="#" class="thumb">
-                <div><img src="{{p.avatar}}" width="90px" height="60px"></div>
-              </a>
+<!--              <a href="#" class="thumb">-->
+<!--                <div><img src="{{p.avatar}}" width="90px" height="60px"></div>-->
+<!--              </a>-->
 
-              <div class="info">
-                <a href="#" class="jobname">
-                  {{p.title}}
-                </a>
-                <a href="#" class="company">
-                  Làm việc tại: {{p.address}}                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+<!--              <div class="info">-->
+<!--                <a href="#" class="jobname">-->
+<!--                  {{p.title}}-->
+<!--                </a>-->
+<!--                <a href="#" class="company">-->
+<!--                  Làm việc tại: {{p.address}} </a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
 
-        <div class="side-bar mb-3">
+<!--        <div class="side-bar mb-3">-->
 
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="home-ads">
-                  <a href="#">
-                    <img src="../../../assets/img/ads1.jpg">
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<!--          <div class="container">-->
+<!--            <div class="row">-->
+<!--              <div class="col-md-12">-->
+<!--                <div class="home-ads">-->
+<!--                  <a href="#">-->
+<!--                    <img src="../../../assets/img/ads1.jpg">-->
+<!--                  </a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </div>
   </div>
@@ -349,7 +349,7 @@
               <span><i class="fa fa-question-circle pr-2 icsp"></i>Hỗ trợ nhà tuyển dụng:</span>
             </li>
             <li>
-              <span><i class="fa fa-phone pr-2 icsp"></i>0123.456.789</span>
+              <span><i class="fa fa-phone pr-2 icsp"></i>19006868</span>
             </li>
           </ul>
         </div>
@@ -374,28 +374,27 @@
     <div class="row">
       <div class="col-md-4 col-sm-8 col-12">
         <h2 class="footer-heading">
-          <span>About</span>
+          <span>Giới thiệu</span>
         </h2>
         <p class="footer-content">
-          Discover the best way to find houses, condominiums, apartments and HDBs for sale and rent in Singapore with
-          JobsOnline, Singapore's Fastest Growing Jobs Portal.
+          Khám phá cách tốt nhất để tìm vệc làm IT qua Cổng thông tin việc làm phát triển nhanh nhất Việt Nam.
         </p>
         <ul class="footer-contact">
           <li>
-            <a href="#">
-              <i class="fa fa-phone fticn"></i> +123 456 7890
+            <a>
+              <i class="fa fa-phone fticn"></i> 19006868
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-envelope fticn"></i>
-              hello@123.com
+              support@techjob.com
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-map-marker fticn"></i>
-              33 Xô Viết Nghệ Tĩnh, Đà Nẵng
+              Số 23, Lô TT01, Hàm Nghi, Mỹ Đình, Hà Nội
             </a>
           </li>
         </ul>
@@ -405,43 +404,43 @@
           <span>Ngôn ngữ nổi bật</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Javascript</a></li>
-          <li><a href="#">Java</a></li>
-          <li><a href="#">Frontend</a></li>
-          <li><a href="#">SQL Server</a></li>
-          <li><a href="#">.NET</a></li>
+          <li><a>Java</a></li>
+          <li><a>Javascript</a></li>
+          <li><a>PHP</a></li>
+          <li><a>.NET</a></li>
+          <li><a>SQL Server</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả ngành nghề</span>
+          <span>Ngành nghề</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Lập trình viên</a></li>
-          <li><a href="#">Kiểm thử phần mềm</a></li>
-          <li><a href="#">Kỹ sư cầu nối</a></li>
-          <li><a href="#">Quản lý dự án</a></li>
+          <li><a>Quản lý dự án</a></li>
+          <li><a>Lập trình viên</a></li>
+          <li><a>Kiểm thử phần mềm</a></li>
+          <li><a>Kỹ sư cầu nối</a></li>
+          <li><a>Nhân sự</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả hình thức</span>
+          <span>Hình thức</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Nhân viên chính thức</a></li>
-          <li><a href="#">Nhân viên bán thời gian</a></li>
-          <li><a href="#">Freelancer</a></li>
+          <li><a>Nhân viên chính thức</a></li>
+          <li><a>Nhân viên bán thời gian</a></li>
+          <li><a>Freelancer</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-12 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả tỉnh thành</span>
+          <span>Địa điểm</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Hồ Chính Minh</a></li>
-          <li><a href="#">Hà Nội</a></li>
-          <li><a href="#">Đà Nẵng</a></li>
-          <li><a href="#">Buôn Ma Thuột</a></li>
+          <li><a>Hà Nội</a></li>
+          <li><a>Đà Nẵng</a></li>
+          <li><a>Hồ Chí Minh</a></li>
         </ul>
       </div>
     </div>
@@ -451,7 +450,7 @@
 <footer class="container-fluid copyright-wrap">
   <div class="container copyright">
     <p class="copyright-content">
-      Copyright © 2020 <a href="#"> Tech<b>Job</b></a>. All Right Reserved.
+      Copyright © 2023 <a> Tech<b>Job</b></a>. All Right Reserved.
     </p>
   </div>
 </footer>

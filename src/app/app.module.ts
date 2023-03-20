@@ -24,9 +24,6 @@ import {SplitButtonModule} from 'primeng/splitbutton';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastModule} from 'primeng/toast';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,8 +50,7 @@ import {ToastModule} from 'primeng/toast';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule,SplitButtonModule,BrowserAnimationsModule,ToastModule
-
+    NgxPaginationModule,SplitButtonModule,BrowserAnimationsModule,ToastModule,ToastModule
 
   ],
 

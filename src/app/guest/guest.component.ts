@@ -17,33 +17,46 @@ import {Router} from "@angular/router";
 
 export class GuestComponent implements OnInit{
   ListJobnew: ListJobCompanyAccount[] = []
+  p: number = 1;
+  total: number = 0;
 
   ngOnInit(): void {
-    this.getall_Guest()
+    this.getAllJob_Latest()
   }
   constructor(private servicerShow_New: ShowJobService,private loginService:LoginService,private messageService:MessageService,private router:Router) {
   }
 
-  getall_Guest(){
-    this.servicerShow_New.getallJob_byGuest().subscribe((data)=>{
-      this.ListJobnew=data;
-      // this.showError();
-    })
-  }
-
-  // click(){
-  //   // alert("Bạn phải đăng nhập mới dùng được chức năng này!")
-  //   this.showWarn()
-  //   this.router.navigate(["/login"])
-  //
-  //
-  //
-  // }
-  // showWarn() {
-  //   this.messageService.add({severity:'warn', summary: 'Cảnh báo', detail: 'Bạn không có quyền truy cập ',key: 'tc'});
+  // getall_Guest(){
+  //   this.servicerShow_New.getallJob_byGuest().subscribe((data)=>{
+  //     this.ListJobnew=data;
+  //     // this.showError();
+  //   })
   // }
 
   showError() {
-    this.messageService.add({severity:'error', summary: 'Cảnh báo', detail: 'Bạn không có quyền truy cập',key: 'tc'});
+    this.messageService.add({severity:'error', summary: 'Cảnh báo', detail: 'Bạn không có quyền truy cập, Vui lòng đăng nhập để thực hiện!',key: 'tc'});
   }
+  getAllJob_Latest() {
+    this.servicerShow_New.getAllJob_Latest(this.p).subscribe((data) => {
+      this.ListJobnew = data;
+      this.total = this.ListJobnew.length;
+    })
+  }
+
+  pageChangeEvent(event: number) {
+    this.p = event;
+    this.getAllJob_Latest();
+  }
+  getAllJob() {
+    this.servicerShow_New.getAllJob().subscribe((data) => {
+      this.ListAllJob = data;
+    })
+  }
+
+  getTopCompany() {
+    this.servicerShow_New.getTopCompany().subscribe((data) => {
+      this.ListTopCompany = data;
+    })
+  }
+
 }

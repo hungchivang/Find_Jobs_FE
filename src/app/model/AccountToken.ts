@@ -1,6 +1,6 @@
 import {Role} from "./Role";
 
-export class AccountToken{
+export class AccountToken {
   id: number;
   email: string;
   token: string;

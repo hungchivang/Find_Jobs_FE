@@ -4,11 +4,13 @@ import {RegistercompanyService} from "../../service/registercompany.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Account} from "../../model/Account";
 import {Role} from "../../model/Role";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-registercompany',
   templateUrl: './registercompany.component.html',
-  styleUrls: ['./registercompany.component.css']
+  styleUrls: ['./registercompany.component.css'],
+  providers: [MessageService]
 
 })
 export class RegistercompanyComponent implements OnInit {
@@ -21,7 +23,7 @@ export class RegistercompanyComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private registerCompanyService: RegistercompanyService, private router: Router, private route: ActivatedRoute) {
+  constructor(private registerCompanyService: RegistercompanyService, private router: Router, private route: ActivatedRoute, private messageService: MessageService) {
   }
 
   registerForm = new FormGroup({
@@ -48,4 +50,11 @@ export class RegistercompanyComponent implements OnInit {
         console.log(this.registerForm.value)
       })
     }
+
+  showError() {
+    this.messageService.add({severity:'error', summary: 'Cảnh báo', detail: 'Đăng nhập thất bại', key: 'tc'});
+  }
+  showSuccess() {
+    this.messageService.add({severity:'success', summary: 'Thông báo', detail: 'Đăng nhập thành công', key: 'tc'});
+  }
 }

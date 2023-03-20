@@ -1,8 +1,8 @@
 <div class="container-fluid fluid-nav">
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <a href="#" class="nav-logo">
+<!--       <a class="navbar-brand" href="#">Navbar</a>-->
+      <a href="#" routerLink="/home" class="nav-logo">
         <img src="../../../assets/img/techjobs_bgb.png">
       </a>
       <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse"
@@ -15,16 +15,15 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto tnav-left tn-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Việc Làm IT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tin Tức</a>
-          </li>
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">Việc Làm IT</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">Tin Tức</a>-->
+<!--          </li>-->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true"
-               aria-expanded="false" routerLink="/edit/{{account.email}}">
-              Thông tin cá nhân
+               aria-expanded="false" routerLink="/edit/{{account.email}}"> Thông tin ứng viên
             </a>
             <!--            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">-->
             <!--              <a class="dropdown-item" href="#">Action</a>-->
@@ -36,10 +35,10 @@
         </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>
+<!--            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>-->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Xin chào :{{account.email}}</a>
+            <a class="nav-link">Xin chào: {{account.email}}</a>
           </li>
           <!--          <li class="nav-item">-->
           <!--            <a class="nav-link" routerLink="/login">Đăng xuất</a>-->
@@ -232,7 +231,7 @@
                     </div>
                   </div>
                   <div class="wrap-btn-appl">
-                    <a href="#" class="btn btn-appl">Apply Now</a>
+                    <a href="#" class="btn btn-appl">Nộp đơn</a>
                   </div>
                 </div>
               </div>
@@ -256,59 +255,59 @@
             <div class="catelog-list">
               <ul>
                 <li>
-                  <a href="#">
+                  <a>
                 <span class="cate-img">
-                  <em>Lập trình viên</em>
+                  <em>Quản lý dự án</em>
                 </span>
-                    <span class="cate-count">(1100)</span>
+                    <span class="cate-count"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a>
+                  <span class="cate-img">
+                  <em>Lập trình viên</em>
+                </span>
+                    <span class="cate-count"></span>
+                  </a>
+                </li>
+                <li>
+                  <a>
                   <span class="cate-img">
                   <em>Nhân viên kiểm thử</em>
                 </span>
-                    <span class="cate-count">(230)</span>
+                    <span class="cate-count"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a>
                   <span class="cate-img">
                   <em>Kỹ sư cầu nối</em>
                 </span>
-                    <span class="cate-count">(110)</span>
+                    <span class="cate-count"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a>
                   <span class="cate-img">
-                  <em>Designer</em>
+                  <em>Kỹ sư thiết kế mạng</em>
                 </span>
-                    <span class="cate-count">(2300)</span>
+                    <span class="cate-count"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a>
                   <span class="cate-img">
-                  <em>Product Manager</em>
+                  <em>Kỹ sư bảo trì hệ thống</em>
                 </span>
-                    <span class="cate-count">(99)</span>
+                    <span class="cate-count"></span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a>
                   <span class="cate-img">
-                  <em>HR</em>
+                  <em>Nhân sự</em>
                 </span>
-                    <span class="cate-count">(300)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                    <span class="cate-count">(300)</span>
+                    <span class="cate-count"></span>
                   </a>
                 </li>
               </ul>
@@ -327,9 +326,7 @@
   </div>
   <!-- (end) job board & sidebar section  -->
 
-
   <div class="clearfix"></div>
-
 
   <!-- job board v2 -->
   <!--  <div class="container-fluid">-->
@@ -858,7 +855,7 @@
               <span><i class="fa fa-question-circle pr-2 icsp"></i>Hỗ trợ nhà tuyển dụng:</span>
             </li>
             <li>
-              <span><i class="fa fa-phone pr-2 icsp"></i>0123.456.789</span>
+              <span><i class="fa fa-phone pr-2 icsp"></i>19006868</span>
             </li>
           </ul>
         </div>
@@ -883,28 +880,27 @@
     <div class="row">
       <div class="col-md-4 col-sm-8 col-12">
         <h2 class="footer-heading">
-          <span>About</span>
+          <span>Giới thiệu</span>
         </h2>
         <p class="footer-content">
-          Discover the best way to find houses, condominiums, apartments and HDBs for sale and rent in Singapore with
-          JobsOnline, Singapore's Fastest Growing Jobs Portal.
+          Khám phá cách tốt nhất để tìm vệc làm IT qua Cổng thông tin việc làm phát triển nhanh nhất Việt Nam.
         </p>
         <ul class="footer-contact">
           <li>
-            <a href="#">
-              <i class="fa fa-phone fticn"></i> +123 456 7890
+            <a>
+              <i class="fa fa-phone fticn"></i> 19006868
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-envelope fticn"></i>
-              hello@123.com
+              support@techjob.com
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-map-marker fticn"></i>
-              33 Xô Viết Nghệ Tĩnh, Đà Nẵng
+              Số 23, Lô TT01, Hàm Nghi, Mỹ Đình, Hà Nội
             </a>
           </li>
         </ul>
@@ -914,47 +910,45 @@
           <span>Ngôn ngữ nổi bật</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Javascript</a></li>
-          <li><a href="#">Java</a></li>
-          <li><a href="#">Frontend</a></li>
-          <li><a href="#">SQL Server</a></li>
-          <li><a href="#">.NET</a></li>
+          <li><a>Java</a></li>
+          <li><a>Javascript</a></li>
+          <li><a>PHP</a></li>
+          <li><a>.NET</a></li>
+          <li><a>SQL Server</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả ngành nghề</span>
+          <span>Ngành nghề</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Lập trình viên</a></li>
-          <li><a href="#">Kiểm thử phần mềm</a></li>
-          <li><a href="#">Kỹ sư cầu nối</a></li>
-          <li><a href="#">Quản lý dự án</a></li>
+          <li><a>Quản lý dự án</a></li>
+          <li><a>Lập trình viên</a></li>
+          <li><a>Kiểm thử phần mềm</a></li>
+          <li><a>Kỹ sư cầu nối</a></li>
+          <li><a>Nhân sự</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả hình thức</span>
+          <span>Hình thức</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Nhân viên chính thức</a></li>
-          <li><a href="#">Nhân viên bán thời gian</a></li>
-          <li><a href="#">Freelancer</a></li>
+          <li><a>Nhân viên chính thức</a></li>
+          <li><a>Nhân viên bán thời gian</a></li>
+          <li><a>Freelancer</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-12 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả tỉnh thành</span>
+          <span>Địa điểm</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Hồ Chính Minh</a></li>
-          <li><a href="#">Hà Nội</a></li>
-          <li><a href="#">Đà Nẵng</a></li>
-          <li><a href="#">Buôn Ma Thuột</a></li>
+          <li><a>Hà Nội</a></li>
+          <li><a>Đà Nẵng</a></li>
+          <li><a>Hồ Chí Minh</a></li>
         </ul>
       </div>
-
-
     </div>
   </div>
 </div>
@@ -962,14 +956,12 @@
 <footer class="container-fluid copyright-wrap">
   <div class="container copyright">
     <p class="copyright-content">
-      Copyright © 2020 <a href="#"> Tech<b>Job</b></a>. All Right Reserved.
+      Copyright © 2023 <a> Tech<b>Job</b></a>. All Right Reserved.
     </p>
   </div>
 </footer>
 
-
 <!-- (end) footer -->
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/readmore.js"></script>

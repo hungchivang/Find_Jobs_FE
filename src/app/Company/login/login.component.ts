@@ -5,11 +5,13 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Account} from "../../model/Account";
 import {AccountToken} from "../../model/AccountToken";
 import {Observable} from "rxjs";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [MessageService]
 })
 export class LoginComponent implements OnInit {
 
@@ -18,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private loginService: LoginService, private router: Router) {
+  constructor(private loginService: LoginService, private router: Router, private messageService: MessageService) {
   }
 
   loginForm = new FormGroup({
