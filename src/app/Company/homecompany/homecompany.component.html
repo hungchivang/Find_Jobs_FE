@@ -1,23 +1,27 @@
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap"
+      rel="stylesheet">
 
 <!-- Font Awesome -->
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!-- main nav -->
-<div class="container-fluid fluid-nav" >
+
+<div class="container-fluid fluid-nav">
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
       <a class="nav-logo">
         <img src="assets/img/techjobs_bgb.png">
       </a>
-      <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
         <i class="fa fa-bars icn-res" aria-hidden="true"></i>
-
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto tnav-left tn-nav">
           <li class="nav-item">
@@ -32,22 +36,25 @@
             <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true">Đăng tuyển</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/login">Đăng xuất</a>
+            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/login">Đăng
+              xuất</a>
           </li>
         </ul>
       </div>
     </nav>
   </div>
 </div>
+
 <!-- (end) main nav -->
 
 <div class="clearfix"></div>
 
 <!-- main banner -->
-<div class="container-fluid clear-left clear-right" >
+
+<div class="container-fluid clear-left clear-right">
   <div class="main-banner">
     <div class="banner-image">
-      <img src="assets/img/banner2.jpg" alt="banner-image" >
+      <img src="assets/img/banner2.jpg" alt="banner-image">
     </div>
   </div>
   <div class="banner-content">
@@ -56,16 +63,18 @@
     </div>
   </div>
 </div>
+
 <!-- (end) main banner -->
 
 <!-- search section -->
+
 <div class="container-fluid search-fluid">
   <div class="container">
     <div class="search-wrapper" style="margin-top: -11rem;">
-
       <ul class="nav nav-tabs search-nav-tabs" id="myTab" role="tablist">
         <li class="nav-item search-nav-item">
-          <a class="nav-link snav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Tìm tin đã đăng</a>
+          <a class="nav-link snav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+             aria-controls="profile" aria-selected="false">Tìm tin đã đăng</a>
         </li>
       </ul>
       <div class="tab-content search-tab-content" id="myTabContent">
@@ -75,12 +84,14 @@
         <!-- (end) content tab 1 -->
 
         <!-- content tab 2 -->
+
         <div class="tab-pane stab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <form class="bn-search-form" [formGroup]="formSearchJobByTitle" (ngSubmit)="searchJobByTitleOfCompany()">
             <div class="row">
               <div class="col-md-10 col-sm-12">
                 <div class="input-group s-input-group w-100">
-                  <input type="text" class="form-control sinput" formControlName="title" placeholder="Nhập kỹ năng, công việc,...">
+                  <input type="text" class="form-control sinput" formControlName="title"
+                         placeholder="Nhập kỹ năng, công việc,...">
                   <span><i class="fa fa-search"></i></span>
                 </div>
               </div>
@@ -90,15 +101,18 @@
             </div>
           </form>
         </div>
-        <!-- (end) content tab 2 -->
-      </div>
 
+        <!-- (end) content tab 2 -->
+
+      </div>
     </div>
   </div>
 </div>
+
 <!-- (end) search section -->
 
 <!-- job board & sidebar section  -->
+
 <div class="container-fluid jb-wrapper">
   <div class="container">
     <div class="row">
@@ -108,8 +122,8 @@
           <h2 class="widget-title">
             <span (click)="findAllJob()">Tin đã đăng</span>
           </h2>
-
-          <div class="job-group" *ngFor="let list of listJob | paginate:{itemsPerPage:5,currentPage:p,totalItems:total}">
+          <div class="job-group"
+               *ngFor="let list of listJob | paginate:{itemsPerPage:5,currentPage:p,totalItems:total}">
             <div class="job pagi">
               <div class="job-content">
                 <div class="job-logo">
@@ -117,16 +131,15 @@
                     <img src="{{list.avatar}}" class="job-logo-ima" alt="job-logo">
                   </a>
                 </div>
-
                 <div class="job-desc">
                   <div class="job-title">
                     <a routerLink="/InfoJobDetail/{{list.idJob}}">{{list.title}}</a>
                   </div>
                   <div class="job-company">
-                    <a>{{list.nameLocation}}</a> | <a class="job-address"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <a>{{list.nameLocation}}</a> | <a class="job-address"><i class="fa fa-map-marker"
+                                                                             aria-hidden="true"></i>
                     {{list.address}}</a>
                   </div>
-
                   <div class="job-inf">
                     <div class="job-main-skill">
                       <i class="fa fa-code" aria-hidden="true"></i> <a> {{list.nameCategory}}</a>
@@ -137,19 +150,20 @@
                       <span class="salary-max">{{list.max}} <em class="salary-unit">$</em></span>
                     </div>
                     <div class="job-deadline">
-                      <span><i class="fa fa-clock-o" aria-hidden="true"></i>  Hạn nộp: <strong>{{list.expired_date}}</strong></span>
+                      <span><i class="fa fa-clock-o"
+                               aria-hidden="true"></i>  Hạn nộp: <strong>{{list.expired_date}}</strong></span>
                     </div>
                   </div>
 
-      <!--block-->
-                  <div class="custom-control custom-switch">
+                  <!--block-->
 
+                  <div class="custom-control custom-switch">
                     <div *ngIf="list.statusJob == 1">
                       <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
                       <label class="custom-control-label" for="customSwitch1" (click)="blockJobByEmail(list.idJob)">Active</label>
                     </div>
                     <div *ngIf="list.statusJob == 0 ">
-                      <input type="checkbox" class="custom-control-input" id="customSwitch2" >
+                      <input type="checkbox" class="custom-control-input" id="customSwitch2">
                       <label class="custom-control-label" for="customSwitch2" (click)="blockJobByEmail(list.idJob)">Block</label>
                     </div>
                   </div>
@@ -163,11 +177,13 @@
             </div>
           </div>
         </div>
-          <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
+        <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
       </div>
 
       <!-- (end) job board -->
+
       <!-- sidebar -->
+
       <div class="col-md-4 col-sm-12 col-12 clear-left">
         <div class="job-sidebar">
           <h2 class="widget-title">
@@ -223,19 +239,20 @@
                   <span class="cate-count">{{company.website}}</span>
                 </a>
               </li>
-
               <li>
                 <a class="readallstyle reads1" routerLink="/informationCompany">Xem tất cả</a>
               </li>
-
             </ul>
           </div>
         </div>
       </div>
+
       <!-- (end) sidebar -->
+
     </div>
   </div>
 </div>
+
 <!-- (end) job board & sidebar section  -->
 
 <div class="clearfix"></div>
@@ -243,7 +260,7 @@
 <!-- job board v2 -->
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     var owl = $('.owl-carousel');
     owl.owlCarousel({
       loop: true,
@@ -252,30 +269,31 @@
       autoplay: true,
       autoplayTimeout: 3000,
       autoplayHoverPause: true,
-      responsiveClass:true,
-      responsive:{
-        0:{
-          items:2,
-          nav:true,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 2,
+          nav: true,
           slideBy: 2,
           dots: false
         },
-        600:{
-          items:4,
-          nav:false,
+        600: {
+          items: 4,
+          nav: false,
           slideBy: 2,
           dots: false
         },
-        1000:{
+        1000: {
           items: 6,
-          nav:true,
-          loop:false,
+          nav: true,
+          loop: false,
           slideBy: 2
         }
       }
     });
   })
 </script>
+
 <!-- (end) job board v2 -->
 
 <div class="clearfix"></div>
@@ -303,6 +321,7 @@
 <div class="clearfix"></div>
 
 <!-- news -->
+
 <div class="container-fluid">
   <div class="container news-wrapper">
     <div class="row">
@@ -379,15 +398,16 @@
               các phương án ứng phó tốc độ và hiệu quả để giải quyết bài toán về tìn...
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <!-- (end) news -->
 
 <!-- job support -->
+
 <div class="container-fluid job-support-wrapper">
   <div class="container-fluid job-support-wrap">
     <div class="container job-support">
@@ -415,9 +435,11 @@
     </div>
   </div>
 </div>
+
 <!-- (end) job support -->
 
 <!-- footer -->
+
 <div class="container-fluid footer-wrap  clear-left clear-right">
   <div class="container footer">
     <div class="row">

@@ -1,3 +1,5 @@
+<!-- main nav -->
+
 <div class="container-fluid fluid-nav">
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
@@ -8,9 +10,7 @@
               data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
               aria-label="Toggle navigation">
         <i class="fa fa-bars icn-res" aria-hidden="true"></i>
-
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto tnav-left tn-nav">
         </ul>
@@ -23,34 +23,42 @@
           <li class="nav-item dropdown">
           </li>
           <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/registerCompany">Đăng kí</a>
+            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/registerCompany">Đăng
+              kí</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/login">Đăng nhập</a>
+            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/login">Đăng
+              nhập</a>
           </li>
         </ul>
       </div>
     </nav>
   </div>
 </div>
+
 <!-- (end) main nav -->
 
 <div class="clearfix"></div>
 
 <!-- main banner -->
+
 <div class="container-fluid clear-left clear-right">
   <div class="main-banner">
     <div class="banner-image">
       <img src="../../../assets/img/banner2.jpg" alt="banner-image">
     </div>
   </div>
+
   <!-- (end) search section -->
 
   <!-- job board & sidebar section  -->
+
   <div class="container-fluid jb-wrapper">
     <div class="container">
       <div class="row">
+
         <!-- job board -->
+
         <div class="col-md-8 col-sm-12 col-12">
           <div class="job-board-wrap">
             <h2 class="widget-title">
@@ -65,7 +73,6 @@
                       <img src="{{p.avatar}}" class="job-logo-ima" alt="job-logo">
                     </a>
                   </div>
-
                   <div class="job-desc">
                     <div class="job-title">
                       <a>{{p.title}} </a>
@@ -75,7 +82,6 @@
                       class="fa fa-map-marker" aria-hidden="true"></i>
                       {{p.address}}</a>
                     </div>
-
                     <div class="job-inf">
                       <div class="job-main-skill">
                         <i class="fa fa-code" aria-hidden="true"></i> <a> {{p.codeJob}}</a>
@@ -96,18 +102,17 @@
                   </div>
                 </div>
               </div>
-
               <div class="readmorestyle-wrap">
-                <!--              <a  class="readallstyle reads1" routerLink="/detailsJob/{{p.idJob}}">Xem thêm</a>-->
               </div>
             </div>
           </div>
           <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
-
         </div>
 
         <!-- (end) job board -->
+
         <!-- sidebar -->
+
         <div class="col-md-4 col-sm-12 col-12 clear-left">
           <div class="job-sidebar">
             <h2 class="widget-title">
@@ -174,17 +179,19 @@
               </ul>
             </div>
           </div>
-
           <div class="job-sidebar">
             <div class="sb-banner">
               <img src="../../../assets/img/ads1.jpg" class="advertisement">
             </div>
           </div>
         </div>
+
         <!-- (end) sidebar -->
+
       </div>
     </div>
   </div>
+
   <!-- (end) job board & sidebar section  -->
 
   <div class="clearfix"></div>
@@ -223,6 +230,7 @@
       });
     })
   </script>
+
   <!-- (end) job board v2 -->
 
   <div class="clearfix"></div>
@@ -232,6 +240,7 @@
   <div class="clearfix"></div>
 
   <!-- all job -->
+
   <div class="container-fluid">
     <div class="container job-best-salary">
       <div class="row">
@@ -275,6 +284,7 @@
   </div>
 
   <!-- job-best-salary -->
+
   <div class="container-fluid">
     <div class="container job-best-salary">
       <div class="row">
@@ -303,8 +313,8 @@
       </div>
     </div>
   </div>
-
 </div>
+
 <!-- (end) job-best-salary -->
 
 <!-- (end) job-best-salary -->
@@ -329,6 +339,7 @@
 <p-toast position="bottom-center" key="bc"></p-toast>
 
 <!-- news -->
+
 <div class="container-fluid">
   <div class="container news-wrapper">
     <div class="row">
@@ -405,15 +416,16 @@
               các phương án ứng phó tốc độ và hiệu quả để giải quyết bài toán về tìn...
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <!-- (end) news -->
 
 <!-- job support -->
+
 <div class="container-fluid job-support-wrapper">
   <div class="container-fluid job-support-wrap">
     <div class="container job-support">
@@ -441,9 +453,11 @@
     </div>
   </div>
 </div>
+
 <!-- (end) job support -->
 
 <!-- footer -->
+
 <div class="container-fluid footer-wrap  clear-left clear-right">
   <div class="container footer">
     <div class="row">
@@ -542,15 +556,17 @@
     lessLink: '<a href="#">Rút gọn<i class="fa fa-angle-up pl-2"></i></a>'
   });
 </script>
+
 <!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 <script src="js/jquery-3.4.1.slim.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/select2.min.js"></script>
 <script src="js/jobdata.js"></script>
 
-<!-- <script type="text/javascript" src="js/pagination.js"></script> -->
 <!-- Owl Stylesheets Javascript -->
+
 <script src="js/owlcarousel/owl.carousel.js"></script>
+
 <!-- Read More Plugin -->

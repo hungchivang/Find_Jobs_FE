@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-<!--    <a class="navbar-brand" href="#">Admin</a>-->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -15,13 +15,13 @@
         <li class="nav-item">
           <a class="nav-link active" routerLink="/adminJob">Quản lý bài đăng</a>
         </li>
-
       </ul>
     </div>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <form class="d-flex" [formGroup]="formsearch" (ngSubmit)="seagchbynameUser()">
-          <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search" formControlName="name">
+          <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search"
+                 formControlName="name">
           <button class="btn btn-outline-success" type="submit">Tìm</button>
         </form>
       </div>
@@ -30,50 +30,41 @@
   </div>
 </nav>
 <h2 style="text-align: center">Danh sách người dùng</h2>
-      <div class="page-content">
+<div class="page-content">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col" style="text-align: center">Tên người dùng</th>
+      <th scope="col" style="text-align: center">Hình ảnh</th>
+      <th scope="col" style="text-align: center">Email</th>
+      <th scope="col" style="text-align: center">Số điện thoại</th>
+      <th scope="col" style="text-align: center">Mật khẩu</th>
+      <th scope="col" style="text-align: center">Địa chỉ</th>
+      <th scope="col" style="text-align: center">Khóa tài khoản</th>
+    </tr>
+    </thead>
 
-        <table class="table">
-          <thead class="thead-dark">
-          <tr>
-
-            <th scope="col" style="text-align: center">Tên người dùng</th>
-            <th scope="col" style="text-align: center">Hình ảnh</th>
-            <th scope="col" style="text-align: center">Email</th>
-            <th scope="col" style="text-align: center">Số điện thoại</th>
-            <th scope="col" style="text-align: center">Mật khẩu</th>
-            <th scope="col" style="text-align: center">Địa chỉ</th>
-            <th scope="col" style="text-align: center">Khóa tài khoản</th>
-
-          </tr>
-          </thead>
-
-          <tr *ngFor="let p of ListAccount  | paginate:{itemsPerPage: 6, currentPage: p, totalItems: total }">
-
-            <th scope="row" style="text-align: center">{{p.name}}</th>
-            <td><img src="{{p.avatar}}" width="100" height="70"></td>
-            <th scope="row" style="text-align: center">{{p.email}}</th>
-            <th scope="row" style="text-align: center">{{p.phone}}</th>
-                        <th scope="row" style="text-align: center">{{p.password}}</th>
-            <th scope="row" style="text-align: center">{{p.address}}</th>
-            <!--            <th scope="row" style="text-align: center">{{p.website}}</th>-->
-            <td scope="row" style="text-align: center">
-              <div class="custom-control custom-switch">
-
-                <div *ngIf="p.status">
-                  <input type="checkbox" class="custom-control-input" id="customSwitch1{{p.name}}" checked>
-                  <label class="custom-control-label" for="customSwitch1{{p.name}}" (click)="blockUser(p.id)">Active</label>
-                </div>
-                <div *ngIf="!p.status">
-                  <input type="checkbox" class="custom-control-input" id="customSwitch2{{p.name}}">
-                  <label class="custom-control-label" for="customSwitch2{{p.name}}" (click)="blockUser(p.id)">Block</label>
-                </div>
-              </div>
-            </td>
-            <td scope="row" style="text-align: center"></td>
-
-          </tr>
-
-        </table>
-        <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
-
-      </div>
+    <tr *ngFor="let p of ListAccount  | paginate:{itemsPerPage: 6, currentPage: p, totalItems: total }">
+      <th scope="row" style="text-align: center">{{p.name}}</th>
+      <td><img src="{{p.avatar}}" width="100" height="70"></td>
+      <th scope="row" style="text-align: center">{{p.email}}</th>
+      <th scope="row" style="text-align: center">{{p.phone}}</th>
+      <th scope="row" style="text-align: center">{{p.password}}</th>
+      <th scope="row" style="text-align: center">{{p.address}}</th>
+      <td scope="row" style="text-align: center">
+        <div class="custom-control custom-switch">
+          <div *ngIf="p.status">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1{{p.name}}" checked>
+            <label class="custom-control-label" for="customSwitch1{{p.name}}" (click)="blockUser(p.id)">Active</label>
+          </div>
+          <div *ngIf="!p.status">
+            <input type="checkbox" class="custom-control-input" id="customSwitch2{{p.name}}">
+            <label class="custom-control-label" for="customSwitch2{{p.name}}" (click)="blockUser(p.id)">Block</label>
+          </div>
+        </div>
+      </td>
+      <td scope="row" style="text-align: center"></td>
+    </tr>
+  </table>
+  <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
+</div>
