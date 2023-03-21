@@ -11,42 +11,13 @@
 <div class="container-fluid fluid-nav another-page">
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <a href="#" class="nav-logo">
+      <a routerLink="/homeCompany" class="nav-logo">
         <img src="assets/img/techjobs_bgb.png">
       </a>
-      <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        <i class="fa fa-bars icn-res" aria-hidden="true"></i>
-
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto tnav-left tn-nav">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/homeCompany">Trang Chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/informationCompany">Doanh Nghiệp</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" >Tin mới</a>
-              <a class="dropdown-item" routerLink="/informationCompany">Doanh nghiệp</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" routerLink="/login">Log out</a>
-            </div>
-          </li>
-        </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" >{{company.short_name}}</a>
+            <a class="nav-link" > Xin chào {{company.short_name}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true">Đăng Tuyển</a>
@@ -70,7 +41,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="home-ads">
-          <a href="#">
+          <a>
             <img src="assets/img/hna2.jpg">
           </a>
         </div>
@@ -269,7 +240,7 @@
               <span><i class="fa fa-question-circle pr-2 icsp"></i>Hỗ trợ nhà tuyển dụng:</span>
             </li>
             <li>
-              <span><i class="fa fa-phone pr-2 icsp"></i>0123.456.789</span>
+              <span><i class="fa fa-phone pr-2 icsp"></i>19006868</span>
             </li>
           </ul>
         </div>
@@ -294,27 +265,27 @@
     <div class="row">
       <div class="col-md-4 col-sm-8 col-12">
         <h2 class="footer-heading">
-          <span>About</span>
+          <span>Giới thiệu</span>
         </h2>
         <p class="footer-content">
-          Discover the best way to find houses, condominiums, apartments and HDBs for sale and rent in Singapore with JobsOnline, Singapore's Fastest Growing Jobs Portal.
+          Khám phá cách tốt nhất để tìm vệc làm IT qua Cổng thông tin việc làm phát triển nhanh nhất Việt Nam.
         </p>
         <ul class="footer-contact">
           <li>
-            <a href="#">
-              <i class="fa fa-phone fticn"></i> +123 456 7890
+            <a>
+              <i class="fa fa-phone fticn"></i> 19006868
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-envelope fticn"></i>
-              hello@123.com
+              support@techjob.com
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-map-marker fticn"></i>
-              33 Xô Viết Nghệ Tĩnh, Đà Nẵng
+              Số 23, Lô TT01, Hàm Nghi, Mỹ Đình, Hà Nội
             </a>
           </li>
         </ul>
@@ -324,43 +295,43 @@
           <span>Ngôn ngữ nổi bật</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Javascript</a></li>
-          <li><a href="#">Java</a></li>
-          <li><a href="#">Frontend</a></li>
-          <li><a href="#">SQL Server</a></li>
-          <li><a href="#">.NET</a></li>
+          <li><a>Java</a></li>
+          <li><a>Javascript</a></li>
+          <li><a>PHP</a></li>
+          <li><a>.NET</a></li>
+          <li><a>SQL Server</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả ngành nghề</span>
+          <span>Ngành nghề</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Lập trình viên</a></li>
-          <li><a href="#">Kiểm thử phần mềm</a></li>
-          <li><a href="#">Kỹ sư cầu nối</a></li>
-          <li><a href="#">Quản lý dự án</a></li>
+          <li><a>Quản lý dự án</a></li>
+          <li><a>Lập trình viên</a></li>
+          <li><a>Kiểm thử phần mềm</a></li>
+          <li><a>Kỹ sư cầu nối</a></li>
+          <li><a>Nhân sự</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả hình thức</span>
+          <span>Hình thức</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Nhân viên chính thức</a></li>
-          <li><a href="#">Nhân viên bán thời gian</a></li>
-          <li><a href="#">Freelancer</a></li>
+          <li><a>Nhân viên chính thức</a></li>
+          <li><a>Nhân viên bán thời gian</a></li>
+          <li><a>Freelancer</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-12 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả tỉnh thành</span>
+          <span>Địa điểm</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Hồ Chính Minh</a></li>
-          <li><a href="#">Hà Nội</a></li>
-          <li><a href="#">Đà Nẵng</a></li>
-          <li><a href="#">Buôn Ma Thuột</a></li>
+          <li><a>Hà Nội</a></li>
+          <li><a>Đà Nẵng</a></li>
+          <li><a>Hồ Chí Minh</a></li>
         </ul>
       </div>
     </div>
@@ -370,7 +341,7 @@
 <footer class="container-fluid copyright-wrap">
   <div class="container copyright">
     <p class="copyright-content">
-      Copyright © 2020 <a href="#"> Tech<b>Job</b></a>. All Right Reserved.
+      Copyright © 2023 <a> Tech<b>Job</b></a>. All Right Reserved.
     </p>
   </div>
 </footer>

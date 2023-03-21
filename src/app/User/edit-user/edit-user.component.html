@@ -4,18 +4,22 @@
       rel="stylesheet">
 
 <!-- Font Awesome -->
+
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 <!-- select 2 css -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- main nav -->
+
 <div class="container-fluid fluid-nav another-page">
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
       <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <a href="#" class="nav-logo">
+      <a routerLink="/home" class="nav-logo">
         <img src="assets/img/techjobs_bgb.png">
       </a>
       <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse"
@@ -23,39 +27,19 @@
               aria-label="Toggle navigation">
         <!-- <span class="navbar-toggler-icon"></span> -->
         <i class="fa fa-bars icn-res" aria-hidden="true"></i>
-
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto tnav-left tn-nav">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/homeCompany">Trang Chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/informationCompany">Doanh Nghiệp</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item">Tin mới</a>
-              <a class="dropdown-item" routerLink="/informationCompany">Doanh nghiệp</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" routerLink="/login">Log out</a>
-            </div>
-          </li>
-        </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>
+
+      <!--Đổi mật khẩu-->
+
+          <li class="nav-item">
+            <a class="nav-link" > Xin chào {{account.email}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true">Đăng Tuyển</a>
+            <a type="button" class="nav-link btn-employers" tabindex="-1" aria-disabled="true" data-bs-toggle="modal" data-bs-target="#myModal">
+              Đổi mật khẩu
+            </a>
           </li>
         </ul>
       </div>
@@ -76,7 +60,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="home-ads">
-          <a href="#">
+          <a>
             <img src="assets/img/hna2.jpg">
           </a>
         </div>
@@ -92,9 +76,7 @@
     <div class="row">
       <div class="col-md-8 col-sm-12 col-12 recuitment-inner">
         <form class="recuitment-form" [formGroup]="formEditUser" (ngSubmit)="edit()">
-
           <div class="accordion" id="accordionExample">
-
             <div class="card recuitment-card">
               <div class="card-header recuitment-card-header" id="heading4">
                 <h2 class="mb-0">
@@ -110,7 +92,6 @@
               <div id="collapse4" class="collapse show" aria-labelledby="heading4" data-parent="#collapse4">
                 <div class="card-body recuitment-body">
                   <div class="form-group row">
-
                     <div class="col-sm-9">
                       <input type="text" class="form-control" formControlName="id" hidden="">
                       <input type="text" class="form-control" formControlName="idCompany" hidden="">
@@ -122,75 +103,45 @@
 
                     <div class="form-group" hidden="">
                       <fieldset formGroupName="role">
-                        <!--                        <select class="form-control" formControlName="id"  >-->
-                        <!--                          <option value=""></option>-->
-                        <!--                          <option value="1">Doanh Nghiệp</option>-->
-                        <!--                        </select>-->
-                        <!--                      </fieldset>-->
-                        <!--                    </div>-->
-                        <!--                    <div class="form-group" hidden="">-->
-                        <!--                      <fieldset formGroupName="account">-->
-                        <!--                        <select class="form-control" formControlName="id"  >-->
-                        <!--                          <option value=""></option>-->
-                        <!--                        </select>-->
                       </fieldset>
                     </div>
                     <!--                    ddad------------------------------>
+
                   </div>
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label text-right label">Email<span style="color: red"
-                                                                                       class="pl-2">*</span></label>
+                    <label class="col-sm-3 col-form-label text-right label">Email<span style="color: red" class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" placeholder="Email" formControlName="email" readonly>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label text-right label">Mật khẩu <span style="color: red"
-                                                                                           class="pl-2">*</span></label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" placeholder="Mật khẩu" formControlName="password"/>
-                      <p *ngIf="!formEditUser.get('password')?.errors?.['pattern'] && formEditUser.get('password')?.touched"
-                         style="color: red; margin-top: 10px">Mật khẩu không hợp lệ (8->16 kí tự)</p>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-3 col-form-label text-right label">Họ và tên<span style="color: red"
-                                                                                           class="pl-2">*</span></label>
+                    <label class="col-sm-3 col-form-label text-right label">Họ và tên<span style="color: red" class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" placeholder="Họ và tên" formControlName="name"/>
                       <p *ngIf="!formEditUser.get('name')?.valid && formEditUser.get('name')?.touched" style="color: red">Không được để trống</p>
-
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label text-right label">Địa chỉ<span style="color: red"
-                                                                                         class="pl-2">*</span></label>
+                    <label class="col-sm-3 col-form-label text-right label">Địa chỉ<span style="color: red" class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" placeholder="Nhập địa chỉ" formControlName="address"/>
                       <p *ngIf="!formEditUser.get('address')?.valid && formEditUser.get('address')?.touched" style="color: red">Không được để trống</p>
-
                     </div>
-
                   </div>
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label text-right label">Điện thoại<span style="color: red"
-                                                                                            class="pl-2">*</span></label>
+                    <label class="col-sm-3 col-form-label text-right label">Điện thoại<span style="color: red" class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" placeholder="Nhập số điện thoại" formControlName="phone"/>
                       <p *ngIf="!formEditUser.get('phone')?.valid && formEditUser.get('phone')?.touched" style="color: red">Không được để trống(10 chữ số ,bắt đầu từ 0)</p>
-
                     </div>
-
                   </div>
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-right label">Mô tả <span style="color: red" class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <input type="email" class="form-control" placeholder="Mô tả" formControlName="description"/>
                       <p *ngIf="!formEditUser.get('description')?.valid && formEditUser.get('description')?.touched" style="color: red">Không được để trống</p>
-
                     </div>
                   </div>
-
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-right label">Avatar</label>
                     <div class="col-sm-9 ">
@@ -199,35 +150,21 @@
                         <input id="fileElem" #imageInput type="file" accept="/images/*" (change)="processFile(imageInput)" >
                         <label style="cursor: pointer;" for="fileElem">Tải ảnh lên hoặc kéo thả vào đây</label>
                         <progress id="progress-bar" max=100 value=0 class="d-none"></progress>
-
-
                         <div *ngIf="selectedFile" class="img-preview-container">
-
-                          <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
-                               [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
+                          <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}" [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
                           </div>
-
                           <div *ngIf="selectedFile.pending" class="img-loading-overlay">
                             <div class="img-spinning-circle"></div>
                           </div>
-
                           <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
                           <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
                         </div>
-
-
                         <div id="gallery"></div>
                       </div>
-
-
-
                   </div>
                 </div>
-
               </div>
             </div>
-
-
           </div>
           <div class="rec-submit">
             <button type="submit" class="btn-submit-recuitment" name="">
@@ -236,7 +173,6 @@
           </div>
           </div>
         </form>
-
       </div>
       <!-- Side bar -->
       <div class="col-md-4 col-sm-12 col-12">
@@ -248,8 +184,6 @@
             <h4></h4>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
@@ -258,7 +192,6 @@
 <!-- (end) published recuitment -->
 
 <div class="clearfix"></div>
-
 
 <!-- job support -->
 <div class="container-fluid job-support-wrapper">
@@ -271,7 +204,7 @@
               <span><i class="fa fa-question-circle pr-2 icsp"></i>Hỗ trợ nhà tuyển dụng:</span>
             </li>
             <li>
-              <span><i class="fa fa-phone pr-2 icsp"></i>0123.456.789</span>
+              <span><i class="fa fa-phone pr-2 icsp"></i>19006868</span>
             </li>
           </ul>
         </div>
@@ -290,35 +223,33 @@
 </div>
 <!-- (end) job support -->
 
-
 <!-- footer -->
 <div class="container-fluid footer-wrap  clear-left clear-right">
   <div class="container footer">
     <div class="row">
       <div class="col-md-4 col-sm-8 col-12">
         <h2 class="footer-heading">
-          <span>About</span>
+          <span>Giới thiệu</span>
         </h2>
         <p class="footer-content">
-          Discover the best way to find houses, condominiums, apartments and HDBs for sale and rent in Singapore with
-          JobsOnline, Singapore's Fastest Growing Jobs Portal.
+          Khám phá cách tốt nhất để tìm vệc làm IT qua Cổng thông tin việc làm phát triển nhanh nhất Việt Nam.
         </p>
         <ul class="footer-contact">
           <li>
-            <a href="#">
-              <i class="fa fa-phone fticn"></i> +123 456 7890
+            <a  style="text-align: center">
+              <i class="fa fa-phone fticn"></i> 19006868
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-envelope fticn"></i>
-              hello@123.com
+              support@techjob.com
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-map-marker fticn"></i>
-              33 Xô Viết Nghệ Tĩnh, Đà Nẵng
+              Số 23, Lô TT01, Hàm Nghi, Mỹ Đình, Hà Nội
             </a>
           </li>
         </ul>
@@ -328,47 +259,45 @@
           <span>Ngôn ngữ nổi bật</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Javascript</a></li>
-          <li><a href="#">Java</a></li>
-          <li><a href="#">Frontend</a></li>
-          <li><a href="#">SQL Server</a></li>
-          <li><a href="#">.NET</a></li>
+          <li><a>Java</a></li>
+          <li><a>Javascript</a></li>
+          <li><a>PHP</a></li>
+          <li><a>.NET</a></li>
+          <li><a>SQL Server</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả ngành nghề</span>
+          <span>Ngành nghề</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Lập trình viên</a></li>
-          <li><a href="#">Kiểm thử phần mềm</a></li>
-          <li><a href="#">Kỹ sư cầu nối</a></li>
-          <li><a href="#">Quản lý dự án</a></li>
+          <li><a>Quản lý dự án</a></li>
+          <li><a>Lập trình viên</a></li>
+          <li><a>Kiểm thử phần mềm</a></li>
+          <li><a>Kỹ sư cầu nối</a></li>
+          <li><a>Nhân sự</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả hình thức</span>
+          <span>Hình thức</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Nhân viên chính thức</a></li>
-          <li><a href="#">Nhân viên bán thời gian</a></li>
-          <li><a href="#">Freelancer</a></li>
+          <li><a>Nhân viên chính thức</a></li>
+          <li><a>Nhân viên bán thời gian</a></li>
+          <li><a>Freelancer</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-12 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả tỉnh thành</span>
+          <span>Địa điểm</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Hồ Chính Minh</a></li>
-          <li><a href="#">Hà Nội</a></li>
-          <li><a href="#">Đà Nẵng</a></li>
-          <li><a href="#">Buôn Ma Thuột</a></li>
+          <li><a>Hà Nội</a></li>
+          <li><a>Đà Nẵng</a></li>
+          <li><a>Hồ Chí Minh</a></li>
         </ul>
       </div>
-
-
     </div>
   </div>
 </div>
@@ -376,7 +305,36 @@
 <footer class="container-fluid copyright-wrap">
   <div class="container copyright">
     <p class="copyright-content">
-      Copyright © 2020 <a href="#"> Tech<b>Job</b></a>. All Right Reserved.
+      Copyright © 2023 <a> Tech<b>Job</b></a>. All Right Reserved.
     </p>
   </div>
 </footer>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form [formGroup]="formEditPassword" (ngSubmit)="EditPassword1()">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Đổi mật khẩu</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="col-sm-12">
+            <input type="password" class="form-control" placeholder="Nhập mật khẩu cũ" formControlName="password"/>
+            <input type="password" class="form-control" placeholder="Nhập mật khẩu mới" formControlName="passwordNew"/>
+            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu " formControlName="password2"/>
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

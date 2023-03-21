@@ -10,12 +10,10 @@
 <div class="container-fluid fluid-nav" >
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
       <a class="nav-logo">
         <img src="assets/img/techjobs_bgb.png">
       </a>
       <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- <span class="navbar-toggler-icon"></span> -->
         <i class="fa fa-bars icn-res" aria-hidden="true"></i>
 
       </button>
@@ -25,24 +23,10 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/informationCompany">Thông tin Doanh nghiệp</a>
           </li>
-<!--          <li class="nav-item dropdown">-->
-<!--            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--              Dropdown-->
-<!--            </a>-->
-<!--            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">-->
-<!--              <a class="dropdown-item" >Tin mới</a>-->
-<!--              <a class="dropdown-item" routerLink="/informationCompany">Doanh nghiệp</a>-->
-<!--              <div class="dropdown-divider"></div>-->
-<!--              <a class="dropdown-item" routerLink="/login">Log out</a>-->
-<!--            </div>-->
-<!--          </li>-->
         </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
-<!--          <li class="nav-item active">-->
-<!--            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>-->
-<!--          </li>-->
           <li class="nav-item">
-            <a class="nav-link" >Xin chào {{company.email}}</a>
+            <a class="nav-link">Xin chào {{company.email}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true">Đăng tuyển</a>
@@ -69,16 +53,6 @@
   <div class="banner-content">
     <h3>{{company.name}}</h3>
     <div class="banner-tags">
-<!--      <ul>-->
-<!--        <li><a href="#">Java</a></li>-->
-<!--        <li><a href="#">Python</a></li>-->
-<!--        <li><a href="#">Tester</a></li>-->
-<!--        <li><a href="#">QA QC</a></li>-->
-<!--        <li><a href="#">.NET</a></li>-->
-<!--        <li><a href="#">Javascript</a></li>-->
-<!--        <li><a href="#">Business Analyst</a></li>-->
-<!--        <li><a href="#">Designer</a></li>-->
-<!--      </ul>-->
     </div>
   </div>
 </div>
@@ -167,7 +141,7 @@
                     </div>
                   </div>
 
-<!--block------------->
+      <!--block-->
                   <div class="custom-control custom-switch">
 
                     <div *ngIf="list.statusJob == 1">
@@ -178,7 +152,6 @@
                       <input type="checkbox" class="custom-control-input" id="customSwitch2" >
                       <label class="custom-control-label" for="customSwitch2" (click)="blockJobByEmail(list.idJob)">Block</label>
                     </div>
-
                   </div>
                   <div class="readmorestyle-wrap">
                     <a routerLink="/InfoJobDetail/{{list.idJob}}" class="readallstyle reads1">Xem chi tiết</a>
@@ -187,9 +160,7 @@
                 <div class="wrap-btn-appl">
                 </div>
               </div>
-
             </div>
-
           </div>
         </div>
           <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
@@ -260,12 +231,6 @@
             </ul>
           </div>
         </div>
-
-<!--        <div class="job-sidebar">-->
-<!--          <div class="sb-banner">-->
-<!--            <img src="assets/img/ads1.jpg" class="advertisement">-->
-<!--          </div>-->
-<!--        </div>-->
       </div>
       <!-- (end) sidebar -->
     </div>
@@ -315,100 +280,6 @@
 
 <div class="clearfix"></div>
 
-<!-- top employer -->
-<!--<div class="container-fluid">-->
-<!--  <div class="container top-employer">-->
-<!--    <div class="row">-->
-<!--      <div class="col-md-12 top-employer-contain">-->
-<!--        <div class="header">-->
-<!--          <h3>Nhà tuyển dùng hàng đầu</h3>-->
-<!--        </div>-->
-<!--        <div class="row">-->
-<!--          <div class="col-md-3 col-sm-6 col-12 top-employer-wrap">-->
-<!--            <div class="top-employer-item">-->
-<!--              <a href="#">-->
-<!--                <div class="emp-img-thumb">-->
-<!--                  <img src="assets/img/fpt-logo.png">-->
-<!--                </div>-->
-<!--                <h3 class="company">FPT Software</h3>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="col-md-3 col-sm-6 col-12 top-employer-wrap">-->
-<!--            <div class="top-employer-item">-->
-<!--              <a href="#">-->
-<!--                <div class="emp-img-thumb">-->
-<!--                  <img src="assets/img/nvg-logo.png">-->
-<!--                </div>-->
-<!--                <h3 class="company">mgm technology</h3>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="col-md-3 col-sm-6 col-12 top-employer-wrap">-->
-<!--            <div class="top-employer-item">-->
-<!--              <a href="#">-->
-<!--                <div class="emp-img-thumb">-->
-<!--                  <img src="assets/img/alipay-logo.png">-->
-<!--                </div>-->
-<!--                <h3 class="company">ALIPAY Software</h3>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="col-md-3 col-sm-6 col-12 top-employer-wrap">-->
-<!--            <div class="top-employer-item">-->
-<!--              <a href="#">-->
-<!--                <div class="emp-img-thumb">-->
-<!--                  <img src="assets/img/luxoft-vietnam-logo.png">-->
-<!--                </div>-->
-<!--                <h3 class="company">Luxoft Software</h3>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="col-md-3 col-sm-6 col-12 top-employer-wrap">-->
-<!--            <div class="top-employer-item">-->
-<!--              <a href="#">-->
-<!--                <div class="emp-img-thumb">-->
-<!--                  <img src="assets/img/techcombank-logo.png">-->
-<!--                </div>-->
-<!--                <h3 class="company">Techcombank</h3>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="col-md-3 col-sm-6 col-12 top-employer-wrap">-->
-<!--            <div class="top-employer-item">-->
-<!--              <a href="#">-->
-<!--                <div class="emp-img-thumb">-->
-<!--                  <img src="assets/img/home-credit.png">-->
-<!--                </div>-->
-<!--                <h3 class="company">Home Credit</h3>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="col-md-3 col-sm-6 col-12 top-employer-wrap">-->
-<!--            <div class="top-employer-item">-->
-<!--              <a href="#">-->
-<!--                <div class="emp-img-thumb">-->
-<!--                  <img src="assets/img/grab-vietnam.png">-->
-<!--                </div>-->
-<!--                <h3 class="company">Grab (Vietnam) Ltd.</h3>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="col-md-3 col-sm-6 col-12 top-employer-wrap">-->
-<!--            <div class="top-employer-item">-->
-<!--              <a href="#">-->
-<!--                <div class="emp-img-thumb">-->
-<!--                  <img src="assets/img/HINH.png">-->
-<!--                </div>-->
-<!--                <h3 class="company">Techbase Vietnam</h3>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 <!-- (end) top employer -->
 
 <div class="clearfix"></div>
@@ -420,7 +291,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="home-ads">
-          <a href="#">
+          <a>
             <img src="assets/img/hna.jpg">
           </a>
         </div>
@@ -440,36 +311,41 @@
       </div>
       <div class="col-md-4 col-sm-12 col-12 news-item">
         <div class="news-item-inner">
-          <a href="#wrap">
-            <div class="news-thumb" style="background-image: url(assets/img/news1.jpg);"></div>
+          <a
+            href="https://www.vietnamworks.com/hrinsider/5-thoi-diem-doanh-nghiep-khong-duoc-buoc-nguoi-lao-dong-thoi-viec.html">
+            <div class="news-thumb" style="background-image: url(../../../assets/img/news1.jpg);"></div>
           </a>
           <div class="news-details">
             <div class="tags">
-              <a href="#tag1">Quyền lợi nhân viên</a>
+              <a
+                href="https://www.vietnamworks.com/hrinsider/5-thoi-diem-doanh-nghiep-khong-duoc-buoc-nguoi-lao-dong-thoi-viec.html">Quyền
+                lợi nhân viên</a>
             </div>
             <div class="title">
-              <a href="#">
+              <a
+                href="https://www.vietnamworks.com/hrinsider/5-thoi-diem-doanh-nghiep-khong-duoc-buoc-nguoi-lao-dong-thoi-viec.html">
                 5 thời điểm doanh nghiệp không được buộc người lao động thôi việc
               </a>
             </div>
             <div class="meta">
-              Khi nào thì người sử dụng lao động được quyền đơn phương chấm dứt hợp đồng khi nào thì không? Cùng tham khảo bài viết sau đây để hiểu thêm về quyền lợi của người lao động Việt Nam nhé!
+              Khi nào thì người sử dụng lao động được quyền đơn phương chấm dứt hợp đồng khi nào thì không? Cùng tham
+              khảo bài viết sau đây để hiểu thêm về quyền lợi của người lao động Việt Nam nhé!
             </div>
           </div>
-
         </div>
       </div>
       <div class="col-md-4 col-sm-12 col-12 news-item">
         <div class="news-item-inner">
-          <a href="#wrap">
-            <div class="news-thumb" style="background-image: url(assets/img/news2.jpg);"></div>
+          <a href="https://www.vietnamworks.com/hrinsider/nhay-viec-va-nhung-con-so-ban-can-phai-luu-tam.html">
+            <div class="news-thumb" style="background-image: url(../../../assets/img/news2.jpg);"></div>
           </a>
           <div class="news-details">
             <div class="tags">
-              <a href="#tag1">Trước khi nhảy việc</a>
+              <a href="https://www.vietnamworks.com/hrinsider/nhay-viec-va-nhung-con-so-ban-can-phai-luu-tam.html">Trước
+                khi nhảy việc</a>
             </div>
             <div class="title">
-              <a href="#">
+              <a href="https://www.vietnamworks.com/hrinsider/nhay-viec-va-nhung-con-so-ban-can-phai-luu-tam.html">
                 Nhảy việc và những con số bạn cần phải lưu tâm
               </a>
             </div>
@@ -482,20 +358,25 @@
       </div>
       <div class="col-md-4 col-sm-12 col-12 news-item">
         <div class="news-item-inner">
-          <a href="#wrap">
-            <div class="news-thumb" style="background-image: url(assets/img/news3.png);"></div>
+          <a
+            href="https://www.vietnamworks.com/hrinsider/danh-gia-buoc-dem-can-thiet-trong-viec-dao-tao-huan-luyen-nhan-vien.html">
+            <div class="news-thumb" style="background-image: url(../../../assets/img/news3.png);"></div>
           </a>
           <div class="news-details">
             <div class="tags">
-              <a href="#tag1">Huấn luyện nhân sự</a>
+              <a
+                href="https://www.vietnamworks.com/hrinsider/danh-gia-buoc-dem-can-thiet-trong-viec-dao-tao-huan-luyen-nhan-vien.html">Huấn
+                luyện nhân sự</a>
             </div>
             <div class="title">
-              <a href="#">
+              <a
+                href="https://www.vietnamworks.com/hrinsider/danh-gia-buoc-dem-can-thiet-trong-viec-dao-tao-huan-luyen-nhan-vien.html">
                 Đánh giá: bước đệm cần thiết trong việc đào tạo huấn luyện nhân viên
               </a>
             </div>
             <div class="meta">
-              Cú sốc về kinh tế do Covid-19 gây ra đã khiến cho nhiều doanh nghiệp lớn và nhỏ phải nhanh chóng tìm ra các phương án ứng phó tốc độ và hiệu quả để giải quyết bài toán về tìn...
+              Cú sốc về kinh tế do Covid-19 gây ra đã khiến cho nhiều doanh nghiệp lớn và nhỏ phải nhanh chóng tìm ra
+              các phương án ứng phó tốc độ và hiệu quả để giải quyết bài toán về tìn...
             </div>
           </div>
 
