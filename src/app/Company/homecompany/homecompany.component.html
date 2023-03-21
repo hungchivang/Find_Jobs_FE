@@ -6,8 +6,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-
-
 <!-- main nav -->
 <div class="container-fluid fluid-nav" >
   <div class="container cnt-tnar">
@@ -31,15 +29,10 @@
             <a class="nav-link" routerLink="/informationCompany">Doanh Nghiệp</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+            <a class="nav-link dropdown-toggle" routerLink="/confirmCompany" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Danh sách ứng tuyển
             </a>
-            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" >Tin mới</a>
-              <a class="dropdown-item" routerLink="/informationCompany">Doanh nghiệp</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" routerLink="/login">Log out</a>
-            </div>
+
           </li>
         </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
@@ -100,9 +93,11 @@
         </li>
       </ul>
       <div class="tab-content search-tab-content" id="myTabContent">
+
         <!-- content tab 1 -->
 
         <!-- (end) content tab 1 -->
+
         <!-- content tab 2 -->
         <div class="tab-pane stab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <form class="bn-search-form" [formGroup]="formSearchJobByTitle" (ngSubmit)="searchJobByTitleOfCompany()">
@@ -173,17 +168,18 @@
 <!--                  block------------->
                   <div class="custom-control custom-switch">
 
-                    <div *ngIf="list.statusJob">
+                    <div *ngIf="list.statusJob == 1">
                       <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
                       <label class="custom-control-label" for="customSwitch1" (click)="blockJobByEmail(list.idJob)">Active</label>
                     </div>
-                    <div *ngIf="!list.statusJob">
+                    <div *ngIf="list.statusJob == 0 ">
                       <input type="checkbox" class="custom-control-input" id="customSwitch2" >
                       <label class="custom-control-label" for="customSwitch2" (click)="blockJobByEmail(list.idJob)">Block</label>
                     </div>
+
                   </div>
                   <div class="readmorestyle-wrap">
-                    <a routerLink="/" class="readallstyle reads1">Xem chi tiết</a>
+                    <a routerLink="/InfoJobDetail/{{list.idJob}}" class="readallstyle reads1">Xem chi tiết</a>
                   </div>
                 </div>
                 <div class="wrap-btn-appl">
@@ -191,7 +187,6 @@
               </div>
 
             </div>
-
 
           </div>
         </div>
@@ -284,11 +279,7 @@
 </div>
 <!-- (end) job board & sidebar section  -->
 
-
-
 <div class="clearfix"></div>
-
-
 
 <!-- job board v2 -->
 
@@ -428,10 +419,7 @@
 
 <div class="clearfix"></div>
 
-
 <!-- job-best-salary -->
-
-
 
 <div class="container-fluid">
   <div class="container">
@@ -446,8 +434,6 @@
     </div>
   </div>
 </div>
-
-
 
 <div class="clearfix"></div>
 
@@ -631,8 +617,6 @@
           <li><a href="#">Buôn Ma Thuột</a></li>
         </ul>
       </div>
-
-
     </div>
   </div>
 </div>

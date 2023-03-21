@@ -16,8 +16,17 @@ import { BusinessUserDetailsComponent } from './Details/business-user-details/bu
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { InfoDetailCompanyComponent } from './Company/info-detail-company/info-detail-company.component';
+import { AdminJobComponent } from './admin-job/admin-job.component';
+import { AdminCompanyComponent } from './admin-company/admin-company.component';
+import { AdminUserComponent } from './admin-user/admin-user.component';
 import { ApplyJobComponent } from './User/apply-job/apply-job.component';
-
+import { ShowApplyJobComponent } from './User/show-apply-job/show-apply-job.component';
+import { CancelApplyJobComponent } from './User/cancel-apply-job/cancel-apply-job.component';
+import { ConfirmCompanyComponent } from './Company/confirm-company/confirm-company.component';
+import { ShowCVComponent } from './Company/show-cv/show-cv.component';
+import { Pipe, PipeTransform } from '@angular/core';
+import { SafePipePipe } from './safe-pipe.pipe';
+import { ZoomCVComponent } from './Company/zoom-cv/zoom-cv.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +42,17 @@ import { ApplyJobComponent } from './User/apply-job/apply-job.component';
     EditUserComponent,
     InfoDetailCompanyComponent,
     ApplyJobComponent,
+    InfoDetailCompanyComponent,
+    AdminJobComponent,
+    InfoDetailCompanyComponent,
+    AdminCompanyComponent,
+    AdminUserComponent,
+    ShowApplyJobComponent,
+    CancelApplyJobComponent,
+    ConfirmCompanyComponent,
+    ShowCVComponent,
+    SafePipePipe,
+    ZoomCVComponent
 
   ],
     imports: [
@@ -42,7 +62,6 @@ import { ApplyJobComponent } from './User/apply-job/apply-job.component';
         HttpClientModule,
         FormsModule,
         NgxPaginationModule,
-
     ],
 
   providers: [{

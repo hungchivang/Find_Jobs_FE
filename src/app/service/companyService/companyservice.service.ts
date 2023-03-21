@@ -24,6 +24,20 @@ export class CompanyserviceService {
   findOneConpanyByib(idJob:number):Observable<ListJobCompanyAccount>{
     return this.http.get<ListJobCompanyAccount>(`http://localhost:8080/company/businessUserDetails/${idJob}`)
   }
+  getallCompanyNoEmail(page:number):Observable<CompanyAndAccount[]>{
+    return this.http.get<CompanyAndAccount[]>("http://localhost:8080/admin/ShowCompanyAdmin"+'?page='+page)
+
+  }
+  blokCompany(id:number):Observable<void>{
+    return  this.http.get<void>(`http://localhost:8080/admin/blogComPany/${id}`);
+  }
+  searchbyCompany(name:string):Observable<CompanyAndAccount[]>{
+    return this.http.get<CompanyAndAccount[]>(`http://localhost:8080/admin/searchCompany/${name}`)
+  }
+
+
+
+
 
 
 

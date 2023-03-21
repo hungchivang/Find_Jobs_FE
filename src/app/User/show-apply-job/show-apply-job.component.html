@@ -1,0 +1,264 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap"
+      rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<!-- select 2 css -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- main nav -->
+<div class="container-fluid fluid-nav another-page">
+  <div class="container cnt-tnar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <a class="nav-logo">
+        <img src="assets/img/techjobs_bgb.png">
+      </a>
+      <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        <i class="fa fa-bars icn-res" aria-hidden="true"></i>
+
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto tnav-left tn-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Trang Chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="//edit/{{account.email}}">Thông tin cá nhân</a>
+          </li>
+<!--          <li class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"-->
+<!--               aria-haspopup="true" aria-expanded="false">-->
+<!--              Dropdown-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">-->
+<!--              <a class="dropdown-item">Tin mới</a>-->
+<!--              <a class="dropdown-item" routerLink="/informationCompany">Doanh nghiệp</a>-->
+<!--              <div class="dropdown-divider"></div>-->
+<!--              <a class="dropdown-item" routerLink="/login">Log out</a>-->
+<!--            </div>-->
+<!--          </li>-->
+        </ul>
+        <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
+
+          <li class="nav-item">
+            <a class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <a >Xin chào :{{account.email}}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+<!-- (end) main nav -->
+
+<div class="clearfix"></div>
+
+<!-- recuiter Nav -->
+
+<!--  recuiter Nav -->
+
+<!-- widget recuitment  -->
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="home-ads">
+          <a href="#">
+            <img src="assets/img/hna2.jpg">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- (end) widget recuitment  -->
+
+<!-- published recuitment -->
+<div class="container-fluid published-recuitment-wrapper">
+  <div class="container published-recuitment-content">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-12 recuitment-inner">
+        <form class="recuitment-form" >
+          <div class="page-content">
+            <table class="table">
+              <thead class="thead-dark">
+              <tr>
+                <th scope="col" style="text-align: center">#</th>
+                <th scope="col" style="text-align: center">Tên công ty</th>
+                <th scope="col" style="text-align: center">Tên công việc</th>
+                <th scope="col" style="text-align: center">Thông báo</th>
+                <th scope="col" style="text-align: center">Trạng thái apply</th>
+                <th scope="col" style="text-align: center">Trạng thái tuyển</th>
+                <th scope="col" style="text-align: center">Hành động</th>
+              </tr>
+              </thead>
+              <tr *ngFor="let apply of ListApplyJob | paginate:{itemsPerPage:5,currentPage:p,totalItems:total};let i = index" [attr.data-index]="i">
+                <th scope="row" style="text-align: center">{{i}}</th>
+                <th scope="row" style="text-align: center" routerLink="/businessUserDetails/{{apply.idJob}}">{{apply.short_name}}</th>
+                <th scope="row" style="text-align: center" routerLink="/detailsJob/{{apply.idJob}}">{{apply.title}}</th>
+                <th scope="row" style="text-align: center">{{apply.message}}</th>
+                <th scope="row" style="text-align: center" *ngIf="apply.statusApply == 1">Đã nộp cv</th>
+                <th scope="row" style="text-align: center" *ngIf="apply.statusApply == 0">Đã hủy nộp cv</th>
+                <th scope="row" style="text-align: center" *ngIf="apply.statusApply == 2">Doanh nghiệp đã xác nhận cv</th>
+                <th scope="row" style="text-align: center" *ngIf="apply.statusApply == 3">Doanh nghiệp đã hủy cv</th>
+                <th scope="row" style="text-align: center" *ngIf="apply.count == 0">Chưa được tuyển</th>
+                <th scope="row" style="text-align: center" *ngIf="apply.count == 1">Đã được tuyển</th>
+                <th scope="row" style="text-align: center" *ngIf="apply.count == 2">Không được tuyển</th>
+                <th *ngIf="apply.statusApply == 1 && apply.count == 0 " >
+                  <button type="button" class="btn btn-primary" (click)="cancelApplyJobUser(apply.idApply)">Cancel</button>
+                </th>
+                <th *ngIf="(apply.count == 0 && apply.statusApply == 0) || (apply.count == 0 && apply.statusApply == 3)
+                 || (apply.count == 0 && apply.statusApply == 2) || (apply.count == 1 && apply.statusApply == 0 )
+                 || (apply.count == 1 && apply.statusApply == 1)|| (apply.count == 1 && apply.statusApply == 2)
+                 || (apply.count == 1 && apply.statusApply == 3)">
+                  <button type="button" class="btn btn-secondary" >Unable</button>
+                </th>
+              </tr>
+            </table>
+          </div>
+
+        </form>
+        <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
+      </div>
+      <!-- Side bar -->
+
+    </div>
+  </div>
+</div>
+
+<!-- (end) published recuitment -->
+
+<div class="clearfix"></div>
+
+
+<!-- job support -->
+<div class="container-fluid job-support-wrapper">
+  <div class="container-fluid job-support-wrap">
+    <div class="container job-support">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-12">
+          <ul class="spp-list">
+            <li>
+              <span><i class="fa fa-question-circle pr-2 icsp"></i>Hỗ trợ nhà tuyển dụng:</span>
+            </li>
+            <li>
+              <span><i class="fa fa-phone pr-2 icsp"></i>0123.456.789</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-sm-12 col-12">
+          <div class="newsletter">
+            <span class="txt6">Đăng ký nhận bản tin việc làm</span>
+            <div class="input-group frm1">
+              <input type="text" placeholder="Nhập email của bạn" class="newsletter-email form-control">
+              <a href="#" class="input-group-addon"><i class="fa fa-lg fa-envelope-o colorb"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- (end) job support -->
+
+
+<!-- footer -->
+<div class="container-fluid footer-wrap  clear-left clear-right">
+  <div class="container footer">
+    <div class="row">
+      <div class="col-md-4 col-sm-8 col-12">
+        <h2 class="footer-heading">
+          <span>About</span>
+        </h2>
+        <p class="footer-content">
+          Discover the best way to find houses, condominiums, apartments and HDBs for sale and rent in Singapore with
+          JobsOnline, Singapore's Fastest Growing Jobs Portal.
+        </p>
+        <ul class="footer-contact">
+          <li>
+            <a href="#">
+              <i class="fa fa-phone fticn"></i> +123 456 7890
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-envelope fticn"></i>
+              hello@123.com
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-map-marker fticn"></i>
+              33 Xô Viết Nghệ Tĩnh, Đà Nẵng
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-4 col-12">
+        <h2 class="footer-heading">
+          <span>Ngôn ngữ nổi bật</span>
+        </h2>
+        <ul class="footer-list">
+          <li><a href="#">Javascript</a></li>
+          <li><a href="#">Java</a></li>
+          <li><a href="#">Frontend</a></li>
+          <li><a href="#">SQL Server</a></li>
+          <li><a href="#">.NET</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-6 col-12">
+        <h2 class="footer-heading">
+          <span>Tất cả ngành nghề</span>
+        </h2>
+        <ul class="footer-list">
+          <li><a href="#">Lập trình viên</a></li>
+          <li><a href="#">Kiểm thử phần mềm</a></li>
+          <li><a href="#">Kỹ sư cầu nối</a></li>
+          <li><a href="#">Quản lý dự án</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-6 col-12">
+        <h2 class="footer-heading">
+          <span>Tất cả hình thức</span>
+        </h2>
+        <ul class="footer-list">
+          <li><a href="#">Nhân viên chính thức</a></li>
+          <li><a href="#">Nhân viên bán thời gian</a></li>
+          <li><a href="#">Freelancer</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-12 col-12">
+        <h2 class="footer-heading">
+          <span>Tất cả tỉnh thành</span>
+        </h2>
+        <ul class="footer-list">
+          <li><a href="#">Hồ Chính Minh</a></li>
+          <li><a href="#">Hà Nội</a></li>
+          <li><a href="#">Đà Nẵng</a></li>
+          <li><a href="#">Buôn Ma Thuột</a></li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid copyright-wrap">
+  <div class="container copyright">
+    <p class="copyright-content">
+      Copyright © 2020 <a href="#"> Tech<b>Job</b></a>. All Right Reserved.
+    </p>
+  </div>
+</footer>

@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
           }else if(this.newAcc.role.id == 2){
             this.router.navigate(["/home"]);
           }else {
-            this.router.navigate([""]);
+            this.router.navigate(["/adminCompany"]);
           }
 
         } else {

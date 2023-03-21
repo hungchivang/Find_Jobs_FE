@@ -11,6 +11,14 @@ import {BusinessUserDetailsComponent} from "./Details/business-user-details/busi
 import {EditUserComponent} from "./User/edit-user/edit-user.component";
 import {InfoDetailCompanyComponent} from "./Company/info-detail-company/info-detail-company.component";
 import {ApplyJobComponent} from "./User/apply-job/apply-job.component";
+import {AdminJobComponent} from "./admin-job/admin-job.component";
+import {AdminCompanyComponent} from "./admin-company/admin-company.component";
+import {AdminUserComponent} from "./admin-user/admin-user.component";
+import {ShowApplyJobComponent} from "./User/show-apply-job/show-apply-job.component";
+import {CancelApplyJobComponent} from "./User/cancel-apply-job/cancel-apply-job.component";
+import {ConfirmCompanyComponent} from "./Company/confirm-company/confirm-company.component";
+import {ShowCVComponent} from "./Company/show-cv/show-cv.component";
+import {ZoomCVComponent} from "./Company/zoom-cv/zoom-cv.component";
 
 const routes: Routes = [
   {path:"registerCompany", component: RegistercompanyComponent },
@@ -24,6 +32,14 @@ const routes: Routes = [
   {path:'edit/:email', component: EditUserComponent },
   {path:'InfoJobDetail/:idJob', component: InfoDetailCompanyComponent },
   {path:'applyJob/:idJob', component: ApplyJobComponent },
+  {path:'adminJob', component: AdminJobComponent },
+  {path:"adminCompany", component: AdminCompanyComponent },
+  {path:"adminUser", component: AdminUserComponent },
+  {path:"showApplyJob", component: ShowApplyJobComponent },
+  {path:"cancelApplyJob/:idApply", component: CancelApplyJobComponent },
+  {path:"confirmCompany", component: ConfirmCompanyComponent },
+  {path:"showCV/:idApply", component: ShowCVComponent },
+  {path:"zoomCV/:idApply", component: ZoomCVComponent },
 
 ];
 

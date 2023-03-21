@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Job} from "../../model/Job";
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {ListTopCompany} from "../../model/ListTopCompany";
 import {Category} from "../../model/Category";
@@ -13,7 +12,6 @@ import {Locations} from "../../model/Locations";
 export class ShowJobService {
 
   constructor(private Http:HttpClient) {
-
   }
 
   getAllJob_Latest(page: number):Observable<ListJobCompanyAccount[]>{
@@ -34,6 +32,16 @@ export class ShowJobService {
 
   getTopCompany():Observable<ListTopCompany[]>{
     return this.Http.get<ListTopCompany[]>("http://localhost:8080/job/showTopCompany")
+  }
+
+  // Hiển thị Admin-job
+  getAdminJob(page: number):Observable<ListJobCompanyAccount[]>{
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/admin/showAdminJob" + '?page='+page)
+  }
+
+  // Hiển thị, khóa tin Admin
+  getBlogJob(id: number):Observable<void> {
+    return this.Http.get<void>(`http://localhost:8080/admin/blogJob/${id}`)
   }
 
   getallJob_byGuest():Observable<ListJobCompanyAccount[]>{

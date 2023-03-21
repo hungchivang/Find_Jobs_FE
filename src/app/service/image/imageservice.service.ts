@@ -19,4 +19,10 @@ export class ImageserviceService {
     formData.append('fileImg', image);
     return  this.http.post<any>('http://localhost:8080/account/upImg', formData)
   }
+
+  uploadImageForApplyCV(image: File): Observable<any>{
+    const formData = new FormData();
+    formData.append('fileImg', image);
+    return  this.http.post<any>('http://localhost:8080/applyJob/upImg', formData)
+  }
 }

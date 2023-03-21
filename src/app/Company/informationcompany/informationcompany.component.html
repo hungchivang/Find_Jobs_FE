@@ -1,4 +1,3 @@
-
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
 
@@ -112,7 +111,7 @@
                       <input type="text" class="form-control" formControlName="avatar" hidden="">
                       <input type="text" class="form-control" formControlName="status" hidden="">
                     </div>
-<!--                    ddad------------------------------>
+<!--ddad------------------------------>
 
                     <div class="form-group" hidden="">
                       <fieldset formGroupName="role">
@@ -129,7 +128,7 @@
                         </select>
                       </fieldset>
                     </div>
-                    <!--                    ddad------------------------------>
+<!-- ddad------------------------------>
                   </div>
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-right label">Tên công ty<span style="color: red" class="pl-2">*</span></label>
@@ -198,7 +197,6 @@
                         <label style="cursor: pointer;" for="fileElem">Tải ảnh lên hoặc kéo thả vào đây</label>
                         <progress id="progress-bar" max=100 value=0 class="d-none"></progress>
 
-
                         <div *ngIf="selectedFile" class="img-preview-container">
 
                           <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
@@ -212,7 +210,6 @@
                           <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
                           <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
                         </div>
-
 
                         <div id="gallery"></div>
                       </div>
@@ -233,8 +230,6 @@
                 </div>
               </div>
             </div>
-
-
           </div>
           <div class="rec-submit">
             <button type="submit" class="btn-submit-recuitment" name="">
@@ -254,9 +249,6 @@
             <h4>{{company.name}}</h4>
           </div>
         </div>
-
-
-
       </div>
     </div>
   </div>
@@ -265,10 +257,6 @@
 <!-- (end) published recuitment -->
 
 <div class="clearfix"></div>
-
-
-
-
 
 <!-- job support -->
 <div class="container-fluid job-support-wrapper">
@@ -299,7 +287,6 @@
   </div>
 </div>
 <!-- (end) job support -->
-
 
 <!-- footer -->
 <div class="container-fluid footer-wrap  clear-left clear-right">
@@ -376,8 +363,6 @@
           <li><a href="#">Buôn Ma Thuột</a></li>
         </ul>
       </div>
-
-
     </div>
   </div>
 </div>

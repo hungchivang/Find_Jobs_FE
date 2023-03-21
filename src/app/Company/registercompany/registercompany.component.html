@@ -108,7 +108,7 @@
                 <a href="#" class="fg-login d-inline-block"></a>
                 <a routerLink="/login" class="fg-login float-right d-inline-block" >Bạn đã có tài khoản? Đăng Nhập</a>
               </div>
-              <button type="submit" class="btn btn-primary float-right btn-login d-block w-100">Đăng Ký</button>
+              <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary float-right btn-login d-block w-100">Đăng Ký</button>
               <div class="form-group d-block w-100 mt-5">
                 <div class="text-or text-center">
                   <span>Hoặc</span>
