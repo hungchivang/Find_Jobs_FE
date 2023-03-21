@@ -50,7 +50,7 @@
             <a class="nav-link" >{{company.email}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true">Đăng tuyển</a>
+            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/create">Đăng tuyển</a>
           </li>
         </ul>
       </div>
@@ -184,6 +184,7 @@
           </h2>
 
           <div class="job-group" *ngFor="let list of listJob">
+
             <div class="job pagi">
               <div class="job-content">
                 <div class="job-logo">
@@ -232,6 +233,7 @@
 
                 </div>
                 <div class="wrap-btn-appl">
+                    <a href="#" class="btn btn-appl" routerLink="/editJob/{{list.idJob}}">Edit</a>
 
 
                 </div>

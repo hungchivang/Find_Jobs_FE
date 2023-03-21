@@ -1,5 +1,6 @@
 import {Company} from "./Company";
 import {Category} from "./Category";
+import {Locations} from "./Locations";
 
 export class Job{
   id : number;
@@ -13,12 +14,12 @@ export class Job{
   description:string;
   quantity:number;
   gender: string;
-  status:boolean;
-  location:Location;
+  status:number;
+  location:Locations;
   company:Company;
   category:Category;
 
-  constructor(id: number, title: string, code: string, salaryMin: number, salaryMax: number, address: string, expYear: number, expiredDate: Date, description: string, quantity: number, gender: string, status: boolean, location: Location, company: Company, category: Category) {
+  constructor(id: number, title: string, code: string, salaryMin: number, salaryMax: number, address: string, expYear: number, expiredDate: Date, description: string, quantity: number, gender: string, status: number, location: Locations, company: Company, category: Category) {
     this.id = id;
     this.title = title;
     this.code = code;
