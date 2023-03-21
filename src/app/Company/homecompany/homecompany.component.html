@@ -33,7 +33,7 @@
             <a class="nav-link">Xin chào {{company.email}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true">Đăng tuyển</a>
+            <a class="nav-link btn-employers" routerLink="/createJob" tabindex="-1" aria-disabled="true">Đăng tuyển</a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" routerLink="/login">Đăng
@@ -167,6 +167,11 @@
                       <label class="custom-control-label" for="customSwitch2" (click)="blockJobByEmail(list.idJob)">Block</label>
                     </div>
                   </div>
+
+                  <div class="wrap-btn-appl">
+                    <a href="#" class="btn btn-appl" routerLink="/editJob/{{list.idJob}}">Edit</a>
+                  </div>
+
                   <div class="readmorestyle-wrap">
                     <a routerLink="/InfoJobDetail/{{list.idJob}}" class="readallstyle reads1">Xem chi tiết</a>
                   </div>

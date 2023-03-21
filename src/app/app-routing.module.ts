@@ -14,6 +14,8 @@ import {AdminJobComponent} from "./admin-job/admin-job.component";
 import {AdminCompanyComponent} from "./admin-company/admin-company.component";
 import {AdminUserComponent} from "./admin-user/admin-user.component";
 import {AdminComponent} from "./admin/admin.component";
+import {CreateJobComponent} from "./Company/create-job/create-job.component";
+import {EditjobsComponent} from "./Company/editjobs/editjobs.component";
 
 const routes: Routes = [
   {path:"registerCompany", component: RegistercompanyComponent },
@@ -30,6 +32,8 @@ const routes: Routes = [
   {path:"adminCompany", component: AdminCompanyComponent },
   {path:"adminUser", component: AdminUserComponent },
   {path:"admin", component: AdminComponent },
+  {path:'createJob', component: CreateJobComponent },
+  {path:'editJob/:idJob', component: EditjobsComponent },
 
 ];
 

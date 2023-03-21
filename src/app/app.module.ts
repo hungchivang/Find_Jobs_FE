@@ -23,6 +23,9 @@ import {AdminComponent} from './admin/admin.component';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastModule} from 'primeng/toast';
+import {CreateJobComponent} from "./Company/create-job/create-job.component";
+import {EditjobsComponent} from "./Company/editjobs/editjobs.component";
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import {ToastModule} from 'primeng/toast';
     InfoDetailCompanyComponent,
     AdminCompanyComponent,
     AdminUserComponent,
-    AdminComponent
+    AdminComponent,
+    CreateJobComponent,
+    EditjobsComponent
 
   ],
   imports: [
@@ -50,7 +55,7 @@ import {ToastModule} from 'primeng/toast';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule,SplitButtonModule,BrowserAnimationsModule,ToastModule,ToastModule
+    NgxPaginationModule,SplitButtonModule,BrowserAnimationsModule,ToastModule,ToastModule,
 
   ],
 

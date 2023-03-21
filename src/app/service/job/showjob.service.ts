@@ -3,6 +3,8 @@ import {Observable} from "rxjs";
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {HttpClient} from "@angular/common/http";
 import {Job} from "../../model/Job";
+import {Category} from "../../model/Category";
+import {Locations} from "../../model/Locations";
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +23,12 @@ export class ShowjobService{
 
   searchJobByTitleAndEmailOfCompany(email : string,title:string):Observable<ListJobCompanyAccount[]>{
     return this.http.get<ListJobCompanyAccount[]>(`http://localhost:8080/company/searchJobByTitleAndEmailOfCompany?email=` + email +"&title=" +title);
+  }
+  getAllCategory():Observable<Category[]>{
+    return  this.http.get<Category[]>("http://localhost:8080/job/category")
+  }
+
+  getAllLocation():Observable<Locations[]>{
+    return  this.http.get<Locations[]>("http://localhost:8080/job/location")
   }
 }
