@@ -59,12 +59,12 @@ export class CreateJobComponent implements OnInit {
     address: new FormControl('', Validators.required),
     title: new FormControl('', Validators.required),
     category: new FormGroup({
-      id: new FormControl()
+      id: new FormControl("all_c")
     }, Validators.required),
     salaryMin: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]\d*$/), Validators.min(1)]),
     salaryMax: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]\d*$/), Validators.min(1)]),
     location: new FormGroup({
-      id: new FormControl()
+      id: new FormControl("all_l")
     }),
     expYear: new FormControl('', Validators.required),
     expiredDate: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]\d*$/), Validators.min(1)]),
@@ -111,16 +111,19 @@ export class CreateJobComponent implements OnInit {
     this.createJ.createJob(this.formCreate.value, this.accountToken.email).subscribe(data => {
       this.job = data
       console.log(data);
-    });
-    this.createJ.findAll().subscribe(data => {
-      this.job = data
+      this.successNotification();
+      this.router.navigate(['/homeCompany'])
     }, error => {
-      this.successNotification()
+      this.errorNotification();
       this.router.navigate(['/homeCompany'])
     });
   }
 
   successNotification() {
     Swal.fire('Đăng bài thành công!', '', 'success');
+  }
+
+  errorNotification() {
+    Swal.fire('Đăng bài thất bại!', '', 'error');
   }
 }

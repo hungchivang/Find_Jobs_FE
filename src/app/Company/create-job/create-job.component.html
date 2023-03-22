@@ -102,6 +102,7 @@
                                                                                            class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <select type="text" class="form-control" id="jobGender" formControlName="gender">
+                        <option value="" disabled selected>Chọn giới tính</option>
                         <option value="Nam">Nam</option>
                         <option value="Nữ">Nữ</option>
                       </select>
@@ -141,7 +142,7 @@
                     <label class="col-sm-3 col-form-label text-right label">Vị trí<span style="color: red" class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <select type="text" class="form-control" formControlName="id">
-                        <option value="" disabled selected>Chọn giới tính</option>
+                        <option value="all_l" disabled selected>Chọn vị trí cần tuyển</option>
                         <option *ngFor="let l of ListLoca" value="{{l.id}}">{{l.name}}</option>
                       </select>
                     </div>
@@ -152,6 +153,7 @@
                                                                                                     class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <select type="text" class="form-control" formControlName="id">
+                        <option value="all_c" disabled selected>Chọn hình thức làm việc</option>
                         <option *ngFor="let c of ListCate" value="{{c.id}}">{{c.name}}</option>
                       </select>
                     </div>
