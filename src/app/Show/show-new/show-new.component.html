@@ -76,10 +76,10 @@
               Tìm theo lương
             </a>
             <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" (click)="sortJobBySalaryMin()">0-501</a>
-              <a class="dropdown-item" (click)="sortJobBySalary1000()">501 > 1000</a>
-              <a class="dropdown-item" (click)="sortJobBySalary2000()">1001 > 2000</a>
-              <a class="dropdown-item" (click)="sortJobBySalaryMax()">> 2001</a>
+              <a class="dropdown-item" (click)="sortJobBySalaryMin()">0 --> 501</a>
+              <a class="dropdown-item" (click)="sortJobBySalary1000()">501 --> 1000</a>
+              <a class="dropdown-item" (click)="sortJobBySalary2000()">1001 --> 2000</a>
+              <a class="dropdown-item" (click)="sortJobBySalaryMax()">>2001 --></a>
             </div>
           </li>
         </ul>
@@ -401,7 +401,7 @@
                 <img src="{{p.avatar}}" alt="company logo image">
               </div>
               <div class="content" style="float: right">
-                <div class="job-name">
+                <div class="job-name" >
                   {{p.short_name}}
                 </div>
                 <a class="company">
