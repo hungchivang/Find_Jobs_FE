@@ -5,7 +5,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {LoginService} from "../../service/login.service";
 import {AccountToken} from "../../model/AccountToken";
 import {ApplyJobService} from "../../service/applyJob/apply-job.service";
-import {ActivatedRoute, Route} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ApplyJob} from "../../model/ApplyJob";
 
 @Component({
@@ -22,7 +22,7 @@ export class ApplyJobComponent implements OnInit{
 
   constructor(private imageService:ImageserviceService,
               private loginService: LoginService,
-              private applyJobService:ApplyJobService,
+              private applyJobService:ApplyJobService,private router:Router,
               private route: ActivatedRoute) {
 
   }
@@ -33,7 +33,6 @@ export class ApplyJobComponent implements OnInit{
 
   formUpCV = new FormGroup({
     cv: new FormControl(),
-
   })
 
   applyJobUser() {
@@ -42,10 +41,11 @@ export class ApplyJobComponent implements OnInit{
     this.email = this.accountToken.email;
       this.applyJobService.applyJobUser(this.formUpCV.value,this.accountToken.email,this.idJob).subscribe(data => {
         this.applyJob = data;
+        this.router.navigate(["/home"])
       }, () => {
-        alert("lỗi");
+        alert("Không thể nộp đơn lần 2");
+        this.router.navigate(["/home"])
       })
-
   }
 
 

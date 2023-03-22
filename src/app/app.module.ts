@@ -24,9 +24,9 @@ import { ShowApplyJobComponent } from './User/show-apply-job/show-apply-job.comp
 import { CancelApplyJobComponent } from './User/cancel-apply-job/cancel-apply-job.component';
 import { ConfirmCompanyComponent } from './Company/confirm-company/confirm-company.component';
 import { ShowCVComponent } from './Company/show-cv/show-cv.component';
-import { Pipe, PipeTransform } from '@angular/core';
 import { SafePipePipe } from './safe-pipe.pipe';
 import { ZoomCVComponent } from './Company/zoom-cv/zoom-cv.component';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ import { ZoomCVComponent } from './Company/zoom-cv/zoom-cv.component';
     ConfirmCompanyComponent,
     ShowCVComponent,
     SafePipePipe,
-    ZoomCVComponent
+    ZoomCVComponent,
 
   ],
     imports: [
@@ -62,6 +62,7 @@ import { ZoomCVComponent } from './Company/zoom-cv/zoom-cv.component';
         HttpClientModule,
         FormsModule,
         NgxPaginationModule,
+
     ],
 
   providers: [{

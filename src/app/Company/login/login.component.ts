@@ -3,8 +3,7 @@ import {LoginService} from "../../service/login.service";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Account} from "../../model/Account";
-import {AccountToken} from "../../model/AccountToken";
-import {Observable} from "rxjs";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -32,24 +31,55 @@ export class LoginComponent implements OnInit {
       this.loginService.setUserToken(data);
       this.loginService.setToken(data.token);
       console.log(data);
-      this.loginService.findAccountByEmail(data.email).subscribe(data => {
+      this.loginService.findAccountByEmail(data.email).subscribe((data) => {
         this.newAcc = data;
-        console.log(this.newAcc)
-        if(this.newAcc.status){
-          console.log(this.newAcc.status)
-          alert("Đăng nhập thành công")
-          if(this.newAcc.role.id == 1){
-            this.router.navigate(["/homeCompany"]);
-          }else if(this.newAcc.role.id == 2){
-            this.router.navigate(["/home"]);
-          }else {
-            this.router.navigate(["/adminCompany"]);
+        console.log(data)
+          if(this.newAcc.status){
+            this.successNotification();
+            if(this.newAcc.role.id == 1){
+              this.router.navigate(["/homeCompany"]);
+            }else if(this.newAcc.role.id == 2){
+              this.router.navigate(["/home"]);
+            }else {
+              this.router.navigate(["/adminCompany"]);
+            }
+          } else {
+            this.errorNotification();
           }
-
-        } else {
-          alert("Tài khoản đã bị khóa")
-        }
+      },(error) => {
+        this.blockNotification();
       })
+    },(error) => {
+      this.errorNotification();
     })
+  }
+
+  successNotification() {
+    Swal.fire('Hi', 'Đăng nhập thành công', 'success');
+  }
+
+  errorNotification() {
+    Swal.fire('Hi', 'Không thể đăng nhập', 'error');
+  }
+
+  blockNotification() {
+    Swal.fire('Hi', 'Tài khoản đã bị khóa', 'error');
+  }
+
+  alertConfirmation() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'This process is irreversible.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, go ahead.',
+      cancelButtonText: 'No, let me think',
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire('Removed!', 'Product removed successfully.', 'success');
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire('Cancelled', 'Product still in our database.)', 'error');
+      }
+    });
   }
 }

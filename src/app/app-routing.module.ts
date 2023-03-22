@@ -19,11 +19,12 @@ import {CancelApplyJobComponent} from "./User/cancel-apply-job/cancel-apply-job.
 import {ConfirmCompanyComponent} from "./Company/confirm-company/confirm-company.component";
 import {ShowCVComponent} from "./Company/show-cv/show-cv.component";
 import {ZoomCVComponent} from "./Company/zoom-cv/zoom-cv.component";
+import {CompanyGuardGuard} from "./Company/company-guard.guard";
 
 const routes: Routes = [
   {path:"registerCompany", component: RegistercompanyComponent },
   {path:"login", component: LoginComponent },
-  {path:"homeCompany", component: HomecompanyComponent },
+  {path:"homeCompany", component: HomecompanyComponent,canActivate: [CompanyGuardGuard] },
   {path:"informationCompany", component: InformationcompanyComponent },
   {path:"home", component: ShowNewComponent },
   {path:'detailsJob/:idJob', component: DetailsJobComponent },

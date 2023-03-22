@@ -64,9 +64,11 @@ export class ConfirmCompanyComponent implements OnInit{
     this.accountToken = this.loginService.getUserToken();
     this.applyJobService.findOneApplyJobById(idApply).subscribe((data) =>{
       this.applyJob = data;
-      console.log(data)
       this.applyJobService.confirmRecruitOfCompany(this.applyJob).subscribe((data) => {
         this.applyJob = data;
+        this.confirmApplyJobOfCompany();
+      }, () => {
+        alert("Không thể tuyển quá số lượng");
         this.confirmApplyJobOfCompany();
       })
     })
