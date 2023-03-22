@@ -1,5 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
+    <a class="nav-logo">
+      <img src="../../../assets/img/techjobs_bgw.png">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -34,6 +37,7 @@
   <table class="table">
     <thead class="thead-dark">
     <tr>
+      <th scope="col" style="text-align: center">#</th>
       <th scope="col" style="text-align: center">Tên người dùng</th>
       <th scope="col" style="text-align: center">Hình ảnh</th>
       <th scope="col" style="text-align: center">Email</th>
@@ -44,7 +48,9 @@
     </tr>
     </thead>
 
-    <tr *ngFor="let p of ListAccount  | paginate:{itemsPerPage: 6, currentPage: p, totalItems: total }">
+    <tr *ngFor="let p of ListAccount  | paginate:{itemsPerPage: 6, currentPage: p, totalItems: total}; let i = index"
+        [attr.data-index]="i">
+      <th scope="row" style="text-align: center">{{i + 1}}</th>
       <th scope="row" style="text-align: center">{{p.name}}</th>
       <td><img src="{{p.avatar}}" width="100" height="70"></td>
       <th scope="row" style="text-align: center">{{p.email}}</th>
@@ -66,5 +72,5 @@
       <td scope="row" style="text-align: center"></td>
     </tr>
   </table>
-  <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
+  <pagination-controls previousLabel="Trước" nextLabel="Sau" (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
 </div>

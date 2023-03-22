@@ -3,13 +3,14 @@ import {ShowJobService} from "../../service/Service_Job/show-job.service";
 import {ActivatedRoute} from "@angular/router";
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {AccountToken} from "../../model/AccountToken";
-import {LoginService} from "../../service/login.service";
+import {LoginService} from "../../service/login/login.service";
 
 @Component({
   selector: 'app-details-job',
   templateUrl: './details-job.component.html',
   styleUrls: ['./details-job.component.css']
 })
+
 export class DetailsJobComponent implements OnInit {
   account!: AccountToken
   JobCompanyAccount!: ListJobCompanyAccount

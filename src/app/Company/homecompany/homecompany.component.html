@@ -27,6 +27,9 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/informationCompany">Thông tin Doanh nghiệp</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/confirmCompany">Danh sách ứng tuyển</a>
+          </li>
         </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
           <li class="nav-item">
@@ -169,7 +172,7 @@
                   </div>
 
                   <div class="wrap-btn-appl">
-                    <a href="#" class="btn btn-appl" routerLink="/editJob/{{list.idJob}}">Edit</a>
+                    <a href="#" class="btn btn-appl" routerLink="/editJob/{{list.idJob}}">Sửa</a>
                   </div>
 
                   <div class="readmorestyle-wrap">
@@ -182,7 +185,8 @@
             </div>
           </div>
         </div>
-        <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
+        <pagination-controls previousLabel="Trước" nextLabel="Sau" (pageChange)="pageChangeEvent($event)"
+                             style="text-align: center"></pagination-controls>
       </div>
 
       <!-- (end) job board -->

@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {RegistercompanyService} from "../../service/registercompany.service";
+import {RegistercompanyService} from "../../service/register/registercompany.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Account} from "../../model/Account";
 import {Role} from "../../model/Role";
 import {MessageService} from "primeng/api";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-registercompany',
@@ -38,23 +39,23 @@ export class RegistercompanyComponent implements OnInit {
   })
 
   register() {
-    this.idRole= this.registerForm.value.role;
+    this.idRole = this.registerForm.value.role;
     console.log(this.idRole)
-      this.registerCompanyService.register(this.registerForm.value).subscribe((data) => {
-        this.account = data;
-        console.log(this.account)
-        alert("Đăng kí thành công. Vào Mail để xem chi tiết")
-        this.router.navigate(["/login"])
-      }, () => {
-        alert("Email or số điện thoại đã tồn tại");
-        console.log(this.registerForm.value)
-      })
-    }
-
-  showError() {
-    this.messageService.add({severity:'error', summary: 'Cảnh báo', detail: 'Đăng nhập thất bại', key: 'tc'});
+    this.registerCompanyService.register(this.registerForm.value).subscribe((data) => {
+      this.account = data;
+      console.log(this.account)
+      this.successNotification()
+      this.router.navigate(["/login"])
+    }, () => {
+      this.errorNotification()
+    })
   }
-  showSuccess() {
-    this.messageService.add({severity:'success', summary: 'Thông báo', detail: 'Đăng nhập thành công', key: 'tc'});
+
+  successNotification() {
+    Swal.fire('Đăng ký thành công!', '', 'success');
+  }
+
+  errorNotification() {
+    Swal.fire('Đăng ký thất bại!', 'Vui lòng kiểm tra email hoặc số điện thoại đã tồn tại!', 'error');
   }
 }

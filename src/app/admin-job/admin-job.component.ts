@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AccountToken} from "../model/AccountToken";
 import {ListJobCompanyAccount} from "../model/ListJobCompanyAccount";
 import {ShowJobService} from "../service/Service_Job/show-job.service";
-import {LoginService} from "../service/login.service";
+import {LoginService} from "../service/login/login.service";
 
 @Component({
   selector: 'app-admin-job',

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
@@ -11,77 +11,77 @@ import {Locations} from "../../model/Locations";
 })
 export class ShowJobService {
 
-  constructor(private Http:HttpClient) {
+  constructor(private Http: HttpClient) {
   }
 
-  getAllJob_Latest(page: number):Observable<ListJobCompanyAccount[]>{
-    return  this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/showJobNew"+'?page='+page)
+  getAllJob_Latest(page: number): Observable<ListJobCompanyAccount[]> {
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/showJobNew" + '?page=' + page)
   }
 
-  getOne_Job(id:number):Observable<ListJobCompanyAccount>{
+  getOne_Job(id: number): Observable<ListJobCompanyAccount> {
     return this.Http.get<ListJobCompanyAccount>(`http://localhost:8080/job/showJobNew/${id}`)
   }
 
-  searchbyCompany(short_name:string):Observable<ListJobCompanyAccount[]>{
+  searchbyCompany(short_name: string): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>(`http://localhost:8080/job/searchCompany/${short_name}`)
   }
 
-  getAllJob():Observable<ListJobCompanyAccount[]>{
+  getAllJob(): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/showAllJob")
   }
 
-  getTopCompany():Observable<ListTopCompany[]>{
+  getTopCompany(): Observable<ListTopCompany[]> {
     return this.Http.get<ListTopCompany[]>("http://localhost:8080/job/showTopCompany")
   }
 
   // Hiển thị Admin-job
-  getAdminJob(page: number):Observable<ListJobCompanyAccount[]>{
-    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/admin/showAdminJob" + '?page='+page)
+  getAdminJob(page: number): Observable<ListJobCompanyAccount[]> {
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/admin/showAdminJob" + '?page=' + page)
   }
 
   // Hiển thị, khóa tin Admin
-  getBlogJob(id: number):Observable<void> {
+  getBlogJob(id: number): Observable<void> {
     return this.Http.get<void>(`http://localhost:8080/admin/blogJob/${id}`)
   }
 
-  getallJob_byGuest():Observable<ListJobCompanyAccount[]>{
+  getallJob_byGuest(): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/guest")
   }
 
-  getAllCategory():Observable<Category[]>{
-    return  this.Http.get<Category[]>("http://localhost:8080/category")
+  getAllCategory(): Observable<Category[]> {
+    return this.Http.get<Category[]>("http://localhost:8080/category")
   }
 
-  getAllLocation():Observable<Locations[]>{
-    return  this.Http.get<Locations[]>("http://localhost:8080/location")
+  getAllLocation(): Observable<Locations[]> {
+    return this.Http.get<Locations[]>("http://localhost:8080/location")
   }
 
   // 7 API search job
-  searchJobsByTitleOrAddress(key:string):Observable<ListJobCompanyAccount[]>{
+  searchJobsByTitleOrAddress(key: string): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/searchJobsByTitleOrAddress?key=" + key)
   }
 
-  searchJobsByNameCategory(idCategory:number):Observable<ListJobCompanyAccount[]>{
+  searchJobsByNameCategory(idCategory: number): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>(`http://localhost:8080/job/searchJobsByNameCategory?idCategory=` + idCategory)
   }
 
-  searchJobsByNameLocation(idLocation:number):Observable<ListJobCompanyAccount[]>{
+  searchJobsByNameLocation(idLocation: number): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>(`http://localhost:8080/job/searchJobsByNameLocation?idLocation=` + idLocation)
   }
 
-  searchJobsByTitleAndAddressAndCategory(key:String, idCategory:number): Observable<ListJobCompanyAccount[]> {
+  searchJobsByTitleAndAddressAndCategory(key: String, idCategory: number): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/searchJobsByTitleAndAddressAndCategory?key=" + key + "&idCategory=" + idCategory)
   }
 
-  searchJobsByTitleAndAddressAndLocation(key:String, idLocation:number): Observable<ListJobCompanyAccount[]> {
+  searchJobsByTitleAndAddressAndLocation(key: String, idLocation: number): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/searchJobsByTitleAndAddressAndLocation?key=" + key + "&idLocation=" + idLocation)
   }
 
-  searchJobsByCategoryAndLocation(idCategory:number, idLocation:number): Observable<ListJobCompanyAccount[]> {
+  searchJobsByCategoryAndLocation(idCategory: number, idLocation: number): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/searchJobsByCategoryAndLocation?idCategory=" + idCategory + "&idLocation=" + idLocation)
   }
 
-  searchJobsByTitleAddressCategoryLocation(key:String,idCategory:number, idLocation:number): Observable<ListJobCompanyAccount[]> {
+  searchJobsByTitleAddressCategoryLocation(key: String, idCategory: number, idLocation: number): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/searchJobsByTitleAddressCategoryLocation?key=" + key + "&idCategory=" + idCategory + "&idLocation=" + idLocation)
   }
 
@@ -101,7 +101,8 @@ export class ShowJobService {
   sortJobBySalaryMax(): Observable<ListJobCompanyAccount[]> {
     return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/job/sortJobBySalaryMax")
   }
-  getAdminJoblimit3():Observable<ListJobCompanyAccount[]>{
-    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/admin/AdminJob" )
+
+  getAdminJoblimit3(): Observable<ListJobCompanyAccount[]> {
+    return this.Http.get<ListJobCompanyAccount[]>("http://localhost:8080/admin/AdminJob")
   }
 }

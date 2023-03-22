@@ -10,7 +10,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class AdminUserComponent implements OnInit {
   formsearch!: FormGroup
-  ListAccount:Account[]=[]
+  ListAccount: Account[] = []
 
   p: number = 1;
   total: number = 0;
@@ -18,17 +18,17 @@ export class AdminUserComponent implements OnInit {
   ngOnInit(): void {
     this.getallUser()
 
-    this.formsearch=new FormGroup({
-      name:new FormControl("")
+    this.formsearch = new FormGroup({
+      name: new FormControl("")
     })
   }
 
-  constructor(public AccountService:AccountserviceService) {
+  constructor(public AccountService: AccountserviceService) {
   }
 
   getallUser() {
-    this.AccountService.getallUser().subscribe((data)=>{
-      this.ListAccount=data;
+    this.AccountService.getallUser().subscribe((data) => {
+      this.ListAccount = data;
       this.total = this.ListAccount.length;
     })
   }
@@ -38,16 +38,16 @@ export class AdminUserComponent implements OnInit {
     this.getallUser();
   }
 
-  blockUser(id:number) {
-    this.AccountService.blokUser(id).subscribe((data)=>{
+  blockUser(id: number) {
+    this.AccountService.blokUser(id).subscribe((data) => {
       this.getallUser()
     })
   }
 
   seagchbynameUser() {
-   let value = this.formsearch.get('name')?.value
-    this.AccountService.searchbyUser(value).subscribe((data)=>{
-      this.ListAccount=data
+    let value = this.formsearch.get('name')?.value
+    this.AccountService.searchbyUser(value).subscribe((data) => {
+      this.ListAccount = data
     })
   }
 }

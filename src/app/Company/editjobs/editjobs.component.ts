@@ -7,7 +7,7 @@ import {Job} from "../../model/Job";
 import {HttpClient} from "@angular/common/http";
 import {EditjobService} from "../../service/job/editjob.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {LoginService} from "../../service/login.service";
+import {LoginService} from "../../service/login/login.service";
 import {ShowjobService} from "../../service/job/showjob.service";
 import {CompanyAndAccount} from "../../model/CompanyAndAccount";
 
@@ -28,11 +28,9 @@ export class EditjobsComponent implements OnInit {
   newJob!: Job;
   jobEdit!: Job;
 
-
   constructor(private http: HttpClient, private editjobService: EditjobService, private route: ActivatedRoute,
               private loginService: LoginService, private router: Router,
               private showJobService: ShowjobService) {
-
   }
 
   ngOnInit(): void {
@@ -67,8 +65,8 @@ export class EditjobsComponent implements OnInit {
           company: new FormGroup({
             id: new FormControl(this.newJob.company.id)
           }, Validators.required),
-          salaryMin: new FormControl(this.newJob.salaryMin,[Validators.required, Validators.pattern(/^[0-9]\d*$/), Validators.min(1)]),
-          salaryMax: new FormControl(this.newJob.salaryMax,[Validators.required, Validators.pattern(/^[0-9]\d*$/), Validators.min(1)]),
+          salaryMin: new FormControl(this.newJob.salaryMin, [Validators.required, Validators.pattern(/^[0-9]\d*$/), Validators.min(1)]),
+          salaryMax: new FormControl(this.newJob.salaryMax, [Validators.required, Validators.pattern(/^[0-9]\d*$/), Validators.min(1)]),
           address: new FormControl(this.newJob.address, Validators.required),
           expiredDate: new FormControl(this.newJob.expiredDate),
           code: new FormControl(this.newJob.code),
@@ -96,7 +94,7 @@ export class EditjobsComponent implements OnInit {
       this.formEditJob.value.company,
       this.formEditJob.value.category);
     console.log(this.jobEdit)
-      this.editjobService.editJob(this.jobEdit).subscribe((data) => {
+    this.editjobService.editJob(this.jobEdit).subscribe((data) => {
       this.router.navigate(["/homeCompany"])
     })
   }

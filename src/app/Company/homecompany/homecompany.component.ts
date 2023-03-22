@@ -2,11 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {ShowjobService} from "../../service/job/showjob.service";
 import {AccountToken} from "../../model/AccountToken";
-import {LoginService} from "../../service/login.service";
+import {LoginService} from "../../service/login/login.service";
 import {CompanyAndAccount} from "../../model/CompanyAndAccount";
 import {CompanyserviceService} from "../../service/companyService/companyservice.service";
 import {ActivatedRoute} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-homecompany',
@@ -20,7 +21,7 @@ export class HomecompanyComponent implements OnInit {
   accountToken !: AccountToken;
   p: number = 1;
   total: number = 0;
-  formSearchJobByTitle!:FormGroup;
+  formSearchJobByTitle!: FormGroup;
 
   ngOnInit(): void {
     this.informationCompany();
@@ -32,16 +33,16 @@ export class HomecompanyComponent implements OnInit {
   }
 
   constructor(private showJobService: ShowjobService, private loginService: LoginService,
-              private companyService: CompanyserviceService,private route: ActivatedRoute) {
+              private companyService: CompanyserviceService, private route: ActivatedRoute) {
   }
 
   findAllJob() {
     this.accountToken = this.loginService.getUserToken();
-    this.showJobService.findAllJobInCompany(this.accountToken.email,this.p).subscribe(data => {
+    this.showJobService.findAllJobInCompany(this.accountToken.email, this.p).subscribe(data => {
       this.listJob = data;
-      this.total= this.listJob.length;
+      this.total = this.listJob.length;
     }, error => {
-      alert("Lỗi")
+      this.errorNotification();
     })
   }
 
@@ -50,19 +51,19 @@ export class HomecompanyComponent implements OnInit {
     this.companyService.findAllCompany(this.accountToken.email).subscribe(data => {
       this.company = data;
     }, error => {
-      alert("Lỗi")
+      this.errorNotification();
     })
   }
 
-  blockJobByEmail(id:number) {
-    this.showJobService.blockJobByCompany(id).subscribe((data) =>{
+  blockJobByEmail(id: number) {
+    this.showJobService.blockJobByCompany(id).subscribe((data) => {
 
       this.findAllJob();
     })
   }
 
-  pageChangeEvent(event:number){
-    this.p =event;
+  pageChangeEvent(event: number) {
+    this.p = event;
     this.findAllJob();
   }
 
@@ -71,12 +72,16 @@ export class HomecompanyComponent implements OnInit {
     console.log(title)
     this.accountToken = this.loginService.getUserToken();
     console.log(this.accountToken.email)
-    this.showJobService.searchJobByTitleAndEmailOfCompany(this.accountToken.email,title).subscribe(data => {
+    this.showJobService.searchJobByTitleAndEmailOfCompany(this.accountToken.email, title).subscribe(data => {
       this.listJob = data;
       console.log(data)
       console.log(this.listJob)
     }, error => {
-      alert("Lỗi")
+      this.errorNotification();
     })
+  }
+
+  errorNotification() {
+    Swal.fire('Lỗi!', '', 'error');
   }
 }

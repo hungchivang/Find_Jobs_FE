@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ListJobCompanyAccount} from "../model/ListJobCompanyAccount";
 import {ShowJobService} from "../service/Service_Job/show-job.service";
-import {LoginService} from "../service/login.service";
 import {MessageService} from 'primeng/api';
 import {Router} from "@angular/router";
 import {ListTopCompany} from "../model/ListTopCompany";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-guest',
@@ -14,7 +14,7 @@ import {ListTopCompany} from "../model/ListTopCompany";
 
 })
 
-export class GuestComponent implements OnInit{
+export class GuestComponent implements OnInit {
   ListJobnew: ListJobCompanyAccount[] = []
   ListAllJob: ListJobCompanyAccount[] = [];
   ListTopCompany: ListTopCompany[] = [];
@@ -27,11 +27,11 @@ export class GuestComponent implements OnInit{
     this.getTopCompany();
   }
 
-  constructor(private servicerShow_New: ShowJobService,private messageService:MessageService,private router:Router) {
+  constructor(private servicerShow_New: ShowJobService, private messageService: MessageService, private router: Router) {
   }
 
   showError() {
-    this.messageService.add({severity:'error', summary: 'Cảnh báo', detail: 'Bạn không có quyền truy cập, Vui lòng đăng nhập để thực hiện!',key: 'tc'});
+    this.errorNotification();
   }
 
   getAllJob_Latest() {
@@ -45,6 +45,7 @@ export class GuestComponent implements OnInit{
     this.p = event;
     this.getAllJob_Latest();
   }
+
   getAllJob() {
     this.servicerShow_New.getAllJob().subscribe((data) => {
       this.ListAllJob = data;
@@ -55,5 +56,9 @@ export class GuestComponent implements OnInit{
     this.servicerShow_New.getTopCompany().subscribe((data) => {
       this.ListTopCompany = data;
     })
+  }
+
+  errorNotification() {
+    Swal.fire('Bạn không có quyền truy cập!', 'Vui lòng đăng nhập để thực hiện!', 'error');
   }
 }

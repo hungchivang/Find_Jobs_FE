@@ -18,15 +18,20 @@
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
       <a routerLink="/homeCompany" class="nav-logo">
-        <img src="assets/img/techjobs_bgb.png">
+        <img src="../../../assets/img/techjobs_bgw.png">
       </a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto tnav-left tn-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/homeCompany">Trang Chủ</a>
+          </li>
+        </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
           <li class="nav-item">
             <a class="nav-link"> Xin chào {{company.short_name}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true">Đăng Tuyển</a>
+            <a class="nav-link btn-employers" routerLink="/createJob" tabindex="-1" aria-disabled="true">Đăng Tuyển</a>
           </li>
         </ul>
       </div>

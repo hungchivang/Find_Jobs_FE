@@ -8,25 +8,25 @@ import {FormControl, FormGroup} from "@angular/forms";
   templateUrl: './admin-company.component.html',
   styleUrls: ['./admin-company.component.css']
 })
-export class AdminCompanyComponent implements OnInit{
+export class AdminCompanyComponent implements OnInit {
   p: number = 1;
   total: number = 0;
 
-  ListCompany:CompanyAndAccount[]=[]
+  ListCompany: CompanyAndAccount[] = []
   formsearch!: FormGroup
 
   ngOnInit(): void {
     this.getallCompany()
-    this.formsearch=new FormGroup({
-      name:new FormControl("")
+    this.formsearch = new FormGroup({
+      name: new FormControl("")
     })
   }
 
-  constructor(public CompanyserviceService:CompanyserviceService) {
+  constructor(public CompanyserviceService: CompanyserviceService) {
   }
 
-  getallCompany(){
-    this.CompanyserviceService.getallCompanyNoEmail(this.p).subscribe((data)=>{
+  getallCompany() {
+    this.CompanyserviceService.getallCompanyNoEmail(this.p).subscribe((data) => {
       this.ListCompany = data;
       this.total = this.ListCompany.length;
     })
@@ -37,16 +37,17 @@ export class AdminCompanyComponent implements OnInit{
     this.getallCompany();
   }
 
-  blockCompany(id:number) {
-    this.CompanyserviceService.blokCompany(id).subscribe((data)=>{
+  blockCompany(id: number) {
+    this.CompanyserviceService.blokCompany(id).subscribe((data) => {
       this.getallCompany()
 
     })
   }
+
   seagchbynameCompany() {
     let value = this.formsearch.get('name')?.value
-    this.CompanyserviceService.searchbyCompany(value).subscribe((data)=>{
-      this.ListCompany=data
+    this.CompanyserviceService.searchbyCompany(value).subscribe((data) => {
+      this.ListCompany = data
     })
   }
 }

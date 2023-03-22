@@ -3,7 +3,7 @@ import {ShowJobService} from "../../service/Service_Job/show-job.service";
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {FormControl, FormGroup} from "@angular/forms";
 import {AccountToken} from "../../model/AccountToken";
-import {LoginService} from "../../service/login.service";
+import {LoginService} from "../../service/login/login.service";
 import {ListTopCompany} from "../../model/ListTopCompany";
 import {Category} from "../../model/Category";
 import {Locations} from "../../model/Locations";
@@ -66,7 +66,7 @@ export class ShowNewComponent implements OnInit {
     })
   }
 
-  // show list category,location
+  // Show list category,location
   getListCategory() {
     this.servicerShow_New.getAllCategory().subscribe(data => {
       this.ListCategory = data;
@@ -131,7 +131,7 @@ export class ShowNewComponent implements OnInit {
     }
   }
 
-  //sort Job by Salary
+  // Sort Job by Salary
   sortJobBySalaryMin() {
     this.servicerShow_New.sortJobBySalaryMin().subscribe((data) => {
       this.ListJobnew = data;

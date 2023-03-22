@@ -1,4 +1,4 @@
-export class ImageSnippet{
+export class ImageSnippet {
   src: string;
   file: File;
   pending: boolean = false;

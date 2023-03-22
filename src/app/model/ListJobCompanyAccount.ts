@@ -1,30 +1,30 @@
-export class ListJobCompanyAccount{
-  idJob!:number;
-  address!:string;
-  codeJob!:string;
-  descriptionJob!:string;
-  exp_year!:number
-  expired_date!:any;
-  gender!:string;
-  quantity!:number;
-  min!:any
-  max!:any
-  statusJob!:number;
-  title!:string;
-  codeCompany!:string
-  google_map!:string
-  number_of_employees!:number
-  short_name!:string
-  website!:string
-  avatar!:string
-  banner!:string
-  descriptionAcc!:string
-  email!:string
-  nameAcc!:string
-  phone!:string
-  statusAcc!:boolean
-  nameCategory!:string
-  nameLocation!:string
+export class ListJobCompanyAccount {
+  idJob!: number;
+  address!: string;
+  codeJob!: string;
+  descriptionJob!: string;
+  exp_year!: number
+  expired_date!: any;
+  gender!: string;
+  quantity!: number;
+  min!: any
+  max!: any
+  statusJob!: number;
+  title!: string;
+  codeCompany!: string
+  google_map!: string
+  number_of_employees!: number
+  short_name!: string
+  website!: string
+  avatar!: string
+  banner!: string
+  descriptionAcc!: string
+  email!: string
+  nameAcc!: string
+  phone!: string
+  statusAcc!: boolean
+  nameCategory!: string
+  nameLocation!: string
 
   constructor(idJob: number, address: string, codeJob: string, descriptionJob: string, exp_year: number, expired_date: any, gender: string, quantity: number, min: any, max: any, statusJob: number, title: string, codeCompany: string, google_map: string, number_of_employees: number, short_name: string, website: string, avatar: string, banner: string, descriptionAcc: string, email: string, nameAcc: string, phone: string, statusAcc: boolean, nameCategory: string, nameLocation: string) {
     this.idJob = idJob;

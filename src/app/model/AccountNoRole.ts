@@ -1,4 +1,4 @@
-export class AccountNoRole{
+export class AccountNoRole {
   id: number;
   email: string
   password: string;

@@ -5,126 +5,61 @@
   <title>TechJobs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
   <!-- Roboto Fonts -->
+
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
         rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap"
         rel="stylesheet">
 </head>
 <body>
+
 <!-- main nav -->
+
 <div class="container-fluid fluid-nav another-page">
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <a href="#" class="nav-logo">
-        <img src="img/techjobs_bgw.png">
+      <a routerLink="/homeCompany" class="nav-logo">
+        <img src="../../../assets/img/techjobs_bgw.png">
       </a>
       <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse"
               data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
               aria-label="Toggle navigation">
-        <!-- <span class="navbar-toggler-icon"></span> -->
         <i class="fa fa-bars icn-res" aria-hidden="true"></i>
-
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto tnav-left tn-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Việc Làm IT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tin Tức</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true"
-               aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Tin mới</a>
-              <a class="dropdown-item" href="#">Doanh nghiệp</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Log out</a>
-            </div>
+            <a class="nav-link" routerLink="/homeCompany">Trang chủ</a>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{{accountToken.email}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" style="color: #fff!important">Nhà
-              Tuyển Dụng</a>
+            <a class="nav-link"> Xin chào {{accountToken.email}}</a>
           </li>
         </ul>
       </div>
     </nav>
   </div>
 </div>
+
 <!-- (end) main nav -->
 
 <div class="clearfix"></div>
 
 <!-- recuiter Nav -->
-<nav class="navbar navbar-expand-lg navbar-light nav-recuitment">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNava"
-          aria-controls="navbarNava" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse container" id="navbarNava">
-    <ul class="navbar-nav nav-recuitment-li">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Quản lý đăng tuyển</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Quản lý ứng viên</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Quản lý đăng tin</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Quản lý hồ sơ</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Tài khoản</a>
-      </li>
-    </ul>
-    <ul class="rec-nav-right">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Tìm hồ sơ</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Đăng tuyển</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+
 <!--  recuiter Nav -->
 
 <!-- widget recuitment  -->
-<div class="container-fluid">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="home-ads">
-          <a href="#">
-            <img src="img/hna2.jpg">
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <!-- (end) widget recuitment  -->
 
 <!-- published recuitment -->
+
 <div class="container-fluid published-recuitment-wrapper">
   <div class="container published-recuitment-content">
     <div class="row">
@@ -148,10 +83,12 @@
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body recuitment-body">
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label text-right label">Tiêu đề<span style="color: red" class="pl-2">*</span></label>
+                    <label class="col-sm-3 col-form-label text-right label">Tiêu đề<span style="color: red"
+                                                                                         class="pl-2">*</span></label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control"  value="{{this.newJob.title}}" formControlName="title">
-                      <p *ngIf="!formEditJob.get('title')?.valid && formEditJob.get('title')?.touched" style="color: red">
+                      <input type="text" class="form-control" value="{{this.newJob.title}}" formControlName="title">
+                      <p *ngIf="!formEditJob.get('title')?.valid && formEditJob.get('title')?.touched"
+                         style="color: red">
                     </div>
                   </div>
 
@@ -166,8 +103,8 @@
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-right label">Số lượng cần tuyển</label>
                     <div class="col-sm-9">
-                      <input type="number" class="form-control" value="{{this.newJob.quantity}}" formControlName="quantity">
-
+                      <input type="number" class="form-control" value="{{this.newJob.quantity}}"
+                             formControlName="quantity">
 
                     </div>
                   </div>
@@ -176,8 +113,7 @@
                                                                                            class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <fieldset formGroupName="genderObj">
-                        <select type="text" class="form-control" formControlName="gender" >
-                          <option value="Nam/Nữ">Nam/Nữ</option>
+                        <select type="text" class="form-control" formControlName="gender">
                           <option value="Nam">Nam</option>
                           <option value="Nữ">Nữ</option>
                         </select>
@@ -185,12 +121,13 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label text-right label">Mô tả công việc<span style="color: red" class="pl-2">*</span></label>
+                    <label class="col-sm-3 col-form-label text-right label">Mô tả công việc<span style="color: red"
+                                                                                                 class="pl-2">*</span></label>
                     <div class="col-sm-9">
                       <textarea type="text" class="form-control" placeholder="Nhập mô tả công việc"
                                 formControlName="description" rows="5"></textarea>
-                      <p *ngIf="!formEditJob.get('description')?.valid && formEditJob.get('description')?.touched" style="color: red">
-
+                      <p *ngIf="!formEditJob.get('description')?.valid && formEditJob.get('description')?.touched"
+                         style="color: red">
 
                     </div>
                   </div>
@@ -220,7 +157,6 @@
                     <div class="col-sm-9">
                       <fieldset formGroupName="location">
                         <select type="text" class="form-control" formControlName="id">
-                          <!--                        <option *ngFor="let c of ListLoca" value="{{c.id}}">{{c.name}}</option>-->
                           <option *ngFor="let l of ListLoca" value="{{l.id}}">{{l.name}}</option>
                         </select>
                       </fieldset>
@@ -238,7 +174,6 @@
                     <div class="col-sm-9">
                       <fieldset formGroupName="category">
                         <select type="text" class="form-control" formControlName="id">
-                          <!--                        <option *ngFor="let cate of ListCate" value="{{cate.id}}">{{cate.name}}</option>-->
                           <option *ngFor="let c of ListCate" value="{{c.id}}">{{c.name}}</option>
 
                         </select>
@@ -256,7 +191,6 @@
                              formControlName="salaryMax">
                     </div>
                   </div>
-
 
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-right label">Nhập địa chỉ<span style="color: red"
@@ -277,7 +211,6 @@
               </div>
             </div>
 
-
             <div class="rec-submit">
               <button type="submit" class="btn-submit-recuitment" name="">
                 <i class="fa fa-floppy-o pr-2" routerLink="/homeCompany"></i>Cập nhật
@@ -285,141 +218,17 @@
             </div>
           </div>
         </form>
-
-      </div>
-
-      <div class="block-sidebar" style="margin-bottom: 20px;">
-        <header>
-          <h3 class="title-sidebar font-roboto bg-primary">
-            Trung tâm quản lý
-          </h3>
-        </header>
-        <div class="content-sidebar menu-trung-tam-ql menu-ql-employer">
-          <h3 class="menu-ql-ntv">
-            Quản lý tài khoản
-          </h3>
-          <ul>
-            <li>
-              <a href="#">
-                Tài khoản
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Giấy phép kinh doanh
-              </a>
-            </li>
-          </ul>
-          <h3 class="menu-ql-ntv">
-            Quản lý dịch vụ
-          </h3>
-          <ul>
-            <li>
-              <a href="#">
-                Lịch sử dịch vụ
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank">
-                Báo giá
-              </a>
-            </li>
-          </ul>
-          <h3 class="menu-ql-ntv">
-            Quản lý tin tuyển dụng
-          </h3>
-          <ul>
-            <li>
-              <a href="#">
-                Đăng tin tuyển dụng
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Danh sách tin tuyển dụng
-              </a>
-            </li>
-          </ul>
-          <h3 class="menu-ql-ntv">
-            Quản lý ứng viên
-          </h3>
-          <ul>
-            <li>
-              <a href="#">
-                Tìm kiếm hồ sơ
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Hồ sơ đã lưu
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Hồ sơ đã ứng tuyển
-              </a>
-            </li>
-            <li>
-              <a href="#" title="Thông báo hồ sơ phù hợp">
-                Thông báo hồ sơ phù hợp
-              </a>
-            </li>
-          </ul>
-          <h3 class="menu-ql-ntv">
-            Hỗ trợ và thông báo
-          </h3>
-          <ul>
-            <li>
-              <a href="#" title="Gửi yêu cầu đến ban quản trị">
-                Gửi yêu cầu đến ban quản trị
-              </a>
-            </li>
-            <li>
-              <a href="#" title="Ban quản trị thông báo">
-                Ban quản trị thông báo
-              </a>
-            </li>
-            <li>
-              <a href="#" title="Hướng dẫn thao tác">
-                Hướng dẫn thao tác
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank">
-                <span>Thông tin thanh toán</span>
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="#">
-                <span>Cổng tra cứu lương</span>
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="#">
-                <span> Cẩm nang tuyển dụng</span>
-              </a>
-            </li>
-          </ul>
-          <ul>
-            <li class="logout">
-              <a href="#" title="Đăng xuất">
-                Đăng xuất
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   </div>
 </div>
 
-
 <!-- (end) published recuitment -->
 
 <div class="clearfix"></div>
 
-
 <!-- job support -->
+
 <div class="container-fluid job-support-wrapper">
   <div class="container-fluid job-support-wrap">
     <div class="container job-support">
@@ -430,7 +239,7 @@
               <span><i class="fa fa-question-circle pr-2 icsp"></i>Hỗ trợ nhà tuyển dụng:</span>
             </li>
             <li>
-              <span><i class="fa fa-phone pr-2 icsp"></i>0123.456.789</span>
+              <span><i class="fa fa-phone pr-2 icsp"></i>19006868</span>
             </li>
           </ul>
         </div>
@@ -447,37 +256,37 @@
     </div>
   </div>
 </div>
+
 <!-- (end) job support -->
 
-
 <!-- footer -->
+
 <div class="container-fluid footer-wrap  clear-left clear-right">
   <div class="container footer">
     <div class="row">
       <div class="col-md-4 col-sm-8 col-12">
         <h2 class="footer-heading">
-          <span>About</span>
+          <span>Giới thiệu</span>
         </h2>
         <p class="footer-content">
-          Discover the best way to find houses, condominiums, apartments and HDBs for sale and rent in Singapore with
-          JobsOnline, Singapore's Fastest Growing Jobs Portal.
+          Khám phá cách tốt nhất để tìm vệc làm IT qua Cổng thông tin việc làm phát triển nhanh nhất Việt Nam.
         </p>
         <ul class="footer-contact">
           <li>
-            <a href="#">
-              <i class="fa fa-phone fticn"></i> +123 456 7890
+            <a>
+              <i class="fa fa-phone fticn"></i> 19006868
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-envelope fticn"></i>
-              hello@123.com
+              support@techjob.com
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i class="fa fa-map-marker fticn"></i>
-              33 Xô Viết Nghệ Tĩnh, Đà Nẵng
+              Số 23, Lô TT01, Hàm Nghi, Mỹ Đình, Hà Nội
             </a>
           </li>
         </ul>
@@ -487,47 +296,45 @@
           <span>Ngôn ngữ nổi bật</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Javascript</a></li>
-          <li><a href="#">Java</a></li>
-          <li><a href="#">Frontend</a></li>
-          <li><a href="#">SQL Server</a></li>
-          <li><a href="#">.NET</a></li>
+          <li><a>Java</a></li>
+          <li><a>Javascript</a></li>
+          <li><a>PHP</a></li>
+          <li><a>.NET</a></li>
+          <li><a>SQL Server</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả ngành nghề</span>
+          <span>Ngành nghề</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Lập trình viên</a></li>
-          <li><a href="#">Kiểm thử phần mềm</a></li>
-          <li><a href="#">Kỹ sư cầu nối</a></li>
-          <li><a href="#">Quản lý dự án</a></li>
+          <li><a>Quản lý dự án</a></li>
+          <li><a>Lập trình viên</a></li>
+          <li><a>Kiểm thử phần mềm</a></li>
+          <li><a>Kỹ sư cầu nối</a></li>
+          <li><a>Nhân sự</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-6 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả hình thức</span>
+          <span>Hình thức</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Nhân viên chính thức</a></li>
-          <li><a href="#">Nhân viên bán thời gian</a></li>
-          <li><a href="#">Freelancer</a></li>
+          <li><a>Nhân viên chính thức</a></li>
+          <li><a>Nhân viên bán thời gian</a></li>
+          <li><a>Freelancer</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-sm-12 col-12">
         <h2 class="footer-heading">
-          <span>Tất cả tỉnh thành</span>
+          <span>Địa điểm</span>
         </h2>
         <ul class="footer-list">
-          <li><a href="#">Hồ Chính Minh</a></li>
-          <li><a href="#">Hà Nội</a></li>
-          <li><a href="#">Đà Nẵng</a></li>
-          <li><a href="#">Buôn Ma Thuột</a></li>
+          <li><a>Hà Nội</a></li>
+          <li><a>Đà Nẵng</a></li>
+          <li><a>Hồ Chí Minh</a></li>
         </ul>
       </div>
-
-
     </div>
   </div>
 </div>
@@ -535,31 +342,29 @@
 <footer class="container-fluid copyright-wrap">
   <div class="container copyright">
     <p class="copyright-content">
-      Copyright © 2020 <a href="#"> Tech<b>Job</b></a>. All Right Reserved.
+      Copyright © 2023 <a> Tech<b>Job</b></a>. All Right Reserved.
     </p>
   </div>
 </footer>
 
-
 <!-- (end) footer -->
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 <script src="js/jquery-3.4.1.slim.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/select2.min.js"></script>
 <script src="js/jobdata.js"></script>
-
 <script type="text/javascript" src="js/main.js"></script>
-<!-- Owl Stylesheets Javascript -->
-<script src="js/owlcarousel/owl.carousel.js"></script>
-<!-- Read More Plugin -->
 
+<!-- Owl Stylesheets Javascript -->
+
+<script src="js/owlcarousel/owl.carousel.js"></script>
+
+<!-- Read More Plugin -->
 
 </body>
 </html>
-

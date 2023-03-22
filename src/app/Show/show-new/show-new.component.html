@@ -13,10 +13,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto tnav-left tn-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true"
-               aria-expanded="false" routerLink="/edit/{{account.email}}"> Thông tin ứng viên
-            </a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/edit/{{account.email}}"> Thông tin ứng viên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/showApplyJob"> Danh sách nộp CV</a>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
@@ -75,10 +76,10 @@
               Tìm theo lương
             </a>
             <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" (click)="sortJobBySalaryMin()">Min</a>
-              <a class="dropdown-item" (click)="sortJobBySalary1000()">300 > 1000</a>
-              <a class="dropdown-item" (click)="sortJobBySalary2000()">1000 > 2000</a>
-              <a class="dropdown-item" (click)="sortJobBySalaryMax()">max</a>
+              <a class="dropdown-item" (click)="sortJobBySalaryMin()">0-501</a>
+              <a class="dropdown-item" (click)="sortJobBySalary1000()">501 > 1000</a>
+              <a class="dropdown-item" (click)="sortJobBySalary2000()">1001 > 2000</a>
+              <a class="dropdown-item" (click)="sortJobBySalaryMax()">> 2001</a>
             </div>
           </li>
         </ul>
@@ -186,12 +187,12 @@
 
                     <div class="job-inf">
                       <div class="job-main-skill">
-                        <i class="fa fa-code" aria-hidden="true"></i> <a> {{p.codeJob}}</a>
+                        <i class="fa fa-code" aria-hidden="true"></i> <a> {{p.nameCategory}}</a>
                       </div>
                       <div class="job-salary">
                         <i class="fa fa-money" aria-hidden="true"></i>
-                        <span class="salary-min">{{p.min}}<em class="salary-unit">$</em></span>
-                        <span class="salary-max">{{p.max}} <em class="salary-unit">$</em></span>
+                        <span class="salary-min"> {{p.min}}<em class="salary-unit">$</em></span>
+                        <span class="salary-max"> {{p.max}}<em class="salary-unit">$</em></span>
                       </div>
                       <div class="job-deadline">
                         <span><i class="fa fa-clock-o"
@@ -200,7 +201,7 @@
                     </div>
                   </div>
                   <div class="wrap-btn-appl">
-                    <a href="#" class="btn btn-appl">Nộp đơn</a>
+                    <a href="#" routerLink="/applyJob/{{p.idJob}}" class="btn btn-appl">Nộp đơn</a>
                   </div>
                 </div>
               </div>
@@ -208,7 +209,8 @@
               </div>
             </div>
           </div>
-          <pagination-controls (pageChange)="pageChangeEvent($event)" style="text-align: center"></pagination-controls>
+          <pagination-controls previousLabel="Trước" nextLabel="Sau" (pageChange)="pageChangeEvent($event)"
+                               style="text-align: center"></pagination-controls>
         </div>
 
         <!-- (end) job board -->

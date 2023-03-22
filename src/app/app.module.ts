@@ -15,17 +15,23 @@ import {GuestComponent} from './guest/guest.component';
 import {BusinessUserDetailsComponent} from './Details/business-user-details/business-user-details.component';
 import {EditUserComponent} from './User/edit-user/edit-user.component';
 import {NgxPaginationModule} from "ngx-pagination";
-import {InfoDetailCompanyComponent} from './Company/info-detail-company/info-detail-company.component';
-import {AdminJobComponent} from './admin-job/admin-job.component';
-import {AdminCompanyComponent} from './admin-company/admin-company.component';
-import {AdminUserComponent} from './admin-user/admin-user.component';
 import {AdminComponent} from './admin/admin.component';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastModule} from 'primeng/toast';
 import {CreateJobComponent} from "./Company/create-job/create-job.component";
 import {EditjobsComponent} from "./Company/editjobs/editjobs.component";
-
+import {InfoDetailCompanyComponent} from './Company/info-detail-company/info-detail-company.component';
+import {AdminJobComponent} from './admin-job/admin-job.component';
+import {AdminCompanyComponent} from './admin-company/admin-company.component';
+import {AdminUserComponent} from './admin-user/admin-user.component';
+import {ApplyJobComponent} from './User/apply-job/apply-job.component';
+import {ShowApplyJobComponent} from './User/show-apply-job/show-apply-job.component';
+import {CancelApplyJobComponent} from './User/cancel-apply-job/cancel-apply-job.component';
+import {ConfirmCompanyComponent} from './Company/confirm-company/confirm-company.component';
+import {ShowCVComponent} from './Company/show-cv/show-cv.component';
+import {SafePipePipe} from './safe-pipe.pipe';
+import {ZoomCVComponent} from './Company/zoom-cv/zoom-cv.component';
 
 @NgModule({
   declarations: [
@@ -40,23 +46,35 @@ import {EditjobsComponent} from "./Company/editjobs/editjobs.component";
     BusinessUserDetailsComponent,
     EditUserComponent,
     InfoDetailCompanyComponent,
+    ApplyJobComponent,
+    InfoDetailCompanyComponent,
     AdminJobComponent,
     InfoDetailCompanyComponent,
     AdminCompanyComponent,
     AdminUserComponent,
     AdminComponent,
     CreateJobComponent,
-    EditjobsComponent
-
+    EditjobsComponent,
+    AdminUserComponent,
+    ShowApplyJobComponent,
+    CancelApplyJobComponent,
+    ConfirmCompanyComponent,
+    ShowCVComponent,
+    SafePipePipe,
+    ZoomCVComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule,SplitButtonModule,BrowserAnimationsModule,ToastModule,ToastModule,
-
+    NgxPaginationModule,
+    SplitButtonModule,
+    BrowserAnimationsModule,
+    ToastModule,
+    ToastModule,
   ],
 
   providers: [{

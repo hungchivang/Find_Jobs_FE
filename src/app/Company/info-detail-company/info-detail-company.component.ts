@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {ShowJobService} from "../../service/Service_Job/show-job.service";
 import {ActivatedRoute} from "@angular/router";
 import {AccountToken} from "../../model/AccountToken";
-import {LoginService} from "../../service/login.service";
+import {LoginService} from "../../service/login/login.service";
 
 @Component({
   selector: 'app-info-detail-company',
   templateUrl: './info-detail-company.component.html',
   styleUrls: ['./info-detail-company.component.css']
 })
+
 export class InfoDetailCompanyComponent {
   account!: AccountToken
   JobCompanyAccount!: ListJobCompanyAccount

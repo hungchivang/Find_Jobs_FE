@@ -113,10 +113,10 @@ export class EditUserComponent implements OnInit {
           alert("Thành công")
         })
       } else {
-        alert("Nhập lại mật khẩu không trung khớp")
+        alert("Nhập lại mật khẩu không trùng khớp!")
       }
     } else {
-      alert("Mật khẩu cũ không trùng")
+      alert("Mật khẩu cũ không trùng khớp!")
     }
   }
 }

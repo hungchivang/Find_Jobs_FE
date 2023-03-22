@@ -1,15 +1,13 @@
-import {Role} from "./Role";
-import {Category} from "./Category";
 import {Account} from "./Account";
 
-export class Company{
-  id:number;
-  shortName:string;
-  code:string;
-  numberOfEmployees:number;
-  googleMap:string;
-  website:string;
-  account:Account;
+export class Company {
+  id: number;
+  shortName: string;
+  code: string;
+  numberOfEmployees: number;
+  googleMap: string;
+  website: string;
+  account: Account;
 
   constructor(id: number, shortName: string, code: string, numberOfEmployees: number, googleMap: string, website: string, account: Account) {
     this.id = id;

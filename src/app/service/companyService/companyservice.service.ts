@@ -1,11 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Account} from "../../model/Account";
 import {Observable} from "rxjs";
 import {Company} from "../../model/Company";
 import {ListJobCompanyAccount} from "../../model/ListJobCompanyAccount";
 import {CompanyAndAccount} from "../../model/CompanyAndAccount";
-import {Job} from "../../model/Job";
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +27,6 @@ export class CompanyserviceService {
 
   getallCompanyNoEmail(page: number): Observable<CompanyAndAccount[]> {
     return this.http.get<CompanyAndAccount[]>("http://localhost:8080/admin/ShowCompanyAdmin" + '?page=' + page)
-
   }
 
   blokCompany(id: number): Observable<void> {
@@ -43,6 +40,4 @@ export class CompanyserviceService {
   getallCompanylimit3(): Observable<CompanyAndAccount[]> {
     return this.http.get<CompanyAndAccount[]>("http://localhost:8080/admin/adminCompany")
   }
-
-
 }

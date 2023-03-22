@@ -9,26 +9,28 @@ import {Locations} from "../../model/Locations";
 @Injectable({
   providedIn: 'root'
 })
-export class ShowjobService{
+export class ShowjobService {
 
-  constructor(private http:HttpClient) { }
-
-  findAllJobInCompany(email : string,page:number):Observable<ListJobCompanyAccount[]>{
-    return this.http.get<any>(`http://localhost:8080/job/showJob/` + email +"?page=" +page);
+  constructor(private http: HttpClient) {
   }
 
-  blockJobByCompany(id : number): Observable<Job>{
+  findAllJobInCompany(email: string, page: number): Observable<ListJobCompanyAccount[]> {
+    return this.http.get<any>(`http://localhost:8080/job/showJob/` + email + "?page=" + page);
+  }
+
+  blockJobByCompany(id: number): Observable<Job> {
     return this.http.get<Job>(`http://localhost:8080/job/block/` + id);
   }
 
-  searchJobByTitleAndEmailOfCompany(email : string,title:string):Observable<ListJobCompanyAccount[]>{
-    return this.http.get<ListJobCompanyAccount[]>(`http://localhost:8080/company/searchJobByTitleAndEmailOfCompany?email=` + email +"&title=" +title);
-  }
-  getAllCategory():Observable<Category[]>{
-    return  this.http.get<Category[]>("http://localhost:8080/job/category")
+  searchJobByTitleAndEmailOfCompany(email: string, title: string): Observable<ListJobCompanyAccount[]> {
+    return this.http.get<ListJobCompanyAccount[]>(`http://localhost:8080/company/searchJobByTitleAndEmailOfCompany?email=` + email + "&title=" + title);
   }
 
-  getAllLocation():Observable<Locations[]>{
-    return  this.http.get<Locations[]>("http://localhost:8080/job/location")
+  getAllCategory(): Observable<Category[]> {
+    return this.http.get<Category[]>("http://localhost:8080/job/category")
+  }
+
+  getAllLocation(): Observable<Locations[]> {
+    return this.http.get<Locations[]>("http://localhost:8080/job/location")
   }
 }

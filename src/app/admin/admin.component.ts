@@ -11,35 +11,16 @@ import {AccountserviceService} from "../service/accountService/accountservice.se
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent implements OnInit{
-  ListCompany:CompanyAndAccount[]=[]
-  ListAdminJob: ListJobCompanyAccount[] = [];
-  ListAccount:Account[]=[]
 
+export class AdminComponent implements OnInit {
+  ListCompany: CompanyAndAccount[] = []
+  ListAdminJob: ListJobCompanyAccount[] = [];
+  ListAccount: Account[] = []
 
   ngOnInit(): void {
-    this.getallCompanylimit3()
-    this.getAdminJoblimit3()
-    this.getallUserlimit3()
-  }
-  constructor(public CompanyserviceService:CompanyserviceService,private servicerShow_New: ShowJobService,public AccountService:AccountserviceService) {
-  }
-  getallCompanylimit3(){
-    this.CompanyserviceService.getallCompanylimit3().subscribe((data)=>{
-      this.ListCompany = data;
-    })
-  }
-  getAdminJoblimit3() {
-    this.servicerShow_New.getAdminJoblimit3().subscribe((data) => {
-      this.ListAdminJob = data;
 
-    })
-  }
-  getallUserlimit3() {
-    this.AccountService.getallUserlimit3().subscribe((data)=>{
-      this.ListAccount=data;
-
-    })
   }
 
+  constructor(public CompanyserviceService: CompanyserviceService, private servicerShow_New: ShowJobService, public AccountService: AccountserviceService) {
+  }
 }
