@@ -34,7 +34,7 @@ const routes: Routes = [
   {path: "home", component: ShowNewComponent, canActivate: [UserGuard]},
   {path: 'detailsJob/:idJob', component: DetailsJobComponent,},
   {path: 'guest', component: GuestComponent},
-  {path: 'businessUserDetails/:idJob', component: BusinessUserDetailsComponent, canActivate: [UserGuard]},
+  {path: 'businessUserDetails/:idJob', component: BusinessUserDetailsComponent},
   {path: 'edit/:email', component: EditUserComponent, canActivate: [UserGuard]},
   {path: 'InfoJobDetail/:idJob', component: InfoDetailCompanyComponent},
   {path: 'applyJob/:idJob', component: ApplyJobComponent, canActivate: [UserGuard]},
